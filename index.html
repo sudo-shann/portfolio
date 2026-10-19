@@ -3,358 +3,658 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shannmuka Buddabathini | Software Engineer 3</title>
+  <title>Shannmuka Buddabathini | Software Engineer III</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #060911; }
     .mono { font-family: 'JetBrains Mono', monospace; }
+    
+    /* Subtle architectural grid */
     .bg-grid {
-      background-size: 40px 40px;
+      background-size: 48px 48px;
       background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    /* Interactive spotlight hover effect */
+    .spotlight-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .spotlight-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(16, 185, 129, 0.08), transparent 40%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Custom sleek scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #060911; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #10b981; }
+
+    /* Blinking cursor for typewriter */
+    .cursor-blink {
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
   </style>
 </head>
-<body class="bg-[#080c14] text-slate-200 antialiased selection:bg-emerald-400 selection:text-black">
+<body class="text-slate-200 antialiased selection:bg-emerald-400 selection:text-black">
 
-  <!-- Subtle ambient glow background -->
+  <!-- Ambient Background Layers -->
   <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
-  <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-emerald-500/10 via-cyan-500/10 to-transparent blur-3xl pointer-events-none z-0"></div>
+  <div class="fixed top-[-10%] left-1/4 w-[500px] h-[400px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none z-0"></div>
+  <div class="fixed bottom-[-10%] right-1/4 w-[500px] h-[400px] bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none z-0"></div>
 
-  <!-- Navigation -->
-  <nav class="sticky top-0 z-50 backdrop-blur-xl bg-[#080c14]/85 border-b border-slate-800/80 px-6 py-4">
-    <div class="max-w-6xl mx-auto flex justify-between items-center relative z-10">
-      <a href="#hero" class="text-xl font-bold mono tracking-tight text-white group">
-        Shannmuka<span class="text-emerald-400 group-hover:text-cyan-400 transition">.</span>
+  <!-- Navigation Bar -->
+  <nav class="sticky top-0 z-50 backdrop-blur-xl bg-[#060911]/80 border-b border-slate-800/80 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <a href="#hero" class="text-xl font-extrabold mono tracking-tight text-white group flex items-center gap-1">
+        <span class="text-emerald-400">&lt;</span>Shannmuka<span class="text-cyan-400">/&gt;</span>
       </a>
       <div class="hidden md:flex gap-8 text-sm text-slate-400 font-medium">
-        <a href="#about" class="hover:text-emerald-400 transition">About</a>
-        <a href="#certifications" class="hover:text-emerald-400 transition">Certifications</a>
+        <a href="#about" class="hover:text-emerald-400 transition">Impact</a>
+        <a href="#certifications" class="hover:text-emerald-400 transition">Credentials</a>
         <a href="#experience" class="hover:text-emerald-400 transition">Experience</a>
-        <a href="#skills" class="hover:text-emerald-400 transition">Skills</a>
-        <a href="#projects" class="hover:text-emerald-400 transition">Highlights</a>
+        <a href="#projects" class="hover:text-emerald-400 transition">Architecture</a>
+        <a href="#skills" class="hover:text-emerald-400 transition">Tech Stack</a>
         <a href="#education" class="hover:text-emerald-400 transition">Education</a>
       </div>
-      <a href="mailto:shannmuka@gmail.com" class="text-xs mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-4 py-2 rounded-full hover:bg-emerald-400 hover:text-black font-semibold transition">
-        Hire Me →
+      <a href="mailto:shannmuka@gmail.com" class="text-xs mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-4 py-2 rounded-full hover:bg-emerald-400 hover:text-black font-semibold transition shadow-lg shadow-emerald-500/5">
+        Get In Touch →
       </a>
     </div>
   </nav>
 
-  <main class="max-w-6xl mx-auto px-6 py-12 space-y-28 relative z-10">
+  <main class="max-w-6xl mx-auto px-6 py-12 space-y-32 relative z-10">
 
-    <!-- Hero Section with Headshot -->
-    <section id="hero" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-6">
+    <!-- Hero Section -->
+    <section id="hero" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8">
       <div class="lg:col-span-7 space-y-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs mono border border-emerald-500/30 bg-emerald-500/10 text-emerald-400">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs mono border border-emerald-500/30 bg-emerald-500/10 text-emerald-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping absolute"></span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400 relative"></span>
           Software Engineer III @ Walmart
         </div>
-        <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-          Engineering scalable, <br>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">resilient cloud platforms.</span>
+
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+          Shannmuka <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Buddabathini</span>
         </h1>
-        <p class="text-slate-400 text-lg sm:text-xl leading-relaxed">
-          5+ years architecting enterprise Java &amp; Python microservices, Kubernetes-orchestrated platforms, and automated disaster recovery workflows.
+
+        <!-- Dynamic Typewriter Line -->
+        <div class="text-lg sm:text-xl mono text-slate-300 h-8 flex items-center">
+          <span class="text-slate-500 mr-2">&gt;</span>
+          <span>Architecting&nbsp;</span>
+          <span id="typewriter" class="text-emerald-400 font-semibold"></span>
+          <span class="cursor-blink text-emerald-400 font-bold ml-0.5">|</span>
+        </div>
+
+        <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl">
+          Senior-level Software &amp; Cloud Platform Engineer with 5+ years of experience designing high-throughput Java &amp; Python microservices, multi-cluster Kubernetes infrastructure, and AI-augmented reliability tooling for massive enterprise scale.
         </p>
-        <div class="flex flex-wrap gap-4 pt-2">
-          <a href="https://www.linkedin.com/in/buddabathinis/" target="_blank" class="px-5 py-2.5 rounded-lg bg-emerald-400 text-black font-semibold text-sm hover:bg-emerald-300 transition">LinkedIn</a>
-          <a href="https://medium.com/@shannmuka" target="_blank" class="px-5 py-2.5 rounded-lg border border-slate-800 bg-slate-900/80 text-white font-semibold text-sm hover:border-slate-700 transition">Medium</a>
-          <a href="mailto:shannmuka@gmail.com" class="px-5 py-2.5 rounded-lg border border-slate-800 bg-slate-900/80 text-slate-300 font-semibold text-sm hover:border-slate-700 hover:text-white transition">Email Me</a>
+
+        <!-- Social & Action Buttons -->
+        <div class="flex flex-wrap gap-3.5 pt-3">
+          <a href="https://www.linkedin.com/in/buddabathinis/" target="_blank" class="px-5 py-2.5 rounded-xl bg-emerald-400 text-slate-950 font-bold text-sm hover:bg-emerald-300 transition flex items-center gap-2 shadow-lg shadow-emerald-500/10">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/sudo-shann" target="_blank" class="px-5 py-2.5 rounded-xl border border-slate-800 bg-slate-900/90 text-white font-semibold text-sm hover:border-slate-700 hover:bg-slate-800 transition flex items-center gap-2">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+            GitHub
+          </a>
+          <a href="https://medium.com/@shannmuka" target="_blank" class="px-5 py-2.5 rounded-xl border border-slate-800 bg-slate-900/90 text-white font-semibold text-sm hover:border-slate-700 hover:bg-slate-800 transition">
+            Medium Blog
+          </a>
+          <a href="mailto:shannmuka@gmail.com" class="px-5 py-2.5 rounded-xl border border-slate-800 bg-slate-900/90 text-slate-300 font-semibold text-sm hover:border-slate-700 hover:text-white transition">
+            shannmuka@gmail.com
+          </a>
         </div>
       </div>
 
-      <!-- Profile Image Card -->
+      <!-- Profile Photo & Floating Badges -->
       <div class="lg:col-span-5 flex justify-center lg:justify-end">
         <div class="relative group">
-          <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-emerald-500 to-cyan-500 opacity-30 group-hover:opacity-60 blur transition duration-500"></div>
-          <div class="relative w-72 sm:w-80 rounded-2xl overflow-hidden border border-slate-800 bg-slate-900/90 shadow-2xl">
-            <img src="profile.jpg" alt="Shannmuka Buddabathini" class="w-full h-96 object-cover object-top filter brightness-[0.98] contrast-[1.02] group-hover:scale-105 transition duration-500">
-            <div class="p-4 bg-[#0d131f]/95 border-t border-slate-800/80">
-              <div class="text-base font-bold text-white">Shannmuka Buddabathini</div>
-              <div class="text-xs mono text-emerald-400">SWE III · Bentonville, AR</div>
+          <div class="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-cyan-500 opacity-30 group-hover:opacity-60 blur-lg transition duration-500"></div>
+          <div class="relative w-72 sm:w-80 rounded-2xl overflow-hidden border border-slate-700/80 bg-[#0b101b] shadow-2xl">
+            <img src="profile.jpg" alt="Shannmuka Buddabathini" class="w-full h-96 object-cover object-top group-hover:scale-105 transition duration-700 ease-out">
+            <div class="p-4 bg-[#090d16]/95 backdrop-blur-md border-t border-slate-800 flex justify-between items-center">
+              <div>
+                <div class="text-sm font-bold text-white">Shannmuka Buddabathini</div>
+                <div class="text-xs mono text-emerald-400">Bentonville, AR</div>
+              </div>
+              <span class="px-2.5 py-1 rounded-md text-[10px] mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">CKA · Azure Expert</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Key Metrics & About -->
-    <section id="about" class="space-y-6">
-      <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Impact</span>
-      <h2 class="text-3xl font-bold text-white tracking-tight">Scale &amp; Operational Excellence</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="p-5 rounded-xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-sm">
-          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mono">5+</div>
-          <div class="text-xs text-slate-400 mt-2">Years Building Cloud Systems</div>
+    <!-- Impact Metrics & Executive Summary -->
+    <section id="about" class="space-y-8">
+      <div>
+        <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Engineering Impact</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Built for Enterprise Scale</h2>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800/90 bg-slate-900/40 backdrop-blur-sm">
+          <div class="text-4xl font-extrabold text-emerald-400 mono">5+</div>
+          <div class="text-sm font-semibold text-white mt-2">Years of Experience</div>
+          <div class="text-xs text-slate-400 mt-1">Java, Python &amp; Cloud-Native</div>
         </div>
-        <div class="p-5 rounded-xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-sm">
-          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400 mono">~300</div>
-          <div class="text-xs text-slate-400 mt-2">Marketplace Apps Supported</div>
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800/90 bg-slate-900/40 backdrop-blur-sm">
+          <div class="text-4xl font-extrabold text-emerald-400 mono">300+</div>
+          <div class="text-sm font-semibold text-white mt-2">Microservices Supported</div>
+          <div class="text-xs text-slate-400 mt-1">High-volume e-commerce scale</div>
         </div>
-        <div class="p-5 rounded-xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-sm">
-          <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400 mono">70k+</div>
-          <div class="text-xs text-slate-400 mt-2">Subscriptions Governed</div>
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800/90 bg-slate-900/40 backdrop-blur-sm">
+          <div class="text-4xl font-extrabold text-cyan-400 mono">70K+</div>
+          <div class="text-sm font-semibold text-white mt-2">Cloud Subscriptions</div>
+          <div class="text-xs text-slate-400 mt-1">Automated security &amp; governance</div>
         </div>
-        <div class="p-5 rounded-xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-sm">
-          <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400 mono">100+</div>
-          <div class="text-xs text-slate-400 mt-2">Apps Disaster Recovered</div>
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800/90 bg-slate-900/40 backdrop-blur-sm">
+          <div class="text-4xl font-extrabold text-cyan-400 mono">99.9%</div>
+          <div class="text-sm font-semibold text-white mt-2">Resilience &amp; Recovery</div>
+          <div class="text-xs text-slate-400 mt-1">One-click BCDR failover automation</div>
         </div>
       </div>
     </section>
 
-    <!-- Certifications Section -->
+    <!-- Official Certifications -->
     <section id="certifications" class="space-y-6">
-      <div class="flex justify-between items-end">
-        <div>
-          <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Credentials</span>
-          <h2 class="text-3xl font-bold text-white tracking-tight mt-1">Official Certifications</h2>
-        </div>
+      <div>
+        <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Verified Credentials</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Certifications</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- CKA -->
-        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-emerald-500/50 transition group flex flex-col justify-between">
+        <a href="https://www.credly.com/badges/5d88f542-bc0e-4c0c-8703-93c166ff2327/public_url" target="_blank" class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-emerald-500/50 transition group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="text-3xl">☸️</span>
-              <span class="text-[10px] mono px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">Linux Foundation</span>
+              <span class="px-3 py-1 rounded-md text-xs mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-semibold">Linux Foundation</span>
+              <span class="text-slate-500 group-hover:text-emerald-400 transition">↗</span>
             </div>
             <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition">Certified Kubernetes Administrator (CKA)</h3>
-            <p class="text-xs mono text-slate-400 mt-2">ID: LF-pywqcnzqbj</p>
+            <p class="text-xs mono text-slate-400 mt-2">Credential ID: LF-pywqcnzqbj</p>
           </div>
-          <div class="pt-6">
-            <a href="https://www.credly.com/badges/5d88f542-bc0e-4c0c-8703-93c166ff2327/public_url" target="_blank" class="text-xs mono text-emerald-400 hover:text-emerald-300 inline-flex items-center gap-1 font-semibold">
-              Verify Credential ↗
-            </a>
+          <div class="pt-6 text-xs mono text-emerald-400 font-semibold flex items-center gap-1">
+            Verify on Credly →
           </div>
-        </div>
+        </a>
 
-        <!-- Azure DevOps -->
-        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-cyan-500/50 transition group flex flex-col justify-between">
+        <!-- Azure DevOps Expert -->
+        <a href="https://learn.microsoft.com/en-us/users/buddabathinis/credentials/85a970745a50e145" target="_blank" class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-cyan-500/50 transition group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="text-3xl">☁️</span>
-              <span class="text-[10px] mono px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">Microsoft Certified</span>
+              <span class="px-3 py-1 rounded-md text-xs mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-semibold">Microsoft Expert ★★★</span>
+              <span class="text-slate-500 group-hover:text-cyan-400 transition">↗</span>
             </div>
-            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition">DevOps Engineer Expert</h3>
-            <p class="text-xs mono text-slate-400 mt-2">Credential: 85A970745A50E145</p>
+            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition">Microsoft Certified: DevOps Engineer Expert</h3>
+            <p class="text-xs mono text-slate-400 mt-2">Credential ID: 85A970745A50E145</p>
           </div>
-          <div class="pt-6">
-            <a href="https://learn.microsoft.com/en-us/users/buddabathinis/credentials/85a970745a50e145" target="_blank" class="text-xs mono text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1 font-semibold">
-              Verify Credential ↗
-            </a>
+          <div class="pt-6 text-xs mono text-cyan-400 font-semibold flex items-center gap-1">
+            Verify on Microsoft Learn →
           </div>
-        </div>
+        </a>
 
-        <!-- Azure Admin -->
-        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-cyan-500/50 transition group flex flex-col justify-between">
+        <!-- Azure Admin Associate -->
+        <a href="https://learn.microsoft.com/en-in/users/buddabathinis/credentials/4c83d9da3dd1bf20" target="_blank" class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-cyan-500/50 transition group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="text-3xl">🛡️</span>
-              <span class="text-[10px] mono px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">Microsoft Certified</span>
+              <span class="px-3 py-1 rounded-md text-xs mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-semibold">Microsoft Associate ★★</span>
+              <span class="text-slate-500 group-hover:text-cyan-400 transition">↗</span>
             </div>
-            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition">Azure Administrator Associate</h3>
-            <p class="text-xs mono text-slate-400 mt-2">Credential: 4C83D9DA3DD1BF20</p>
+            <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition">Microsoft Certified: Azure Administrator Associate</h3>
+            <p class="text-xs mono text-slate-400 mt-2">Credential ID: 4C83D9DA3DD1BF20</p>
           </div>
-          <div class="pt-6">
-            <a href="https://learn.microsoft.com/en-in/users/buddabathinis/credentials/4c83d9da3dd1bf20" target="_blank" class="text-xs mono text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1 font-semibold">
-              Verify Credential ↗
-            </a>
+          <div class="pt-6 text-xs mono text-cyan-400 font-semibold flex items-center gap-1">
+            Verify on Microsoft Learn →
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
-    <!-- Experience Timeline -->
-    <section id="experience" class="space-y-8">
+    <!-- Work Experience (Polished & Generalized) -->
+    <section id="experience" class="space-y-10">
       <div>
-        <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Career</span>
-        <h2 class="text-3xl font-bold text-white tracking-tight mt-1">Experience</h2>
+        <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Career Progression</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Work Experience</h2>
       </div>
 
-      <div class="border-l border-slate-800 pl-6 sm:pl-8 space-y-12">
+      <div class="border-l-2 border-slate-800/90 pl-6 sm:pl-10 space-y-14">
+
+        <!-- Walmart -->
         <div class="relative group">
-          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3 h-3 rounded-full bg-slate-700 group-hover:bg-emerald-400 transition"></div>
-          <span class="text-xs mono text-emerald-400 font-semibold">05/2024 — Present</span>
-          <h3 class="text-xl font-bold text-white mt-1">Software Engineer 3</h3>
-          <p class="text-sm text-slate-400 mb-3 font-medium">Walmart · Bentonville, AR</p>
-          <ul class="text-slate-400 text-sm space-y-2 list-disc list-outside ml-4">
-            <li>Re-platformed manual OneOps VM runbooks to WCNP using Python, CI/CD, and Kubernetes, eliminating operational toil.</li>
-            <li>Engineered Alert Controller APIs with an LLM-driven enrichment layer to suppress false positives and escalate real incidents via xMatters.</li>
-            <li>Supported ~300 Marketplace applications with on-call triage for service mesh, routing, and deployment failures.</li>
-            <li>Authored BCDR YAML playbooks and led one-click disaster recovery for 100+ apps during an Azure South Central outage.</li>
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-emerald-400 bg-[#060911] group-hover:bg-emerald-400 transition"></div>
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+            <h3 class="text-xl font-bold text-white">Software Engineer III</h3>
+            <span class="text-xs mono text-emerald-400 font-semibold">May 2024 — Present</span>
+          </div>
+          <p class="text-sm text-slate-400 mb-4 font-medium">Walmart · Bentonville, AR</p>
+          <ul class="text-slate-300/90 text-sm space-y-2.5 list-disc list-outside ml-4 leading-relaxed">
+            <li>Architected and automated inventory migration workflows by re-platforming legacy VM runbooks onto cloud-native Kubernetes infrastructure using Python and CI/CD pipelines, eliminating manual SSH operations and reducing operational toil.</li>
+            <li>Designed and built intelligent Alert Controller REST APIs integrated with incident management platforms to dynamically suppress maintenance-window noise and escalate high-priority production alerts.</li>
+            <li>Integrated an LLM-driven contextual enrichment layer into the alerting pipeline to classify telemetry, infer service dependencies, and improve incident triage accuracy.</li>
+            <li>Authored automated Disaster Recovery (BCDR) playbooks and led cross-functional failover execution for 100+ microservices during a major multi-region cloud outage.</li>
+            <li>Provided tier-3 production engineering and on-call leadership across ~300 Marketplace application teams, resolving complex service mesh routing, Kubernetes orchestration, and golden-signal (latency, traffic, error rate) bottlenecks.</li>
           </ul>
-        </div>
-
-        <div class="relative group">
-          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3 h-3 rounded-full bg-slate-700 group-hover:bg-emerald-400 transition"></div>
-          <span class="text-xs mono text-slate-500">07/2023 — 04/2024</span>
-          <h3 class="text-xl font-bold text-white mt-1">Software Developer</h3>
-          <p class="text-sm text-slate-400 mb-3 font-medium">MAK Technologies LLC · Springboro, OH</p>
-          <ul class="text-slate-400 text-sm space-y-2 list-disc list-outside ml-4">
-            <li>Built Java microservices containerized with Docker and deployed to AKS via Helm with custom health probes.</li>
-            <li>Decoupled backend communications with Apache Kafka event streaming to handle high traffic spikes.</li>
-            <li>Configured CI/CD automation via Jenkins, Maven, and SonarQube; authored Terraform and Bicep scripts.</li>
-          </ul>
-        </div>
-
-        <div class="relative group">
-          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3 h-3 rounded-full bg-slate-700 group-hover:bg-emerald-400 transition"></div>
-          <span class="text-xs mono text-slate-500">10/2022 — 06/2023</span>
-          <h3 class="text-xl font-bold text-white mt-1">Cloud Engineer</h3>
-          <p class="text-sm text-slate-400 mb-3 font-medium">Microsoft · Redmond, WA</p>
-          <ul class="text-slate-400 text-sm space-y-2 list-disc list-outside ml-4">
-            <li>Engineered automated cloud governance for 70,000+ subscriptions, cutting deployment costs by 15% and security incidents by 50%.</li>
-            <li>Implemented Java REST APIs and Azure Policy automation integrated with MS Teams and Outlook webhooks.</li>
-            <li>Enforced Azure PIM and Conditional Access Policies across the tenant to eliminate standing privileged access.</li>
-          </ul>
-        </div>
-
-        <div class="relative group">
-          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3 h-3 rounded-full bg-slate-700 group-hover:bg-emerald-400 transition"></div>
-          <span class="text-xs mono text-slate-500">08/2019 — 08/2021</span>
-          <h3 class="text-xl font-bold text-white mt-1">Azure Cloud Engineer</h3>
-          <p class="text-sm text-slate-400 mb-3 font-medium">ZENQ · Hyderabad, India</p>
-          <ul class="text-slate-400 text-sm space-y-2 list-disc list-outside ml-4">
-            <li>Developed Spring Boot REST APIs for the Nasdaq eVestment analytics platform.</li>
-            <li>Applied Azure Policies and Azure Backup across 100+ critical workloads, attaining a 99% recovery rate.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical Skills -->
-    <section id="skills" class="space-y-6">
-      <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Stack</span>
-      <h2 class="text-3xl font-bold text-white tracking-tight">Technologies &amp; Systems</h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
-          <h3 class="font-bold text-white mb-3">Backend &amp; Languages</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Java</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Python</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Spring Boot</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">RESTful APIs</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">C#</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">MySQL</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Oracle</span>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Python</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Kubernetes</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">LLM Enrichment</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Service Mesh</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">BCDR Automation</span>
           </div>
         </div>
 
-        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
-          <h3 class="font-bold text-white mb-3">Cloud, K8s &amp; IaaC</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Kubernetes (CKA)</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Azure AKS</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">AWS</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Docker</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Terraform</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Ansible</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Service Mesh</span>
+        <!-- MAK Technologies -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-slate-600 bg-[#060911] group-hover:border-emerald-400 group-hover:bg-emerald-400 transition"></div>
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+            <h3 class="text-xl font-bold text-white">Software Developer</h3>
+            <span class="text-xs mono text-slate-400">Jul 2023 — Apr 2024</span>
+          </div>
+          <p class="text-sm text-slate-400 mb-4 font-medium">MAK Technologies LLC · Springboro, OH</p>
+          <ul class="text-slate-300/90 text-sm space-y-2.5 list-disc list-outside ml-4 leading-relaxed">
+            <li>Designed and developed backend Java microservices and RESTful APIs with strict schema validation, structured error contracts, and object-oriented domain modeling.</li>
+            <li>Containerized microservices with Docker and orchestrated multi-environment deployments on Azure Kubernetes Service (AKS) using Helm charts and custom liveness/readiness probes.</li>
+            <li>Engineered asynchronous event-driven architectures using Apache Kafka to decouple core services and buffer high-concurrency traffic spikes cleanly.</li>
+            <li>Built automated CI/CD pipelines with Jenkins, Maven, and SonarQube quality gates, while provisioning repeatable cloud infrastructure via Terraform and Bicep.</li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Java</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Spring Boot</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Apache Kafka</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">AKS &amp; Helm</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Terraform</span>
           </div>
         </div>
 
-        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
-          <h3 class="font-bold text-white mb-3">SRE, CI/CD &amp; Events</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Apache Kafka</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Prometheus</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Grafana</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Dynatrace</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Jenkins</span>
-            <span class="px-2.5 py-1 rounded text-xs mono bg-slate-800 text-slate-300">Azure DevOps</span>
+        <!-- Microsoft -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-slate-600 bg-[#060911] group-hover:border-emerald-400 group-hover:bg-emerald-400 transition"></div>
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+            <h3 class="text-xl font-bold text-white">Cloud Engineer</h3>
+            <span class="text-xs mono text-slate-400">Oct 2022 — Jun 2023</span>
+          </div>
+          <p class="text-sm text-slate-400 mb-4 font-medium">Microsoft · Redmond, WA</p>
+          <ul class="text-slate-300/90 text-sm space-y-2.5 list-disc list-outside ml-4 leading-relaxed">
+            <li>Spearheaded an automated cloud governance platform across 70,000+ enterprise subscriptions, reducing infrastructure deployment costs by 15% and cutting security incidents by 50%.</li>
+            <li>Built backend Java RESTful APIs to programmatically orchestrate custom Azure policy enforcement and dispatch real-time compliance alerts to Microsoft Teams and Outlook.</li>
+            <li>Architected Zero-Trust Identity &amp; Access Management (IAM) controls using Conditional Access and Privileged Identity Management (PIM) to eliminate standing administrative privileges.</li>
+            <li>Designed multi-tenant Azure DevOps CI/CD pipelines and modular ARM/Terraform templates that automated 80% of provisioning tasks and accelerated policy rollout times by 50%.</li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Java REST APIs</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Azure Governance</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Zero-Trust IAM / PIM</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Azure DevOps</span>
           </div>
         </div>
+
+        <!-- ZENQ -->
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-slate-600 bg-[#060911] group-hover:border-emerald-400 group-hover:bg-emerald-400 transition"></div>
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+            <h3 class="text-xl font-bold text-white">Azure Cloud Engineer</h3>
+            <span class="text-xs mono text-slate-400">Aug 2019 — Aug 2021</span>
+          </div>
+          <p class="text-sm text-slate-400 mb-4 font-medium">ZENQ · Hyderabad, India</p>
+          <ul class="text-slate-300/90 text-sm space-y-2.5 list-disc list-outside ml-4 leading-relaxed">
+            <li>Developed Java and Spring Boot RESTful APIs powering institutional financial analytics workflows, focusing on clean domain models and low-latency data retrieval.</li>
+            <li>Engineered cloud compliance and automated backup recovery across 100+ critical production workloads, achieving 99% recovery reliability and reducing audit findings by 30%.</li>
+            <li>Standardized multi-environment deployments by authoring 30+ reusable ARM and Terraform modules, cutting provisioning overhead by 25%.</li>
+          </ul>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Java</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Spring Boot</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Terraform &amp; ARM</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Azure Monitor</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- Highlights Section -->
+    <!-- Featured Architectural Highlights (4-Card Grid like Rohith's site) -->
     <section id="projects" class="space-y-6">
-      <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Highlights</span>
-      <h2 class="text-3xl font-bold text-white tracking-tight">Key Architectures</h2>
+      <div>
+        <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Featured Work</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Key Architectural Highlights</h2>
+      </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40 space-y-3">
-          <div class="text-xs mono text-emerald-400">Walmart Platform · SRE &amp; AI</div>
-          <h3 class="text-xl font-bold text-white">LLM-Enriched Intelligent Alert Controller</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Constructed APIs integrated with xMatters to suppress expected alert storms during maintenance windows and escalate actionable incidents. Added an LLM enrichment layer to contextually parse and classify alerts, mitigating alert fatigue.
-          </p>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="px-2.5 py-0.5 rounded text-xs mono bg-slate-800 text-slate-300">Python</span>
-            <span class="px-2.5 py-0.5 rounded text-xs mono bg-slate-800 text-slate-300">LLMs</span>
-            <span class="px-2.5 py-0.5 rounded text-xs mono bg-slate-800 text-slate-300">xMatters</span>
+        <!-- Card 1 -->
+        <div class="spotlight-card p-7 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-xs mono px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">AI-Augmented SRE</span>
+              <span class="text-xs mono text-slate-500">Enterprise Retail</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">LLM-Enriched Alert &amp; Incident Engine</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Designed an intelligent alert controller integrating LLMs with incident paging pipelines to classify telemetry context, automatically suppress maintenance noise, and route high-severity anomalies.
+            </p>
+          </div>
+          <div class="space-y-4 pt-2">
+            <div class="grid grid-cols-2 gap-3 pt-2 border-t border-slate-800/80">
+              <div>
+                <div class="text-lg font-bold text-emerald-400 mono">~300 Apps</div>
+                <div class="text-[11px] text-slate-400">On-Call Ecosystem</div>
+              </div>
+              <div>
+                <div class="text-lg font-bold text-emerald-400 mono">Automated</div>
+                <div class="text-[11px] text-slate-400">Noise Suppression</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Python</span>
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">LLM APIs</span>
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">xMatters</span>
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">REST APIs</span>
+            </div>
           </div>
         </div>
 
-        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40 space-y-3">
-          <div class="text-xs mono text-cyan-400">Microsoft · Governance at Scale</div>
-          <h3 class="text-xl font-bold text-white">Enterprise Cloud Governance &amp; PIM</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            Engineered compliance automation and custom Azure policies onboarding 70,000+ subscriptions. Enforced SAW conditional access and PIM to eliminate permanent standing access, reducing security incidents by 50%.
-          </p>
-          <div class="flex flex-wrap gap-2 pt-2">
-            <span class="px-2.5 py-0.5 rounded text-xs mono bg-slate-800 text-slate-300">Azure Policy</span>
-            <span class="px-2.5 py-0.5 rounded text-xs mono bg-slate-800 text-slate-300">Azure PIM</span>
-            <span class="px-2.5 py-0.5 rounded text-xs mono bg-slate-800 text-slate-300">ARM / Terraform</span>
+        <!-- Card 2 -->
+        <div class="spotlight-card p-7 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-xs mono px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Cloud Governance</span>
+              <span class="text-xs mono text-slate-500">Hyperscale Cloud</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Multi-Tenant Security &amp; Policy Orchestrator</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Spearheaded an automated governance engine enforcing custom compliance policies and Zero-Trust privileged identity controls across 70,000+ cloud subscriptions.
+            </p>
+          </div>
+          <div class="space-y-4 pt-2">
+            <div class="grid grid-cols-3 gap-2 pt-2 border-t border-slate-800/80">
+              <div>
+                <div class="text-lg font-bold text-cyan-400 mono">70K+</div>
+                <div class="text-[11px] text-slate-400">Subscriptions</div>
+              </div>
+              <div>
+                <div class="text-lg font-bold text-cyan-400 mono">50%</div>
+                <div class="text-[11px] text-slate-400">Fewer Incidents</div>
+              </div>
+              <div>
+                <div class="text-lg font-bold text-cyan-400 mono">99%</div>
+                <div class="text-[11px] text-slate-400">Compliance</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Java</span>
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Azure Policy</span>
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">PIM / IAM</span>
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Terraform</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="spotlight-card p-7 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-xs mono px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Platform Resilience</span>
+              <span class="text-xs mono text-slate-500">High Availability</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">One-Click Disaster Recovery Automation</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Authored declarative BCDR playbooks and automated regional failover workflows capable of evacuating and restoring 100+ interdependent microservices during regional cloud outages.
+            </p>
+          </div>
+          <div class="space-y-4 pt-2">
+            <div class="grid grid-cols-2 gap-3 pt-2 border-t border-slate-800/80">
+              <div>
+                <div class="text-lg font-bold text-emerald-400 mono">100+ Apps</div>
+                <div class="text-[11px] text-slate-400">Live Failover Executed</div>
+              </div>
+              <div>
+                <div class="text-lg font-bold text-emerald-400 mono">Zero-Toil</div>
+                <div class="text-[11px] text-slate-400">K8s Migration</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Kubernetes</span>
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Service Mesh</span>
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">YAML Playbooks</span>
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">CI/CD</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="spotlight-card p-7 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-xs mono px-2.5 py-1 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Published Research</span>
+              <span class="text-xs mono text-slate-500">IJRCSEIT Journal</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Clinical ML Ensemble Diagnostic Models</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Co-authored peer-reviewed machine learning research evaluating ensemble classifiers (Random Forest, J48, C4.5, Naïve Bayes) on Electronic Health Records for early-stage liver cancer detection.
+            </p>
+          </div>
+          <div class="space-y-4 pt-2">
+            <div class="grid grid-cols-2 gap-3 pt-2 border-t border-slate-800/80">
+              <div>
+                <div class="text-lg font-bold text-purple-400 mono">IJRCSEIT</div>
+                <div class="text-[11px] text-slate-400">Peer-Reviewed Publication</div>
+              </div>
+              <div>
+                <div class="text-lg font-bold text-purple-400 mono">Ensemble ML</div>
+                <div class="text-[11px] text-slate-400">Predictive EHR Analytics</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Machine Learning</span>
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Random Forest</span>
+              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">SQL</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Education & Achievements -->
+    <!-- Comprehensive Technical Skills -->
+    <section id="skills" class="space-y-6">
+      <div>
+        <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Technical Arsenal</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Skills &amp; Technologies</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+          <div class="text-emerald-400 mono text-xs mb-2">01 / BACKEND &amp; APIs</div>
+          <h3 class="font-bold text-white text-lg mb-4">Languages &amp; Frameworks</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Java</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Python</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Spring Boot</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Microservices</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">RESTful APIs</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">C# / .NET</span>
+          </div>
+        </div>
+
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+          <div class="text-cyan-400 mono text-xs mb-2">02 / CLOUD &amp; CONTAINERS</div>
+          <h3 class="font-bold text-white text-lg mb-4">Orchestration &amp; Platforms</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Kubernetes (CKA)</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Microsoft Azure</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure AKS</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">AWS</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Docker</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Helm</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Service Mesh</span>
+          </div>
+        </div>
+
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+          <div class="text-emerald-400 mono text-xs mb-2">03 / INFRASTRUCTURE &amp; CI/CD</div>
+          <h3 class="font-bold text-white text-lg mb-4">DevOps &amp; Automation</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Terraform</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">ARM &amp; Bicep</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Ansible</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure DevOps</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Jenkins</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Maven &amp; SonarQube</span>
+          </div>
+        </div>
+
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+          <div class="text-cyan-400 mono text-xs mb-2">04 / OBSERVABILITY &amp; SRE</div>
+          <h3 class="font-bold text-white text-lg mb-4">Monitoring &amp; Reliability</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Prometheus</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Grafana</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Dynatrace</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure Monitor</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">OpenObserve</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">xMatters</span>
+          </div>
+        </div>
+
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+          <div class="text-emerald-400 mono text-xs mb-2">05 / DATA &amp; STREAMING</div>
+          <h3 class="font-bold text-white text-lg mb-4">Messaging &amp; Storage</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Apache Kafka</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">MySQL</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Oracle DB</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Linux (RHEL/Ubuntu)</span>
+          </div>
+        </div>
+
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+          <div class="text-cyan-400 mono text-xs mb-2">06 / SECURITY &amp; AI</div>
+          <h3 class="font-bold text-white text-lg mb-4">Governance &amp; Intelligent Ops</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">LLM Alert Enrichment</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure Policy</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure AD &amp; PIM</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">BCDR Failover</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Honors -->
     <section id="education" class="space-y-6">
-      <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Academics &amp; Honors</span>
-      <h2 class="text-3xl font-bold text-white tracking-tight">Education &amp; Achievements</h2>
+      <div>
+        <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Foundation &amp; Distinctions</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Education &amp; Honors</h2>
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
-          <span class="text-2xl">🎓</span>
-          <h3 class="text-base font-bold text-white mt-2">University of South Florida</h3>
-          <p class="text-sm text-emerald-400">Master's in Business Analytics &amp; Info Systems</p>
-          <p class="text-xs mono text-slate-500 mt-1">Tampa, FL · 2021 – 2022</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+          <div class="text-xs mono text-emerald-400 mb-2">2021 — 2022 · Tampa, FL</div>
+          <h3 class="text-lg font-bold text-white">Master of Science</h3>
+          <p class="text-sm text-slate-300 mt-1">Business Analytics &amp; Information Systems</p>
+          <p class="text-xs text-slate-400 mt-2">University of South Florida (USF)</p>
         </div>
 
-        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
-          <span class="text-2xl">🏫</span>
-          <h3 class="text-base font-bold text-white mt-2">JNTU Kakinada</h3>
-          <p class="text-sm text-emerald-400">Bachelor's in Computer Science &amp; Engineering</p>
-          <p class="text-xs mono text-slate-500 mt-1">Guntur, India · 2015 – 2019</p>
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+          <div class="text-xs mono text-cyan-400 mb-2">2015 — 2019 · India</div>
+          <h3 class="text-lg font-bold text-white">Bachelor of Technology</h3>
+          <p class="text-sm text-slate-300 mt-1">Computer Science &amp; Engineering</p>
+          <p class="text-xs text-slate-400 mt-2">Jawaharlal Nehru Technological University</p>
         </div>
 
-        <div class="p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
-          <span class="text-2xl">♟️</span>
-          <h3 class="text-base font-bold text-white mt-2">Walmart Games</h3>
-          <p class="text-sm text-emerald-400">Gold Medalist – Chess</p>
-          <p class="text-xs mono text-slate-500 mt-1">Represented Marketplace Org · Bentonville</p>
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+          <div class="text-xs mono text-amber-400 mb-2">Competitive Distinctions</div>
+          <h3 class="text-lg font-bold text-white">Arena FIDE Master (AFM)</h3>
+          <p class="text-sm text-slate-300 mt-1">Walmart Associates Chess Gold Medalist</p>
+          <p class="text-xs text-slate-400 mt-2">Official FIDE Title &amp; Corporate Champion</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact Banner -->
-    <section id="contact" class="p-10 rounded-3xl border border-slate-800 bg-gradient-to-b from-slate-900/60 to-[#080c14] text-center space-y-4">
-      <h2 class="text-3xl font-bold text-white">Let's Connect</h2>
-      <p class="text-slate-400 max-w-lg mx-auto text-sm leading-relaxed">
-        Open to conversations around high-throughput distributed architectures, Kubernetes engineering, or cloud platform resilience.
+    <!-- Call to Action Contact Box -->
+    <section id="contact" class="p-10 sm:p-14 rounded-3xl border border-slate-800 bg-gradient-to-b from-slate-900/80 to-[#060911] text-center space-y-5 relative overflow-hidden">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+        Available for Engineering Leadership &amp; Senior Roles
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Let's Build Resilient Systems</h2>
+      <p class="text-slate-400 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+        Whether you want to discuss distributed backend architecture, Kubernetes platform engineering, or new opportunities—my inbox is always open.
       </p>
-      <div class="pt-2">
-        <a href="mailto:shannmuka@gmail.com" class="inline-block px-7 py-3 rounded-xl bg-emerald-400 text-black font-semibold text-sm hover:bg-emerald-300 transition">
-          Email Me (shannmuka@gmail.com)
+      <div class="flex flex-wrap justify-center gap-4 pt-3">
+        <a href="mailto:shannmuka@gmail.com" class="px-7 py-3.5 rounded-xl bg-emerald-400 text-slate-950 font-bold text-sm hover:bg-emerald-300 transition shadow-lg shadow-emerald-500/10">
+          Email Me Directly
+        </a>
+        <a href="https://www.linkedin.com/in/buddabathinis/" target="_blank" class="px-7 py-3.5 rounded-xl border border-slate-700 bg-slate-900 text-white font-semibold text-sm hover:border-slate-600 transition">
+          Connect on LinkedIn
         </a>
       </div>
     </section>
 
   </main>
 
-  <footer class="border-t border-slate-800/60 py-8 text-center text-xs mono text-slate-600">
-    Designed with zero frameworks · Hosted via GitHub Pages
+  <footer class="border-t border-slate-800/60 py-8 text-center text-xs mono text-slate-500">
+    Engineered by Shannmuka Buddabathini · Hosted on GitHub Pages
   </footer>
+
+  <!-- Interactive Scripts: Typewriter + Card Spotlight -->
+  <script>
+    // Typewriter Effect
+    const words = [
+      "Cloud-Native Platforms.",
+      "Kubernetes Infrastructure.",
+      "Resilient Microservices.",
+      "AI-Augmented SRE Tooling."
+    ];
+    let i = 0, j = 0, isDeleting = false;
+    const target = document.getElementById("typewriter");
+
+    function loop() {
+      const current = words[i];
+      target.textContent = current.substring(0, j);
+
+      if (!isDeleting && j < current.length) {
+        j++;
+        setTimeout(loop, 75);
+      } else if (isDeleting && j > 0) {
+        j--;
+        setTimeout(loop, 40);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) i = (i + 1) % words.length;
+        setTimeout(loop, isDeleting ? 1600 : 300);
+      }
+    }
+    loop();
+
+    // Mouse Spotlight Effect on Cards
+    document.querySelectorAll('.spotlight-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+      });
+    });
+  </script>
 
 </body>
 </html>
