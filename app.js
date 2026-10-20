@@ -56,13 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
     })();
   }
 
-  // 3. Typewriter Effect
+  // 3. Typewriter Effect (Focused on Python APIs, Alert Controller & One-Click DR)
   (function () {
     const words = [
-      "Cloud-Native Platforms.",
-      "Kubernetes Infrastructure.",
-      "LLM-Powered Automation.",
-      "AI-Augmented SRE Tooling."
+      "Python & OpenAPI 3.0.3 Microservices.",
+      "One-Click Disaster Recovery (YAML).",
+      "LLM-Enriched Alert Controllers.",
+      "Multi-Tenant Cloud Governance."
     ];
     const target = document.getElementById('typewriter');
     if (!target) return;
@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
     (function loop() {
       const cur = words[i];
       target.textContent = cur.substring(0, j);
-      if (!del && j < cur.length) { j++; setTimeout(loop, 75); }
-      else if (del && j > 0) { j--; setTimeout(loop, 40); }
+      if (!del && j < cur.length) { j++; setTimeout(loop, 70); }
+      else if (del && j > 0) { j--; setTimeout(loop, 35); }
       else { del = !del; if (!del) i = (i + 1) % words.length; setTimeout(loop, del ? 1600 : 300); }
     })();
   })();
@@ -260,22 +260,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const play = document.getElementById('flowPlay');
     const FLOWS = {
       A: [
-        { n: ['callers','api','ctl'], e: ['e1','e3'], t: "A team creates a maintenance exception through the API. It returns an exception ID and a one-time approval token." },
-        { n: ['ctl','biz','dbh','tbl','s-pending'], e: ['e4','e5','e6'], t: "The exception is stored with status pending, together with its approval token." },
-        { n: ['biz'], e: [], t: "For application-level exceptions, an approval request goes to the owning team." },
-        { n: ['callers','api','ctl','biz'], e: ['e1','e3','e4'], t: "The approver submits the exception ID and token, and the service validates them." },
-        { n: ['biz','dbh','tbl','s-scheduled'], e: ['e5','e6'], t: "On success the exception moves to scheduled." },
-        { n: ['sched','s-scheduled','s-active','s-completed'], e: [], t: "An external scheduler moves it from scheduled to active to completed. Suppression only applies while an exception is active." }
+        { n: ['callers','api','ctl'], e: ['e1','e3'], t: "A team schedules a maintenance window via the Python Flask + Connexion (OpenAPI 3.0.3 YAML) API. It returns an exception ID and a one-time approval token." },
+        { n: ['ctl','biz','dbh','tbl','s-pending'], e: ['e4','e5','e6'], t: "The exception is persisted via SQLAlchemy with status pending alongside its approval token." },
+        { n: ['biz'], e: [], t: "For application-level exceptions, an automated approval request is routed to the owning team." },
+        { n: ['callers','api','ctl','biz'], e: ['e1','e3','e4'], t: "The approver submits the exception ID and token, and the Python controller validates the contract." },
+        { n: ['biz','dbh','tbl','s-scheduled'], e: ['e5','e6'], t: "On validation, the exception transitions automatically to scheduled." },
+        { n: ['sched','s-scheduled','s-active','s-completed'], e: [], t: "An automated scheduler transitions windows from scheduled to active to completed. Alert suppression executes automatically while active." }
       ],
       B: [
-        { n: ['hook','api','ctl'], e: ['e2','e3'], t: "The monitoring webhook posts the alert payload. A required routing label is validated, and requests without one are rejected." },
-        { n: ['ctl','biz'], e: ['e4'], t: "Labels are normalized into candidate scopes: messaging, VM platform, container platform and database." },
-        { n: ['biz','llm'], e: ['e8'], t: "The LLM enrichment layer classifies the alert and infers application context." },
-        { n: ['biz','dbh','tbl'], e: ['e5','e6'], t: "For each candidate scope the service looks for an active exception for that team. Matching is case-insensitive and supports wildcards. No match leaves the alert untouched." },
-        { n: ['biz','xmc','xm'], e: ['e7','e9'], t: "On a match, the paging platform is queried for the team's active events, and each is compared with the incoming scope." },
-        { n: ['xmc','xm','tbl'], e: ['e7','e9'], t: "Matched events are annotated, terminated and written to an audit log, so nobody is paged." },
-        { n: ['xm','oncall'], e: ['e10'], t: "Unmatched events stay active and are returned as escalated, so on-call is still paged." },
-        { n: ['callers','api','ctl'], e: ['e1','e3'], t: "The response lists suppressed and escalated events, and callers can read back the suppression record for any exception." }
+        { n: ['hook','api','ctl'], e: ['e2','e3'], t: "Monitoring webhooks post alert payloads to the OpenAPI 3.0.3 endpoint. Routing labels and schema contracts are validated automatically." },
+        { n: ['ctl','biz'], e: ['e4'], t: "Python business logic normalizes labels into candidate scopes: messaging, VM platform, container platform, and database." },
+        { n: ['biz','llm'], e: ['e8'], t: "The LLM enrichment layer classifies the alert payload and infers application context at ~97% accuracy." },
+        { n: ['biz','dbh','tbl'], e: ['e5','e6'], t: "The matching engine queries active exceptions per scope (supporting case-insensitive and wildcard rules). Unmatched alerts bypass suppression." },
+        { n: ['biz','xmc','xm'], e: ['e7','e9'], t: "On a match, the Python xMatters client queries active paging events for the team and matches the incoming scope." },
+        { n: ['xmc','xm','tbl'], e: ['e7','e9'], t: "Matched xMatters events are automatically annotated, terminated via REST API, and recorded in the audit log—suppressing ~40% of shift noise." },
+        { n: ['xm','oncall'], e: ['e10'], t: "True unmatched production incidents remain active and immediately page the on-call engineer." },
+        { n: ['callers','api','ctl'], e: ['e1','e3'], t: "The API response returns structured lists of suppressed and escalated events with full telemetry metrics." }
       ]
     };
     let flow = 'B', i = 0, timer = null;
