@@ -3,193 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shannmuka Buddabathini | Software Engineer III · Cloud, Platform & AI Engineering</title>
-  <meta name="description" content="Software Engineer III at Walmart. Cloud-native platforms on Azure and Kubernetes (CKA), AI-augmented SRE tooling with LLMs, RAG and LangChain, and disaster recovery automation.">
-  <meta name="author" content="Shannmuka Buddabathini">
-  <meta name="theme-color" content="#060911">
-  <link rel="canonical" href="https://sudo-shann.github.io/portfolio/">
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Shannmuka Buddabathini | Software Engineer III">
-  <meta property="og:description" content="Cloud-native platforms, Kubernetes, LLM-powered automation and AI-augmented SRE tooling.">
-  <meta property="og:url" content="https://sudo-shann.github.io/portfolio/">
-  <meta property="og:image" content="https://sudo-shann.github.io/portfolio/profile.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Inline favicon -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060911'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' font-weight='700' text-anchor='middle' fill='%2334d399'%3E%26lt;S/%26gt;%3C/text%3E%3C/svg%3E">
-
-  <!-- Structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Shannmuka Buddabathini",
-    "jobTitle": "Software Engineer III",
-    "worksFor": { "@type": "Organization", "name": "Walmart" },
-    "address": { "@type": "PostalAddress", "addressLocality": "Bentonville", "addressRegion": "AR", "addressCountry": "US" },
-    "email": "mailto:shannmuka@gmail.com",
-    "url": "https://sudo-shann.github.io/portfolio/",
-    "sameAs": [
-      "https://www.linkedin.com/in/buddabathinis/",
-      "https://github.com/sudo-shann",
-      "https://medium.com/@shannmuka"
-    ],
-    "alumniOf": [
-      { "@type": "CollegeOrUniversity", "name": "University of South Florida" },
-      { "@type": "CollegeOrUniversity", "name": "Jawaharlal Nehru Technological University" }
-    ],
-    "knowsAbout": ["Kubernetes", "Azure", "Python", "Java", "Site Reliability Engineering", "Disaster Recovery", "CI/CD", "LLM Applications", "Azure OpenAI Service", "LangChain", "RAG Pipelines"]
-  }
-  </script>
-
+  <title>Shannmuka Buddabathini | Software Engineer III</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #060911; }
-    .mono { font-family: 'JetBrains Mono', monospace; }
-
-    .bg-grid {
-      background-size: 48px 48px;
-      background-image:
-        linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-      -webkit-mask-image: radial-gradient(ellipse at 50% 20%, #000 30%, transparent 80%);
-              mask-image: radial-gradient(ellipse at 50% 20%, #000 30%, transparent 80%);
-    }
-
-    .spotlight-card { position: relative; overflow: hidden; }
-    .spotlight-card::before {
-      content: ""; position: absolute; inset: 0;
-      background: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(16,185,129,0.09), transparent 40%);
-      opacity: 0; transition: opacity .3s; pointer-events: none;
-    }
-    .spotlight-card:hover::before { opacity: 1; }
-
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #060911; }
-    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #10b981; }
-
-    .cursor-blink { animation: blink 1s step-end infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
-
-    /* Scroll reveal */
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.in { opacity: 1; transform: none; }
-
-    /* Active nav link */
-    .nav-link { position: relative; transition: color .2s; }
-    .nav-link.active { color: #34d399; }
-    .nav-link.active::after {
-      content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px;
-      background: linear-gradient(90deg, #34d399, #22d3ee); border-radius: 2px;
-    }
-
-    /* Animated flow line in architecture diagrams */
-    .flow { stroke-dasharray: 6 6; animation: dash 1.2s linear infinite; }
-    @keyframes dash { to { stroke-dashoffset: -24; } }
-
-    /* Avatar fallback if profile.jpg is missing */
-    .avatar-fallback { background: linear-gradient(135deg, #064e3b, #0e7490); }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto !important; }
-      .reveal { opacity: 1; transform: none; transition: none; }
-      .flow, .cursor-blink, .animate-ping { animation: none !important; }
-    }
-
-    /* Interactive architecture diagrams (#alertSvg & #pttSvg) */
-    #alertSvg .nd rect, #pttSvg .nd rect { transition: stroke .3s, fill .3s; }
-    #alertSvg.playing .nd:not(.on), #alertSvg.playing .ed:not(.on),
-    #pttSvg.playing .nd:not(.on), #pttSvg.playing .ed:not(.on) { opacity: .38; transition: opacity .3s; }
-    #alertSvg .nd.on rect { stroke: #34d399; stroke-width: 2.5; fill: #0a3a30; }
-    #pttSvg .nd.on rect { stroke: #22d3ee; stroke-width: 2.5; fill: #083344; }
-    #alertSvg .ed, #pttSvg .ed { stroke: #334155; stroke-width: 2; fill: none; }
-    #alertSvg .ed.on { stroke: #34d399; stroke-dasharray: 6 6; animation: dash 1.2s linear infinite; }
-    #pttSvg .ed.on { stroke: #22d3ee; stroke-dasharray: 6 6; animation: dash 1.2s linear infinite; }
-    #alertSvg .sm { stroke: #475569; stroke-width: 1.5; fill: none; }
-    #alertSvg .sm.am { stroke: #f59e0b; stroke-dasharray: 5 4; }
-    @media (prefers-reduced-motion: reduce) {
-      #alertSvg .ed.on, #pttSvg .ed.on { animation: none; }
-    }
-
-    /* Animated bars */
-    .bar { width: 0; transition: width 1.1s cubic-bezier(.2,.8,.2,1); }
-    .reveal.in .bar { width: var(--w); }
-    @media (prefers-reduced-motion: reduce) { .bar { width: var(--w); transition: none; } }
-    :focus-visible { outline: 2px solid #34d399; outline-offset: 2px; border-radius: 6px; }
-
-    @media print {
-      .no-print, nav, .bg-grid, #progress { display: none !important; }
-      body { background: #fff; color: #000; }
-      * { color: #000 !important; border-color: #ccc !important; background: transparent !important; }
-      .reveal { opacity: 1 !important; transform: none !important; }
-    }
-  </style>
-  <noscript><style>.reveal{opacity:1!important;transform:none!important}.bar{width:var(--w)!important}</style></noscript>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="text-slate-200 antialiased selection:bg-emerald-400 selection:text-black">
 
-  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-emerald-400 focus:text-black font-semibold">Skip to content</a>
+  <!-- Animated Node Network Canvas -->
+  <canvas id="network-canvas"></canvas>
+  <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
+  <div class="fixed top-[-10%] left-1/4 w-[500px] h-[400px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none z-0"></div>
+  <div class="fixed bottom-[-10%] right-1/4 w-[500px] h-[400px] bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none z-0"></div>
 
-  <!-- Scroll progress -->
-  <div id="progress" class="fixed top-0 left-0 h-[3px] w-0 z-[60] bg-gradient-to-r from-emerald-400 to-cyan-400"></div>
-
-  <!-- Ambient background -->
-  <div class="fixed inset-0 bg-grid pointer-events-none z-0" aria-hidden="true"></div>
-  <div class="fixed top-[-10%] left-1/4 w-[500px] h-[400px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none z-0" aria-hidden="true"></div>
-  <div class="fixed bottom-[-10%] right-1/4 w-[500px] h-[400px] bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none z-0" aria-hidden="true"></div>
-
-  <!-- Navigation -->
-  <nav class="no-print sticky top-0 z-50 backdrop-blur-xl bg-[#060911]/80 border-b border-slate-800/80 px-6 py-4" aria-label="Primary">
+  <!-- Navigation Bar -->
+  <nav class="sticky top-0 z-50 backdrop-blur-xl bg-[#05080f]/80 border-b border-slate-800/80 px-6 py-4">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <a href="#hero" class="text-xl font-extrabold mono tracking-tight text-white flex items-center gap-1">
+      <a href="#hero" class="text-xl font-extrabold mono tracking-tight text-white group flex items-center gap-1">
         <span class="text-emerald-400">&lt;</span>Shannmuka<span class="text-cyan-400">/&gt;</span>
       </a>
-
       <div class="hidden md:flex gap-8 text-sm text-slate-400 font-medium">
-        <a href="#about" class="nav-link hover:text-emerald-400">Impact</a>
-        <a href="#experience" class="nav-link hover:text-emerald-400">Experience</a>
-        <a href="#projects" class="nav-link hover:text-emerald-400">Architecture</a>
-        <a href="#certifications" class="nav-link hover:text-emerald-400">Credentials</a>
-        <a href="#skills" class="nav-link hover:text-emerald-400">Tech Stack</a>
-        <a href="#education" class="nav-link hover:text-emerald-400">Education</a>
+        <a href="#about" class="nav-link hover:text-emerald-400 transition">Impact</a>
+        <a href="#certifications" class="nav-link hover:text-emerald-400 transition">Credentials</a>
+        <a href="#experience" class="nav-link hover:text-emerald-400 transition">Experience</a>
+        <a href="#projects" class="nav-link hover:text-emerald-400 transition">Architecture</a>
+        <a href="#skills" class="nav-link hover:text-emerald-400 transition">Tech Stack</a>
+        <a href="#education" class="nav-link hover:text-emerald-400 transition">Education</a>
       </div>
-
-      <div class="flex items-center gap-3">
-        <button id="cmdOpen" type="button" class="no-print hidden md:flex items-center gap-2 text-xs mono text-slate-400 border border-slate-800 rounded-full px-3 py-2 hover:border-emerald-500/50 hover:text-white transition" aria-haspopup="dialog" aria-label="Open command palette">Search <kbd id="cmdKey" class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300">Ctrl K</kbd></button>
-        <a href="mailto:shannmuka@gmail.com" class="hidden sm:inline-block text-xs mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-4 py-2 rounded-full hover:bg-emerald-400 hover:text-black font-semibold transition">
-          Get In Touch →
-        </a>
-        <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-slate-800 text-slate-300" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
-      </div>
-    </div>
-    <div id="mobileMenu" class="hidden md:hidden max-w-6xl mx-auto pt-4 grid grid-cols-2 gap-3 text-sm text-slate-300">
-      <a href="#about" class="px-3 py-2 rounded-lg bg-slate-900/80 border border-slate-800">Impact</a>
-      <a href="#experience" class="px-3 py-2 rounded-lg bg-slate-900/80 border border-slate-800">Experience</a>
-      <a href="#projects" class="px-3 py-2 rounded-lg bg-slate-900/80 border border-slate-800">Architecture</a>
-      <a href="#certifications" class="px-3 py-2 rounded-lg bg-slate-900/80 border border-slate-800">Credentials</a>
-      <a href="#skills" class="px-3 py-2 rounded-lg bg-slate-900/80 border border-slate-800">Tech Stack</a>
-      <a href="#education" class="px-3 py-2 rounded-lg bg-slate-900/80 border border-slate-800">Education</a>
+      <a href="mailto:shannmuka@gmail.com" class="text-xs mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-4 py-2 rounded-full hover:bg-emerald-400 hover:text-black font-semibold transition">
+        Get In Touch →
+      </a>
     </div>
   </nav>
 
-  <main id="main" class="max-w-6xl mx-auto px-6 py-12 space-y-32 relative z-10">
+  <main class="max-w-6xl mx-auto px-6 py-12 space-y-32 relative z-10">
 
-    <!-- Hero -->
-    <section id="hero" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8">
+    <!-- Hero Section -->
+    <section id="hero" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8 reveal active">
       <div class="lg:col-span-7 space-y-6">
-        <div class="relative inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs mono border border-emerald-500/30 bg-emerald-500/10 text-emerald-300">
-          <span class="relative flex w-2 h-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex w-2 h-2 rounded-full bg-emerald-400"></span>
-          </span>
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs mono border border-emerald-500/30 bg-emerald-500/10 text-emerald-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping absolute"></span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400 relative"></span>
           Software Engineer III @ Walmart
         </div>
 
@@ -198,69 +54,66 @@
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Buddabathini</span>
         </h1>
 
-        <div class="text-lg sm:text-xl mono text-slate-300 min-h-[2rem] flex items-center flex-wrap" aria-live="off">
-          <span class="text-slate-500 mr-2">&gt;</span>
+        <div class="text-lg sm:text-xl mono text-slate-300 h-8 flex items-center">
+          <span class="text-slate-500 mr-2">$</span>
           <span>Architecting&nbsp;</span>
           <span id="typewriter" class="text-emerald-400 font-semibold"></span>
-          <span class="cursor-blink text-emerald-400 font-bold ml-0.5" aria-hidden="true">|</span>
+          <span class="cursor-blink text-emerald-400 font-bold ml-0.5">|</span>
         </div>
 
         <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl">
-          Software engineer with 6+ years building reliable, cloud-native platforms and AI-augmented automation on Azure and Kubernetes. I lead disaster recovery and incident response at Walmart, build LLM-powered alerting tooling, and use GitHub Copilot, Claude, Cursor, Azure OpenAI, OpenAI API, LangChain and RAG pipelines, plus Walmart’s internal AI coding assistants, to ship intelligent features faster.
+          Senior-level Software &amp; Cloud Platform Engineer with 5+ years of experience designing high-throughput Java &amp; Python microservices, multi-cluster Kubernetes infrastructure, and AI-augmented reliability tooling for massive enterprise scale.
         </p>
 
-        <div class="flex flex-wrap gap-3.5 pt-3 no-print">
-          <a href="Shannmuka_Software_Engineer.pdf" download class="px-5 py-2.5 rounded-xl bg-emerald-400 text-slate-950 font-bold text-sm hover:bg-emerald-300 transition flex items-center gap-2 shadow-lg shadow-emerald-500/10">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>
-            Download Resume
-          </a>
-          <a href="https://www.linkedin.com/in/buddabathinis/" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl border border-slate-800 bg-slate-900/90 text-white font-semibold text-sm hover:border-emerald-500/50 hover:bg-slate-800 transition flex items-center gap-2">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        <!-- Live Terminal Spec Box -->
+        <div class="rounded-xl border border-slate-800 bg-[#090d16]/90 p-4 max-w-xl mono text-xs text-slate-300 shadow-xl">
+          <div class="flex items-center gap-1.5 mb-2.5 pb-2 border-b border-slate-800/80">
+            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+            <span class="text-slate-500 ml-2">shannmuka@cloud-node:~</span>
+          </div>
+          <div class="space-y-1">
+            <div><span class="text-emerald-400">➜</span> <span class="text-cyan-400">kubectl</span> get engineer shannmuka -o wide</div>
+            <div class="text-slate-400 pl-4">ROLE: SWE III &nbsp;|&nbsp; STACK: Java, Python, K8s, Azure &nbsp;|&nbsp; STATUS: Ready</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-3.5 pt-2">
+          <a href="https://www.linkedin.com/in/buddabathinis/" target="_blank" class="px-5 py-2.5 rounded-xl bg-emerald-400 text-slate-950 font-bold text-sm hover:bg-emerald-300 transition shadow-lg shadow-emerald-500/10">
             LinkedIn
           </a>
-          <a href="https://github.com/sudo-shann" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl border border-slate-800 bg-slate-900/90 text-white font-semibold text-sm hover:border-emerald-500/50 hover:bg-slate-800 transition flex items-center gap-2">
-            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          <a href="https://github.com/sudo-shann" target="_blank" class="px-5 py-2.5 rounded-xl border border-slate-800 bg-slate-900/90 text-white font-semibold text-sm hover:border-slate-700 hover:bg-slate-800 transition">
             GitHub
           </a>
-          <a href="https://medium.com/@shannmuka" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl border border-slate-800 bg-slate-900/90 text-white font-semibold text-sm hover:border-emerald-500/50 hover:bg-slate-800 transition">
-            Medium
+          <a href="https://medium.com/@shannmuka" target="_blank" class="px-5 py-2.5 rounded-xl border border-slate-800 bg-slate-900/90 text-white font-semibold text-sm hover:border-slate-700 hover:bg-slate-800 transition">
+            Medium Blog
           </a>
-          <button id="copyEmail" type="button" class="px-5 py-2.5 rounded-xl border border-slate-800 bg-slate-900/90 text-slate-300 font-semibold text-sm hover:border-emerald-500/50 hover:text-white transition mono">
-            <span id="copyLabel">shannmuka@gmail.com</span> <span class="text-slate-500" aria-hidden="true">⧉</span>
-          </button>
+          <a href="mailto:shannmuka@gmail.com" class="px-5 py-2.5 rounded-xl border border-slate-800 bg-slate-900/90 text-slate-300 font-semibold text-sm hover:border-slate-700 hover:text-white transition">
+            shannmuka@gmail.com
+          </a>
         </div>
       </div>
 
-      <!-- Profile card -->
+      <!-- Profile Photo Card -->
       <div class="lg:col-span-5 flex justify-center lg:justify-end">
         <div class="relative group">
           <div class="absolute -inset-1.5 rounded-3xl bg-gradient-to-tr from-emerald-500 via-teal-500 to-cyan-500 opacity-30 group-hover:opacity-60 blur-lg transition duration-500"></div>
           <div class="relative w-72 sm:w-80 rounded-2xl overflow-hidden border border-slate-700/80 bg-[#0b101b] shadow-2xl">
-            <div class="h-96 overflow-hidden avatar-fallback relative">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl font-extrabold mono text-white/30" aria-hidden="true">SB</div>
-              <img src="profile.jpg" alt="Portrait of Shannmuka Buddabathini" width="320" height="384" loading="eager" decoding="async"
-                   onerror="this.remove()"
-                   class="relative w-full h-96 object-cover object-top group-hover:scale-105 transition duration-700 ease-out">
-            </div>
-            <div class="p-4 bg-[#090d16]/95 backdrop-blur-md border-t border-slate-800 space-y-3">
-              <div class="flex justify-between items-center">
-                <div>
-                  <div class="text-sm font-bold text-white">Shannmuka Buddabathini</div>
-                  <div class="text-xs mono text-emerald-400">Bentonville, AR</div>
-                </div>
+            <img src="profile.jpg" alt="Shannmuka Buddabathini" class="w-full h-96 object-cover object-top group-hover:scale-105 transition duration-700 ease-out">
+            <div class="p-4 bg-[#090d16]/95 backdrop-blur-md border-t border-slate-800 flex justify-between items-center">
+              <div>
+                <div class="text-sm font-bold text-white">Shannmuka Buddabathini</div>
+                <div class="text-xs mono text-emerald-400">Bentonville, AR</div>
               </div>
-              <div class="flex flex-wrap gap-1.5">
-                <span class="px-2 py-1 rounded-md text-[10px] mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">CKA</span>
-                <span class="px-2 py-1 rounded-md text-[10px] mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-semibold">Azure DevOps Expert</span>
-                <span class="px-2 py-1 rounded-md text-[10px] mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-semibold">Azure Admin</span>
-              </div>
+              <span class="px-2.5 py-1 rounded-md text-[10px] mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-semibold">CKA · Azure Expert</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Impact -->
+    <!-- Animated Impact Counters -->
     <section id="about" class="space-y-8 reveal">
       <div>
         <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Engineering Impact</span>
@@ -269,545 +122,41 @@
 
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="spotlight-card p-6 rounded-2xl border border-slate-800/90 bg-slate-900/40 backdrop-blur-sm">
-          <div class="text-4xl font-extrabold text-emerald-400 mono"><span data-count="500" data-prefix="~">~500</span></div>
-          <div class="text-sm font-semibold text-white mt-2">Marketplace Teams Supported</div>
-          <div class="text-xs text-slate-400 mt-1">On-call &amp; production engineering</div>
+          <div class="text-4xl font-extrabold text-emerald-400 mono counter" data-target="5" data-suffix="+">0</div>
+          <div class="text-sm font-semibold text-white mt-2">Years of Experience</div>
+          <div class="text-xs text-slate-400 mt-1">Java, Python &amp; Cloud-Native</div>
         </div>
         <div class="spotlight-card p-6 rounded-2xl border border-slate-800/90 bg-slate-900/40 backdrop-blur-sm">
-          <div class="text-4xl font-extrabold text-emerald-400 mono"><span data-count="100" data-prefix="~">~100</span></div>
-          <div class="text-sm font-semibold text-white mt-2">T0/T1 CBS in One DR Run</div>
-          <div class="text-xs text-slate-400 mt-1">Led during an Azure South Central outage</div>
+          <div class="text-4xl font-extrabold text-emerald-400 mono counter" data-target="300" data-suffix="+">0</div>
+          <div class="text-sm font-semibold text-white mt-2">Microservices Supported</div>
+          <div class="text-xs text-slate-400 mt-1">High-volume e-commerce scale</div>
         </div>
         <div class="spotlight-card p-6 rounded-2xl border border-slate-800/90 bg-slate-900/40 backdrop-blur-sm">
-          <div class="text-2xl sm:text-[1.7rem] leading-tight font-extrabold text-emerald-400 mono">20 → 2–3 min</div>
-          <div class="text-sm font-semibold text-white mt-2">Regional Recovery Time</div>
-          <div class="text-xs text-slate-400 mt-1">One-click DR automation</div>
+          <div class="text-4xl font-extrabold text-cyan-400 mono counter" data-target="70" data-suffix="K+">0</div>
+          <div class="text-sm font-semibold text-white mt-2">Cloud Subscriptions</div>
+          <div class="text-xs text-slate-400 mt-1">Automated security &amp; governance</div>
         </div>
         <div class="spotlight-card p-6 rounded-2xl border border-slate-800/90 bg-slate-900/40 backdrop-blur-sm">
-          <div class="text-4xl font-extrabold text-emerald-400 mono"><span data-count="40" data-prefix="~" data-suffix="%">~40%</span></div>
-          <div class="text-sm font-semibold text-white mt-2">Alerts Suppressed</div>
-          <div class="text-xs text-slate-400 mt-1">~100 of ~250 per 8-hour shift</div>
-        </div>
-        <div class="spotlight-card p-6 rounded-2xl border border-slate-800/90 bg-slate-900/40 backdrop-blur-sm">
-          <div class="text-4xl font-extrabold text-cyan-400 mono"><span data-count="97" data-prefix="~" data-suffix="%">~97%</span></div>
-          <div class="text-sm font-semibold text-white mt-2">LLM Classification Accuracy</div>
-          <div class="text-xs text-slate-400 mt-1">Fewer false pages to on-call</div>
-        </div>
-        <div class="spotlight-card p-6 rounded-2xl border border-slate-800/90 bg-slate-900/40 backdrop-blur-sm">
-          <div class="text-2xl sm:text-[1.7rem] leading-tight font-extrabold text-cyan-400 mono">1–2 wk → 5–10 min</div>
-          <div class="text-sm font-semibold text-white mt-2">Feed Categorization</div>
-          <div class="text-xs text-slate-400 mt-1">Inventory migration automation</div>
-        </div>
-        <div class="spotlight-card p-6 rounded-2xl border border-slate-800/90 bg-slate-900/40 backdrop-blur-sm">
-          <div class="text-4xl font-extrabold text-cyan-400 mono"><span data-count="70" data-suffix="K+">70K+</span></div>
-          <div class="text-sm font-semibold text-white mt-2">Subscriptions Governed</div>
-          <div class="text-xs text-slate-400 mt-1">Microsoft cloud governance rollout</div>
-        </div>
-        <div class="spotlight-card p-6 rounded-2xl border border-slate-800/90 bg-slate-900/40 backdrop-blur-sm">
-          <div class="text-4xl font-extrabold text-cyan-400 mono"><span data-count="50" data-suffix="%">50%</span></div>
-          <div class="text-sm font-semibold text-white mt-2">Fewer Security Incidents</div>
-          <div class="text-xs text-slate-400 mt-1">Via custom Azure Policy &amp; PIM</div>
+          <div class="text-4xl font-extrabold text-cyan-400 mono counter" data-target="100" data-suffix="+">0</div>
+          <div class="text-sm font-semibold text-white mt-2">Apps Failover Tested</div>
+          <div class="text-xs text-slate-400 mt-1">One-click BCDR automation</div>
         </div>
       </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experience" class="space-y-10">
-      <div class="reveal">
-        <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Career Progression</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Work Experience</h2>
-      </div>
-
-      <div class="border-l-2 border-slate-800/90 pl-6 sm:pl-10 space-y-14">
-
-        <!-- Walmart -->
-        <article class="relative group reveal">
-          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-emerald-400 bg-emerald-400/20 group-hover:bg-emerald-400 transition"></div>
-          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-            <h3 class="text-xl font-bold text-white">Software Engineer III</h3>
-            <span class="text-xs mono text-emerald-400 font-semibold">May 2024 — Present</span>
-          </div>
-          <p class="text-sm text-slate-400 mb-4 font-medium">Walmart · Bentonville, AR</p>
-          <ul class="text-slate-300/90 text-sm space-y-2.5 list-disc list-outside ml-4 leading-relaxed">
-            <li>Cut regional-outage recovery from <strong class="text-white font-semibold">~20 min to 2–3 min</strong> with BCDR YAML playbooks and one-click DR automation, and led an on-demand DR execution for <strong class="text-white font-semibold">~100 T0/T1 Critical Business Services (CBS)</strong> during an Azure South Central outage.</li>
-            <li>Designed and built spec-first REST <strong class="text-white font-semibold">Alert Controller APIs</strong> (Python, Flask, Connexion, OpenAPI 3.0.3) integrated with xMatters, suppressing <strong class="text-white font-semibold">~40% of alerts</strong> (~100 of ~250 per 8-hour shift) across ~500 Marketplace applications during maintenance windows.</li>
-            <li>Integrated an <strong class="text-white font-semibold">LLM enrichment layer</strong> (OpenAI API, Azure OpenAI, RAG, Claude and Gemini models) to classify alerts and infer application context at <strong class="text-white font-semibold">~97% accuracy</strong>, keeping false pages away from on-call engineers.</li>
-            <li>Improved reliability of the Alert Controller and DR automation APIs with an API proxy/gateway, rate limiting and throttling (MySQL, Azure SQL Database), now being implemented across Marketplace applications.</li>
-            <li>On call for ~500 Marketplace application teams, speeding resolution of CI/CD failures, Kubernetes deployment issues, service mesh/registry routing and configuration problems; monitor priority T0 deployments and guide teams where needed.</li>
-            <li>Led incident bridges for golden-signal issues (latency, availability, 4xx, 5xx), drove root cause analysis, and created follow-up actions to prevent recurrence.</li>
-            <li>Re-platformed manual OneOps VM runbooks to WCNP (Kubernetes) using Python and CI/CD, cutting pre-owned inventory feed categorization from <strong class="text-white font-semibold">1–2 weeks to ~5–10 minutes</strong>.</li>
-            <li>Use GitHub Copilot, Claude, Cursor and Walmart’s internal AI coding assistants daily to accelerate development and debugging.</li>
-          </ul>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Python</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Kubernetes</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Flask · OpenAPI</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">xMatters</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">LLM Enrichment</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Azure OpenAI</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Service Mesh</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">BCDR</span>
-          </div>
-        </article>
-
-        <!-- MAK -->
-        <article class="relative group reveal">
-          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-slate-600 bg-[#060911] group-hover:border-emerald-400 group-hover:bg-emerald-400 transition"></div>
-          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-            <h3 class="text-xl font-bold text-white">Software Developer</h3>
-            <span class="text-xs mono text-slate-400">Jul 2023 — Apr 2024</span>
-          </div>
-          <p class="text-sm text-slate-400 mb-4 font-medium">MAK Technologies LLC · Springboro, OH</p>
-          <ul class="text-slate-300/90 text-sm space-y-2.5 list-disc list-outside ml-4 leading-relaxed">
-            <li>Developed backend Java microservices and RESTful APIs with validation, clear request/response contracts, and structured error handling.</li>
-            <li>Containerized services with Docker and deployed to AKS using Helm, with readiness/liveness probes and environment-specific configuration.</li>
-            <li>Integrated Apache Kafka for asynchronous messaging to decouple services and absorb traffic spikes.</li>
-            <li>Built Jenkins CI/CD pipelines with Maven, SonarQube quality checks, Docker builds and Helm deployments.</li>
-            <li>Defined Azure infrastructure as code with Terraform and Bicep so environments are reproducible and versioned in Git.</li>
-          </ul>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Java</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Apache Kafka</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">AKS &amp; Helm</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Jenkins</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Terraform / Bicep</span>
-          </div>
-        </article>
-
-        <!-- Microsoft -->
-        <article class="relative group reveal">
-          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-slate-600 bg-[#060911] group-hover:border-emerald-400 group-hover:bg-emerald-400 transition"></div>
-          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-            <h3 class="text-xl font-bold text-white">Cloud Engineer</h3>
-            <span class="text-xs mono text-slate-400">Oct 2022 — Jun 2023</span>
-          </div>
-          <p class="text-sm text-slate-400 mb-4 font-medium">Microsoft · Redmond, WA</p>
-          <ul class="text-slate-300/90 text-sm space-y-2.5 list-disc list-outside ml-4 leading-relaxed">
-            <li>Spearheaded an automated cloud governance solution for the Security Intelligence &amp; Engineering (SI&amp;E) division that onboarded a tenant with <strong class="text-white font-semibold">70,000+ subscriptions</strong>, reducing deployment costs by 15%.</li>
-            <li>Built backend Java REST APIs to orchestrate Azure custom and built-in policies and send notification events to Microsoft Teams and Outlook.</li>
-            <li>Authored custom Azure Policies alongside built-in policies to reach <strong class="text-white font-semibold">99% compliance</strong> across all Azure resources in the Microsoft tenant, resulting in a <strong class="text-white font-semibold">50% reduction in security incidents</strong>.</li>
-            <li>Implemented Privileged Identity Management (PIM) in Azure custom policies to prevent permanent privileged access, plus an Azure AD (B2B/B2C) IAM framework with Conditional Access (SAW, SAS-ALT).</li>
-            <li>Architected an Azure DevOps pipeline, authenticated with Service Principals, to deploy Azure policies and Java and C# .NET applications across multiple tenants, cutting policy rollout time by 50%.</li>
-            <li>Automated 80% of deployment tasks with ARM templates and Terraform, and wrote PowerShell scripts to create and delete Azure resources and publish policy files to file shares.</li>
-          </ul>
-          <div class="flex flex-wrap gap-2 mt-4">
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Java</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">C# .NET 6</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Azure Policy</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">PIM / SAW / SAS-ALT</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Azure DevOps</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">ARM &amp; Terraform</span>
-          </div>
-        </article>
-
-        <!-- Earlier roles (collapsed) -->
-        <details class="relative group reveal">
-          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-slate-600 bg-[#060911] group-hover:border-emerald-400 transition"></div>
-          <summary class="cursor-pointer list-none flex items-center justify-between text-slate-300 hover:text-emerald-400 transition">
-            <span class="text-xl font-bold text-white">Earlier Roles</span>
-            <span class="text-xs mono text-slate-400">2018 — 2022 · click to expand</span>
-          </summary>
-          <div class="mt-6 space-y-8">
-            <div>
-              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                <h4 class="text-lg font-bold text-white">Azure Cloud Engineer</h4>
-                <span class="text-xs mono text-slate-400">Aug 2019 — Aug 2021</span>
-              </div>
-              <p class="text-sm text-slate-400 mb-3">ZENQ · Hyderabad, India</p>
-              <ul class="text-slate-300/90 text-sm space-y-2 list-disc ml-4 leading-relaxed">
-                <li>Built Java / Spring Boot REST APIs for the eVestment (Nasdaq) analytics platform supporting institutional investment workflows.</li>
-                <li>Applied Azure Policies for 99% compliance and a 30% reduction in audit findings.</li>
-                <li>Protected 100+ critical workloads with Azure Backup and Azure Monitor: 99% recovery rate, 90% of issues addressed before escalation.</li>
-                <li>Authored 30+ ARM and Terraform templates, reducing deployment times by 25%.</li>
-              </ul>
-            </div>
-            <div>
-              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                <h4 class="text-lg font-bold text-white">DevOps Engineer Intern</h4>
-                <span class="text-xs mono text-slate-400">Aug 2022 — Sep 2022</span>
-              </div>
-              <p class="text-sm text-slate-400 mb-3">MAK Technologies LLC · Springboro, OH</p>
-              <ul class="text-slate-300/90 text-sm space-y-2 list-disc ml-4 leading-relaxed">
-                <li>Rolled out Azure PIM for a client, decreasing unauthorized access by 30% and improving security compliance by 25%.</li>
-                <li>Used Ansible playbooks and Terraform modules to provision and configure VMs.</li>
-              </ul>
-            </div>
-            <div>
-              <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
-                <h4 class="text-lg font-bold text-white">Research Engineer</h4>
-                <span class="text-xs mono text-slate-400">Jul 2018 — May 2019</span>
-              </div>
-              <p class="text-sm text-slate-400 mb-3">VVIT · Guntur, India</p>
-              <ul class="text-slate-300/90 text-sm space-y-2 list-disc ml-4 leading-relaxed">
-                <li>Co-authored an IJRCSEIT paper on liver cancer detection using ensemble ML (Random Forest, J48, C4.5, Naïve Bayes).</li>
-                <li>Used SQL to extract insights from Electronic Health Records.</li>
-              </ul>
-            </div>
-          </div>
-        </details>
-      </div>
-    </section>
-
-    <!-- Architecture highlights -->
-    <section id="projects" class="space-y-8">
-      <div class="reveal">
-        <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Featured Work</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Key Architectural Highlights</h2>
-      </div>
-
-      <!-- Featured 1: Alert pipeline diagram -->
-      <div class="spotlight-card reveal p-7 rounded-2xl border border-slate-800 bg-slate-900/40 space-y-5">
-        <div class="flex flex-wrap justify-between items-center gap-2">
-          <span class="text-xs mono px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">AI-Augmented SRE</span>
-          <span class="text-xs mono text-slate-500">Walmart · Marketplace</span>
-        </div>
-        <h3 class="text-2xl font-bold text-white">LLM-Enriched Alert &amp; Incident Engine</h3>
-        <p class="text-sm text-slate-400 leading-relaxed max-w-3xl">
-          Spec-first REST APIs (OpenAPI 3.0.3 on Flask and Connexion) that sit between monitoring and paging. Teams schedule and approve maintenance exceptions, incoming alerts are matched against the active ones, and matching xMatters events are annotated and terminated. An LLM layer classifies alerts and infers application context, and anything unmatched stays active and is returned as escalated.
-        </p>
-
-        <div class="no-print flex flex-wrap items-center gap-2 mono text-xs" role="group" aria-label="Alert Controller flow player">
-          <button type="button" data-flow="A" class="flow-tab px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-emerald-400">A · Create &amp; approve</button>
-          <button type="button" data-flow="B" class="flow-tab px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-emerald-400">B · Process alert</button>
-          <span class="mx-1 text-slate-700">|</span>
-          <button type="button" id="flowPrev" class="px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-emerald-400" aria-label="Previous step">◀</button>
-          <button type="button" id="flowPlay" class="px-3 py-1.5 rounded-lg border border-emerald-500/40 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20">Pause</button>
-          <button type="button" id="flowNext" class="px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-emerald-400" aria-label="Next step">▶</button>
-        </div>
-        <div class="text-sm text-slate-300 leading-relaxed min-h-[3.5rem] p-3 rounded-xl bg-slate-950/60 border border-slate-800" aria-live="polite"><span id="flowStep" class="mono text-emerald-400 text-xs mr-2"></span><span id="flowCap"></span></div>
-        <figure class="overflow-x-auto">
-          <svg id="alertSvg" viewBox="0 0 1000 480" class="min-w-[760px] w-full" role="img" aria-label="Alert Controller architecture: clients and a monitoring webhook reach an API layer, then a controller, business logic, a data layer and a database. Business logic also calls an LLM enrichment layer and a paging platform that notifies on-call teams. A status state machine runs from pending to scheduled to active to completed, and any state can be cancelled."><defs><marker id="arrOff" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker><marker id="arrOn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#34d399"/></marker></defs><g font-family="JetBrains Mono, monospace" text-anchor="middle"><path class="ed" id="e1" d="M150 57 H168" marker-end="url(#arrOff)"/><path class="ed" id="e2" d="M150 122 H168" marker-end="url(#arrOff)"/><path class="ed" id="e3" d="M310 90 H328" marker-end="url(#arrOff)"/><path class="ed" id="e4" d="M470 90 H488" marker-end="url(#arrOff)"/><path class="ed" id="e5" d="M630 90 H648" marker-end="url(#arrOff)"/><path class="ed" id="e6" d="M790 90 H808" marker-end="url(#arrOff)"/><path class="ed" id="e7" d="M560 150 V198" marker-end="url(#arrOff)"/><path class="ed" id="e8" d="M510 150 L440 198" marker-end="url(#arrOff)"/><path class="ed" id="e9" d="M630 235 H648" marker-end="url(#arrOff)"/><path class="ed" id="e10" d="M790 235 H808" marker-end="url(#arrOff)"/><g class="nd" id="n-callers"><rect x="10" y="30" width="140" height="55" rx="10" fill="#0b101b" stroke="#334155"/><text x="80.0" y="48" fill="#e2e8f0" font-weight="700" font-size="12">UI / clients</text><text x="80.0" y="64" fill="#94a3b8" font-size="10">add · approve · get</text></g><g class="nd" id="n-hook"><rect x="10" y="95" width="140" height="55" rx="10" fill="#0b101b" stroke="#475569" stroke-dasharray="5 4"/><text x="80.0" y="113" fill="#e2e8f0" font-weight="700" font-size="12">Alert source</text><text x="80.0" y="129" fill="#94a3b8" font-size="10">monitoring webhook</text></g><g class="nd" id="n-api"><rect x="170" y="30" width="140" height="120" rx="10" fill="#06241f" stroke="#10b981"/><text x="240.0" y="48" fill="#34d399" font-weight="700" font-size="12">API layer</text><text x="240.0" y="64" fill="#94a3b8" font-size="10">Flask + Connexion</text><text x="240.0" y="79" fill="#94a3b8" font-size="10">OpenAPI 3.0.3 spec</text><text x="240.0" y="94" fill="#94a3b8" font-size="10">CORS · telemetry</text><text x="240.0" y="109" fill="#94a3b8" font-size="10">health · metrics</text></g><g class="nd" id="n-ctl"><rect x="330" y="30" width="140" height="120" rx="10" fill="#0b101b" stroke="#334155"/><text x="400.0" y="48" fill="#e2e8f0" font-weight="700" font-size="12">Controller</text><text x="400.0" y="64" fill="#94a3b8" font-size="10">validates request</text><text x="400.0" y="79" fill="#94a3b8" font-size="10">normalizes payload</text><text x="400.0" y="94" fill="#94a3b8" font-size="10">structured errors</text></g><g class="nd" id="n-biz"><rect x="490" y="30" width="140" height="120" rx="10" fill="#06241f" stroke="#10b981"/><text x="560.0" y="48" fill="#34d399" font-weight="700" font-size="12">Business logic</text><text x="560.0" y="64" fill="#94a3b8" font-size="10">suppression service</text><text x="560.0" y="79" fill="#94a3b8" font-size="10">UTC · window check</text><text x="560.0" y="94" fill="#94a3b8" font-size="10">per-scope rules</text><text x="560.0" y="109" fill="#94a3b8" font-size="10">matching engine</text></g><g class="nd" id="n-dbh"><rect x="650" y="30" width="140" height="120" rx="10" fill="#0b101b" stroke="#334155"/><text x="720.0" y="48" fill="#e2e8f0" font-weight="700" font-size="12">Data layer</text><text x="720.0" y="64" fill="#94a3b8" font-size="10">SQLAlchemy 2.0</text><text x="720.0" y="79" fill="#94a3b8" font-size="10">shared data-access</text><text x="720.0" y="94" fill="#94a3b8" font-size="10">package</text></g><g class="nd" id="n-tbl"><rect x="810" y="30" width="180" height="120" rx="10" fill="#0b101b" stroke="#334155"/><text x="900.0" y="48" fill="#e2e8f0" font-weight="700" font-size="12">Database</text><text x="900.0" y="64" fill="#94a3b8" font-size="10">Exceptions · Status</text><text x="900.0" y="79" fill="#94a3b8" font-size="10">Approval tokens</text><text x="900.0" y="94" fill="#94a3b8" font-size="10">Scope rules</text><text x="900.0" y="109" fill="#94a3b8" font-size="10">Audit log</text></g><g class="nd" id="n-llm"><rect x="330" y="200" width="140" height="70" rx="10" fill="#0b101b" stroke="#22d3ee" stroke-dasharray="5 4"/><text x="400.0" y="218" fill="#67e8f9" font-weight="700" font-size="12">LLM enrichment</text><text x="400.0" y="234" fill="#94a3b8" font-size="10">Azure OpenAI · RAG</text><text x="400.0" y="249" fill="#94a3b8" font-size="10">classify · context</text></g><g class="nd" id="n-xmc"><rect x="490" y="200" width="140" height="70" rx="10" fill="#0b101b" stroke="#334155"/><text x="560.0" y="218" fill="#e2e8f0" font-weight="700" font-size="12">Paging client</text><text x="560.0" y="234" fill="#94a3b8" font-size="10">xMatters handler</text><text x="560.0" y="249" fill="#94a3b8" font-size="10">REST · authenticated</text></g><g class="nd" id="n-xm"><rect x="650" y="200" width="140" height="70" rx="10" fill="#0b101b" stroke="#475569" stroke-dasharray="5 4"/><text x="720.0" y="218" fill="#e2e8f0" font-weight="700" font-size="12">xMatters</text><text x="720.0" y="234" fill="#94a3b8" font-size="10">events API</text><text x="720.0" y="249" fill="#94a3b8" font-size="10">(external)</text></g><g class="nd" id="n-oncall"><rect x="810" y="200" width="140" height="70" rx="10" fill="#0b101b" stroke="#475569" stroke-dasharray="5 4"/><text x="880.0" y="218" fill="#e2e8f0" font-weight="700" font-size="12">On-call</text><text x="880.0" y="234" fill="#94a3b8" font-size="10">~500 app teams</text></g><text x="10" y="316" fill="#34d399" font-size="11" font-weight="700" text-anchor="start">STATUS STATE MACHINE</text><g class="nd" id="n-sched"><rect x="330" y="324" width="230" height="22" rx="6" fill="#0b101b" stroke="#f59e0b" stroke-dasharray="4 3"/><text x="445" y="339" fill="#fbbf24" font-size="10">scheduler (external service)</text></g><g class="nd" id="n-s-pending"><rect x="30" y="360" width="110" height="34" rx="10" fill="#0b101b" stroke="#334155"/><text x="85.0" y="381" fill="#e2e8f0" font-weight="700" font-size="12">pending</text></g><g class="nd" id="n-s-scheduled"><rect x="210" y="360" width="110" height="34" rx="10" fill="#0b101b" stroke="#334155"/><text x="265.0" y="381" fill="#e2e8f0" font-weight="700" font-size="12">scheduled</text></g><g class="nd" id="n-s-active"><rect x="390" y="360" width="110" height="34" rx="10" fill="#0b101b" stroke="#334155"/><text x="445.0" y="381" fill="#e2e8f0" font-weight="700" font-size="12">active</text></g><g class="nd" id="n-s-completed"><rect x="570" y="360" width="110" height="34" rx="10" fill="#0b101b" stroke="#334155"/><text x="625.0" y="381" fill="#e2e8f0" font-weight="700" font-size="12">completed</text></g><g class="nd" id="n-s-cancelled"><rect x="300" y="430" width="110" height="34" rx="10" fill="#0b101b" stroke="#334155"/><text x="355.0" y="451" fill="#e2e8f0" font-weight="700" font-size="12">cancelled</text></g><path class="sm" d="M140 377 H208" marker-end="url(#arrOff)"/><path class="sm am" d="M320 377 H388" marker-end="url(#arrOff)"/><path class="sm am" d="M500 377 H568" marker-end="url(#arrOff)"/><path class="sm" d="M85 394 L318 430" marker-end="url(#arrOff)" stroke-dasharray="3 4"/><path class="sm" d="M265 394 L345 430" marker-end="url(#arrOff)" stroke-dasharray="3 4"/><path class="sm" d="M445 394 L375 430" marker-end="url(#arrOff)" stroke-dasharray="3 4"/><text x="174" y="370" fill="#64748b" font-size="9" text-anchor="middle">approve</text><g><rect x="720" y="324" width="270" height="140" rx="10" fill="#0b101b" stroke="#1e293b"/><text x="736" y="346" fill="#64748b" font-size="9.5" font-weight="700" text-anchor="start">TRANSITION RULES</text><text x="736" y="372" fill="#94a3b8" font-size="10.5" text-anchor="start">update: pending only</text><text x="736" y="394" fill="#94a3b8" font-size="10.5" text-anchor="start">reschedule: while scheduled</text><text x="736" y="416" fill="#94a3b8" font-size="10.5" text-anchor="start">extend: scheduled only</text><text x="736" y="438" fill="#94a3b8" font-size="10.5" text-anchor="start">suppression: active only</text></g></g></svg>
-          <figcaption class="text-[11px] mono text-slate-500 mt-2">Spec-first REST on synchronous WSGI. Dashed boxes are external systems or a separate layer. Suppressed alerts are terminated in xMatters and never page.</figcaption>
-        </figure>
-
-        <div class="space-y-2" role="img" aria-label="Per 8-hour shift, about 100 of about 250 alerts are suppressed, roughly 40 percent">
-          <div class="flex justify-between text-[11px] mono text-slate-400"><span>Per 8-hour shift · ~250 alerts across ~500 applications</span><span class="text-emerald-400">~40% suppressed</span></div>
-          <div class="flex h-3 rounded overflow-hidden bg-slate-800"><div class="bar h-3 bg-emerald-400" style="--w:40%"></div><div class="bar h-3 bg-slate-600" style="--w:60%"></div></div>
-          <div class="flex justify-between text-[11px] mono"><span class="text-emerald-400">~100 suppressed</span><span class="text-slate-400">~150 continue to normal escalation</span></div>
-        </div>
-
-        <div class="flex flex-wrap gap-1.5">
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Python</span>
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Flask</span>
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">OpenAPI 3.0.3</span>
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">SQLAlchemy</span>
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">LLM</span>
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">xMatters</span>
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">REST APIs</span>
-        </div>
-      </div>
-
-      <!-- Featured 2: Microsoft Multi-Tenant Cloud Governance & JIT Engine -->
-      <div class="spotlight-card reveal p-7 rounded-2xl border border-slate-800 bg-slate-900/40 space-y-5">
-        <div class="flex flex-wrap justify-between items-center gap-2">
-          <span class="text-xs mono px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Multi-Tenant Cloud Governance &amp; PIM</span>
-          <span class="text-xs mono text-slate-500">Microsoft · Security Intelligence &amp; Engineering (SI&amp;E)</span>
-        </div>
-        <h3 class="text-2xl font-bold text-white">Multi-Tenant Policy Orchestrator &amp; JIT Access Engine</h3>
-        <p class="text-sm text-slate-400 leading-relaxed max-w-4xl">
-          Hub-and-spoke governance architecture separating the central <strong class="text-slate-200 font-semibold">Management Plane</strong> (policy orchestration, organizational directory sync, and Microsoft Teams ChatOps workflows) from the lightweight <strong class="text-slate-200 font-semibold">Service Plane</strong> deployed across <strong class="text-slate-200 font-semibold">70,000+ subscriptions</strong>. Custom and built-in Azure Policies are published via Azure DevOps to <code class="mono text-xs text-cyan-300">auto-rollout</code> and <code class="mono text-xs text-cyan-300">manual-rollout</code> file shares, distributed to target Service Planes for least-privilege rollout and rollback, while a serverless Function App provisions time-bound Just-In-Time (JIT / PIM) access verified via SAW Conditional Access and Microsoft Graph.
-        </p>
-
-        <div class="no-print flex flex-wrap items-center gap-2 mono text-xs" role="group" aria-label="Cloud Governance flow player">
-          <button type="button" data-ptt-flow="A" class="ptt-tab px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400">A · Policy rollout</button>
-          <button type="button" data-ptt-flow="B" class="ptt-tab px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400">B · Directory sync &amp; audit</button>
-          <button type="button" data-ptt-flow="C" class="ptt-tab px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400">C · SAW &amp; JIT (PIM) access</button>
-          <span class="mx-1 text-slate-700">|</span>
-          <button type="button" id="pttPrev" class="px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400" aria-label="Previous step">◀</button>
-          <button type="button" id="pttPlay" class="px-3 py-1.5 rounded-lg border border-cyan-500/40 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20">Pause</button>
-          <button type="button" id="pttNext" class="px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400" aria-label="Next step">▶</button>
-        </div>
-
-        <div class="text-sm text-slate-300 leading-relaxed min-h-[3.5rem] p-3 rounded-xl bg-slate-950/60 border border-slate-800" aria-live="polite">
-          <span id="pttStep" class="mono text-cyan-400 text-xs mr-2"></span><span id="pttCap"></span>
-        </div>
-
-        <figure class="overflow-x-auto">
-          <svg id="pttSvg" viewBox="0 0 1000 520" class="min-w-[820px] w-full" role="img" aria-label="Two-plane cloud governance architecture: Top Management Plane contains Teams and Outlook, Azure DevOps CI/CD, ChatOps Bot, Policy Storage with auto-rollout and manual-rollout shares, Orchestrator API, Sync Engine WebJobs, Cosmos DB, Azure Key Vault, and Entra ID with Org Directory. Bottom Service Plane deployed per onboarded tenant/subscription contains Local Queue Store, Policy Worker App, JIT Access Function, Managed Identities, and 70,000+ target subscriptions governed across 8 security pillars.">
-            <defs>
-              <marker id="pttArrOff" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-                <path d="M0 0L10 5L0 10z" fill="#475569"/>
-              </marker>
-              <marker id="pttArrOn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-                <path d="M0 0L10 5L0 10z" fill="#22d3ee"/>
-              </marker>
-            </defs>
-
-            <g font-family="JetBrains Mono, monospace" text-anchor="middle">
-              <!-- Plane Boundaries -->
-              <rect x="8" y="10" width="984" height="232" rx="12" fill="#070d18" stroke="#1e293b" stroke-dasharray="6 4"/>
-              <text x="24" y="29" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="start">MANAGEMENT PLANE (CENTRAL CONTROL &amp; ADMIN HUB · SI&amp;E GOVERNANCE TENANT)</text>
-
-              <rect x="8" y="256" width="984" height="254" rx="12" fill="#070d18" stroke="#0e7490" stroke-dasharray="6 4"/>
-              <text x="24" y="275" fill="#22d3ee" font-size="10.5" font-weight="700" text-anchor="start">SERVICE PLANE (DISTRIBUTED EXECUTION · DEPLOYED PER ONBOARDED TENANT / 70,000+ SUBSCRIPTIONS)</text>
-
-              <!-- Edges -->
-              <path class="ed" id="pe1" d="M164 82 H193" marker-end="url(#pttArrOff)"/>
-              <path class="ed" id="pe2" d="M340 82 H373" marker-end="url(#pttArrOff)"/>
-              <path class="ed" id="pe3" d="M540 82 H573" marker-end="url(#pttArrOff)"/>
-              <path class="ed" id="pe4" d="M755 82 H722" marker-end="url(#pttArrOff)"/>
-              <path class="ed" id="pe5" d="M164 184 H193" marker-end="url(#pttArrOff)"/>
-              <path class="ed" id="pe6" d="M340 184 H373" marker-end="url(#pttArrOff)"/>
-              <path class="ed" id="pe7" d="M457 122 V142" marker-end="url(#pttArrOff)"/>
-              <path class="ed" id="pe8" d="M540 184 H573" marker-end="url(#pttArrOff)"/>
-              <path class="ed" id="pe9" d="M755 184 H722" marker-end="url(#pttArrOff)"/>
-              <!-- Cross-Plane Edges -->
-              <path class="ed" id="pe10" d="M457 226 L110 288" marker-end="url(#pttArrOff)"/>
-              <path class="ed" id="pe15" d="M302 290 L457 124" marker-end="url(#pttArrOff)"/>
-              <path class="ed" id="pe16" d="M457 124 L512 288" marker-end="url(#pttArrOff)"/>
-              <!-- Service Plane Edges -->
-              <path class="ed" id="pe11" d="M179 332 H213" marker-end="url(#pttArrOff)"/>
-              <path class="ed" id="pe12" d="M390 332 H423" marker-end="url(#pttArrOff)"/>
-              <path class="ed" id="pe13" d="M600 332 H633" marker-end="url(#pttArrOff)"/>
-              <path class="ed" id="pe14" d="M795 332 H823" marker-end="url(#pttArrOff)"/>
-
-              <!-- Management Plane Nodes -->
-              <g class="nd" id="n-p-teams">
-                <rect x="24" y="42" width="140" height="80" rx="10" fill="#0b101b" stroke="#475569" stroke-dasharray="5 4"/>
-                <text x="94" y="61" fill="#e2e8f0" font-weight="700" font-size="11.5">Teams &amp; Outlook</text>
-                <text x="94" y="77" fill="#94a3b8" font-size="9.5">admin &amp; user portal</text>
-                <text x="94" y="92" fill="#94a3b8" font-size="9.5">JIT access requests</text>
-                <text x="94" y="107" fill="#94a3b8" font-size="9.5">compliance alerts</text>
-              </g>
-
-              <g class="nd" id="n-p-devops">
-                <rect x="24" y="144" width="140" height="82" rx="10" fill="#0b101b" stroke="#334155"/>
-                <text x="94" y="163" fill="#e2e8f0" font-weight="700" font-size="11.5">Azure DevOps</text>
-                <text x="94" y="179" fill="#94a3b8" font-size="9.5">Service Principal</text>
-                <text x="94" y="194" fill="#94a3b8" font-size="9.5">ARM · Terraform</text>
-                <text x="94" y="209" fill="#94a3b8" font-size="9.5">multi-tenant CI/CD</text>
-              </g>
-
-              <g class="nd" id="n-p-bot">
-                <rect x="195" y="42" width="145" height="80" rx="10" fill="#06241f" stroke="#10b981"/>
-                <text x="267.5" y="61" fill="#34d399" font-weight="700" font-size="11.5">ChatOps Bot</text>
-                <text x="267.5" y="77" fill="#94a3b8" font-size="9.5">Azure Bot Service</text>
-                <text x="267.5" y="92" fill="#94a3b8" font-size="9.5">OAuth 2.0 · SAW auth</text>
-                <text x="267.5" y="107" fill="#94a3b8" font-size="9.5">rollout &amp; JIT commands</text>
-              </g>
-
-              <g class="nd" id="n-p-files">
-                <rect x="195" y="144" width="145" height="82" rx="10" fill="#0b101b" stroke="#334155"/>
-                <text x="267.5" y="163" fill="#e2e8f0" font-weight="700" font-size="11.5">Policy Storage</text>
-                <text x="267.5" y="179" fill="#67e8f9" font-size="9.5">auto-rollout share</text>
-                <text x="267.5" y="194" fill="#fbbf24" font-size="9.5">manual-rollout share</text>
-                <text x="267.5" y="209" fill="#94a3b8" font-size="9.5">sync message queues</text>
-              </g>
-
-              <g class="nd" id="n-p-mapi">
-                <rect x="375" y="42" width="165" height="80" rx="10" fill="#06241f" stroke="#10b981"/>
-                <text x="457.5" y="61" fill="#34d399" font-weight="700" font-size="11.5">Orchestrator API</text>
-                <text x="457.5" y="77" fill="#94a3b8" font-size="9.5">Java &amp; .NET REST APIs</text>
-                <text x="457.5" y="92" fill="#94a3b8" font-size="9.5">central control plane</text>
-                <text x="457.5" y="107" fill="#94a3b8" font-size="9.5">event notifications</text>
-              </g>
-
-              <g class="nd" id="n-p-mjobs">
-                <rect x="375" y="144" width="165" height="82" rx="10" fill="#0b101b" stroke="#334155"/>
-                <text x="457.5" y="163" fill="#e2e8f0" font-weight="700" font-size="11.5">Sync Engine</text>
-                <text x="457.5" y="179" fill="#94a3b8" font-size="9.5">background WebJobs</text>
-                <text x="457.5" y="194" fill="#94a3b8" font-size="9.5">policy distribution</text>
-                <text x="457.5" y="209" fill="#94a3b8" font-size="9.5">tenant metadata sync</text>
-              </g>
-
-              <g class="nd" id="n-p-cosmos">
-                <rect x="575" y="42" width="145" height="80" rx="10" fill="#0b101b" stroke="#334155"/>
-                <text x="647.5" y="61" fill="#e2e8f0" font-weight="700" font-size="11.5">Cosmos DB</text>
-                <text x="647.5" y="77" fill="#94a3b8" font-size="9.5">tenant hierarchy</text>
-                <text x="647.5" y="92" fill="#94a3b8" font-size="9.5">JIT &amp; RBAC rules</text>
-                <text x="647.5" y="107" fill="#94a3b8" font-size="9.5">compliance state</text>
-              </g>
-
-              <g class="nd" id="n-p-kv">
-                <rect x="575" y="144" width="145" height="82" rx="10" fill="#0b101b" stroke="#334155"/>
-                <text x="647.5" y="163" fill="#e2e8f0" font-weight="700" font-size="11.5">Azure Key Vault</text>
-                <text x="647.5" y="179" fill="#94a3b8" font-size="9.5">HSM-backed secrets</text>
-                <text x="647.5" y="194" fill="#94a3b8" font-size="9.5">SAS &amp; DB credentials</text>
-                <text x="647.5" y="209" fill="#94a3b8" font-size="9.5">SSL certs · IP ACLs</text>
-              </g>
-
-              <g class="nd" id="n-p-stree">
-                <rect x="755" y="42" width="220" height="80" rx="10" fill="#0b101b" stroke="#f59e0b" stroke-dasharray="5 4"/>
-                <text x="865" y="61" fill="#fbbf24" font-weight="700" font-size="11.5">Entra ID &amp; Org Directory</text>
-                <text x="865" y="77" fill="#94a3b8" font-size="9.5">tenant &amp; subscription catalog</text>
-                <text x="865" y="92" fill="#94a3b8" font-size="9.5">SAW / SAS-ALT Conditional Access</text>
-                <text x="865" y="107" fill="#94a3b8" font-size="9.5">MS Graph reporting hierarchy</text>
-              </g>
-
-              <g class="nd" id="n-p-pillars">
-                <rect x="755" y="144" width="220" height="82" rx="10" fill="#0b101b" stroke="#22d3ee" stroke-dasharray="5 4"/>
-                <text x="865" y="163" fill="#67e8f9" font-weight="700" font-size="11.5">Policy Repo (JSON)</text>
-                <text x="865" y="179" fill="#94a3b8" font-size="9.5">custom &amp; built-in definitions</text>
-                <text x="865" y="194" fill="#94a3b8" font-size="9.5">8 security &amp; compliance pillars</text>
-                <text x="865" y="209" fill="#94a3b8" font-size="9.5">per-subscription scoping</text>
-              </g>
-
-              <!-- Service Plane Nodes -->
-              <g class="nd" id="n-p-sstore">
-                <rect x="24" y="290" width="155" height="84" rx="10" fill="#0b101b" stroke="#334155"/>
-                <text x="101.5" y="310" fill="#e2e8f0" font-weight="700" font-size="11.5">Local Queue Store</text>
-                <text x="101.5" y="326" fill="#94a3b8" font-size="9.5">policy rollout queue</text>
-                <text x="101.5" y="341" fill="#94a3b8" font-size="9.5">JIT request queue</text>
-                <text x="101.5" y="356" fill="#94a3b8" font-size="9.5">compliance audit logs</text>
-              </g>
-
-              <g class="nd" id="n-p-sweb">
-                <rect x="215" y="290" width="175" height="84" rx="10" fill="#082f49" stroke="#06b6d4"/>
-                <text x="302.5" y="310" fill="#67e8f9" font-weight="700" font-size="11.5">Policy Worker App</text>
-                <text x="302.5" y="326" fill="#94a3b8" font-size="9.5">applies Azure Policies</text>
-                <text x="302.5" y="341" fill="#94a3b8" font-size="9.5">continuous audit scan</text>
-                <text x="302.5" y="356" fill="#94a3b8" font-size="9.5">auto rollout &amp; rollback</text>
-              </g>
-
-              <g class="nd" id="n-p-sfunc">
-                <rect x="425" y="290" width="175" height="84" rx="10" fill="#082f49" stroke="#06b6d4"/>
-                <text x="512.5" y="310" fill="#67e8f9" font-weight="700" font-size="11.5">JIT Access Function</text>
-                <text x="512.5" y="326" fill="#94a3b8" font-size="9.5">serverless provisioner</text>
-                <text x="512.5" y="341" fill="#94a3b8" font-size="9.5">time-bound RBAC grant</text>
-                <text x="512.5" y="356" fill="#94a3b8" font-size="9.5">auto-revokes on expiry</text>
-              </g>
-
-              <g class="nd" id="n-p-sumsi">
-                <rect x="635" y="290" width="160" height="84" rx="10" fill="#0b101b" stroke="#334155"/>
-                <text x="715" y="310" fill="#e2e8f0" font-weight="700" font-size="11.5">Managed Identities</text>
-                <text x="715" y="326" fill="#34d399" font-size="9.5">Policy Contributor role</text>
-                <text x="715" y="341" fill="#fbbf24" font-size="9.5">User Access Admin role</text>
-                <text x="715" y="356" fill="#94a3b8" font-size="9.5">least-privilege RBAC</text>
-              </g>
-
-              <g class="nd" id="n-p-subs">
-                <rect x="825" y="290" width="150" height="84" rx="10" fill="#06241f" stroke="#10b981"/>
-                <text x="900" y="310" fill="#34d399" font-weight="700" font-size="11.5">70,000+ Subs</text>
-                <text x="900" y="326" fill="#e2e8f0" font-size="9.5">99% policy compliance</text>
-                <text x="900" y="341" fill="#94a3b8" font-size="9.5">-50% security incidents</text>
-                <text x="900" y="356" fill="#94a3b8" font-size="9.5">-15% deployment cost</text>
-              </g>
-
-              <!-- 8 Policy Pillars grouped into 4 domain cards -->
-              <text x="24" y="398" fill="#64748b" font-size="9.5" font-weight="700" text-anchor="start">8 SECURITY &amp; COMPLIANCE PILLARS ENFORCED ACROSS ONBOARDED SUBSCRIPTIONS</text>
-
-              <g class="nd" id="n-p-cat1">
-                <rect x="24" y="408" width="225" height="88" rx="9" fill="#0b101b" stroke="#1e293b"/>
-                <text x="136.5" y="426" fill="#67e8f9" font-weight="700" font-size="10.5">1 · Identity, PIM &amp; Least Priv</text>
-                <text x="136.5" y="443" fill="#94a3b8" font-size="9.5">No permanent Sub / RG Owner</text>
-                <text x="136.5" y="458" fill="#94a3b8" font-size="9.5">Remove external Guest accounts</text>
-                <text x="136.5" y="473" fill="#94a3b8" font-size="9.5">Require SC-ALT / SAS-ALT &amp; AAD SQL</text>
-              </g>
-
-              <g class="nd" id="n-p-cat2">
-                <rect x="265" y="408" width="225" height="88" rx="9" fill="#0b101b" stroke="#1e293b"/>
-                <text x="377.5" y="426" fill="#34d399" font-weight="700" font-size="10.5">2 · Encryption &amp; Internet First</text>
-                <text x="377.5" y="443" fill="#94a3b8" font-size="9.5">SQL TDE at rest · TLS 1.2+ / HTTPS</text>
-                <text x="377.5" y="458" fill="#94a3b8" font-size="9.5">VNet DDoS Standard &amp; Subnet NSGs</text>
-                <text x="377.5" y="473" fill="#94a3b8" font-size="9.5">AppGateway &amp; FrontDoor WAF</text>
-              </g>
-
-              <g class="nd" id="n-p-cat3">
-                <rect x="506" y="408" width="225" height="88" rx="9" fill="#0b101b" stroke="#1e293b"/>
-                <text x="618.5" y="426" fill="#fbbf24" font-weight="700" font-size="10.5">3 · Defender &amp; Audit Monitoring</text>
-                <text x="618.5" y="443" fill="#94a3b8" font-size="9.5">Defender: ARM/K8s/KV/SQL/VM/DNS</text>
-                <text x="618.5" y="458" fill="#94a3b8" font-size="9.5">SQL Auditing to Log Analytics</text>
-                <text x="618.5" y="473" fill="#94a3b8" font-size="9.5">Cosmos/MySQL/PG Threat Detection</text>
-              </g>
-
-              <g class="nd" id="n-p-cat4">
-                <rect x="747" y="408" width="228" height="88" rx="9" fill="#0b101b" stroke="#1e293b"/>
-                <text x="861" y="426" fill="#c084fc" font-weight="700" font-size="10.5">4 · Lifecycle &amp; Vulnerability</text>
-                <text x="861" y="443" fill="#94a3b8" font-size="9.5">Migrate Classic to ARM resources</text>
-                <text x="861" y="458" fill="#94a3b8" font-size="9.5">SQL Vulnerability Assessments</text>
-                <text x="861" y="473" fill="#94a3b8" font-size="9.5">Antimalware &amp; Auto OS updates</text>
-              </g>
-            </g>
-          </svg>
-          <figcaption class="text-[11px] mono text-slate-500 mt-2">Decoupled Management Plane vs. Service Plane architecture. Onboarded tenants deploy only the lightweight Service Plane via ARM/Terraform while central admins retain full rollout, audit, and rollback control.</figcaption>
-        </figure>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
-          <div class="space-y-1.5" role="img" aria-label="99 percent compliance achieved across 70,000 plus Azure subscriptions">
-            <div class="flex justify-between text-[11px] mono text-slate-400"><span>Tenant Resource Compliance (70,000+ subscriptions)</span><span class="text-cyan-400">99% compliant</span></div>
-            <div class="h-2.5 rounded overflow-hidden bg-slate-800"><div class="bar h-2.5 bg-gradient-to-r from-cyan-400 to-emerald-400" style="--w:99%"></div></div>
-          </div>
-          <div class="space-y-1.5" role="img" aria-label="80 percent deployment tasks automated and 50 percent faster policy rollout">
-            <div class="flex justify-between text-[11px] mono text-slate-400"><span>ARM / Terraform Automation &amp; Rollout Speedup</span><span class="text-emerald-400">80% automated · -50% rollout time</span></div>
-            <div class="h-2.5 rounded overflow-hidden bg-slate-800"><div class="bar h-2.5 bg-emerald-400" style="--w:80%"></div></div>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap gap-1.5">
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Java REST APIs</span>
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">C# .NET 6 WebJobs</span>
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Azure Policy (Custom &amp; Built-in)</span>
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Azure PIM / JIT Functions</span>
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">SAW / SAS-ALT Conditional Access</span>
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Cosmos DB</span>
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">MS Teams Bot</span>
-          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Azure DevOps · ARM · Terraform</span>
-        </div>
-      </div>
-
-      <!-- Secondary 2-Column Highlight Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="spotlight-card reveal p-7 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between space-y-5">
-          <div class="space-y-3">
-            <span class="text-xs mono px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 inline-block">Platform Resilience</span>
-            <h3 class="text-xl font-bold text-white">One-Click Disaster Recovery</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">
-              Authored BCDR YAML playbooks and built one-click DR automation exposed through reliable, rate-limited APIs. An on-demand run recovered ~100 T0/T1 Critical Business Services during an Azure South Central outage.
-            </p>
-            <div class="space-y-2 pt-1" role="img" aria-label="Regional recovery time fell from about 20 minutes to 2 to 3 minutes">
-              <div><div class="flex justify-between text-[11px] mono text-slate-400 mb-1"><span>Before</span><span>~20 min</span></div><div class="h-2 rounded bg-slate-800"><div class="bar h-2 rounded bg-amber-400/80" style="--w:100%"></div></div></div>
-              <div><div class="flex justify-between text-[11px] mono text-slate-400 mb-1"><span>After · one-click DR</span><span class="text-emerald-400">2–3 min</span></div><div class="h-2 rounded bg-slate-800"><div class="bar h-2 rounded bg-emerald-400" style="--w:13%"></div></div></div>
-            </div>
-          </div>
-          <div class="space-y-3 pt-2">
-            <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-800/80">
-              <div><div class="text-lg font-bold text-emerald-400 mono">~100 CBS</div><div class="text-[11px] text-slate-400">T0 / T1, one run</div></div>
-              <div><div class="text-lg font-bold text-emerald-400 mono">20→2–3 min</div><div class="text-[11px] text-slate-400">Regional recovery</div></div>
-            </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Kubernetes</span>
-              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">YAML</span>
-              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">BCDR</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="spotlight-card reveal p-7 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between space-y-5">
-          <div class="space-y-3">
-            <span class="text-xs mono px-2.5 py-1 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20 inline-block">Published Research</span>
-            <h3 class="text-xl font-bold text-white">Clinical ML for Liver Cancer</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">
-              Co-authored an IJRCSEIT paper evaluating ensemble classifiers on Electronic Health Records for early liver cancer detection.
-            </p>
-          </div>
-          <div class="space-y-3 pt-2">
-            <div class="pt-2 border-t border-slate-800/80">
-              <div class="text-lg font-bold text-purple-400 mono">IJRCSEIT</div>
-              <div class="text-[11px] text-slate-400">International journal publication</div>
-            </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Random Forest</span>
-              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">J48 / C4.5</span>
-              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">SQL</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certifications -->
-    <section id="certifications" class="space-y-6">
-      <div class="reveal">
+    <!-- Official Certifications -->
+    <section id="certifications" class="space-y-6 reveal">
+      <div>
         <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Verified Credentials</span>
         <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Certifications</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <a href="https://www.credly.com/badges/5d88f542-bc0e-4c0c-8703-93c166ff2327/public_url" target="_blank" rel="noopener noreferrer" class="spotlight-card reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-emerald-500/50 transition group flex flex-col justify-between">
+        <a href="https://www.credly.com/badges/5d88f542-bc0e-4c0c-8703-93c166ff2327/public_url" target="_blank" class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-emerald-500/50 transition group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="px-3 py-1 rounded-md text-xs mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-semibold">Linux Foundation</span>
-              <span class="text-slate-500 group-hover:text-emerald-400 transition" aria-hidden="true">↗</span>
+              <span class="text-slate-500 group-hover:text-emerald-400 transition">↗</span>
             </div>
             <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition">Certified Kubernetes Administrator (CKA)</h3>
             <p class="text-xs mono text-slate-400 mt-2">Credential ID: LF-pywqcnzqbj</p>
@@ -815,11 +164,11 @@
           <div class="pt-6 text-xs mono text-emerald-400 font-semibold">Verify on Credly →</div>
         </a>
 
-        <a href="https://learn.microsoft.com/en-us/users/buddabathinis/credentials/85a970745a50e145" target="_blank" rel="noopener noreferrer" class="spotlight-card reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-cyan-500/50 transition group flex flex-col justify-between">
+        <a href="https://learn.microsoft.com/en-us/users/buddabathinis/credentials/85a970745a50e145" target="_blank" class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-cyan-500/50 transition group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-md text-xs mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-semibold">Microsoft · Expert</span>
-              <span class="text-slate-500 group-hover:text-cyan-400 transition" aria-hidden="true">↗</span>
+              <span class="px-3 py-1 rounded-md text-xs mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-semibold">Microsoft Expert ★★★</span>
+              <span class="text-slate-500 group-hover:text-cyan-400 transition">↗</span>
             </div>
             <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition">Microsoft Certified: DevOps Engineer Expert</h3>
             <p class="text-xs mono text-slate-400 mt-2">Credential ID: 85A970745A50E145</p>
@@ -827,11 +176,11 @@
           <div class="pt-6 text-xs mono text-cyan-400 font-semibold">Verify on Microsoft Learn →</div>
         </a>
 
-        <a href="https://learn.microsoft.com/en-in/users/buddabathinis/credentials/4c83d9da3dd1bf20" target="_blank" rel="noopener noreferrer" class="spotlight-card reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-cyan-500/50 transition group flex flex-col justify-between">
+        <a href="https://learn.microsoft.com/en-in/users/buddabathinis/credentials/4c83d9da3dd1bf20" target="_blank" class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-cyan-500/50 transition group flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="px-3 py-1 rounded-md text-xs mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-semibold">Microsoft · Associate</span>
-              <span class="text-slate-500 group-hover:text-cyan-400 transition" aria-hidden="true">↗</span>
+              <span class="px-3 py-1 rounded-md text-xs mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-semibold">Microsoft Associate ★★</span>
+              <span class="text-slate-500 group-hover:text-cyan-400 transition">↗</span>
             </div>
             <h3 class="text-lg font-bold text-white group-hover:text-cyan-400 transition">Microsoft Certified: Azure Administrator Associate</h3>
             <p class="text-xs mono text-slate-400 mt-2">Credential ID: 4C83D9DA3DD1BF20</p>
@@ -841,447 +190,262 @@
       </div>
     </section>
 
-    <!-- Skills with filter -->
-    <section id="skills" class="space-y-6">
-      <div class="reveal flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-        <div>
-          <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Technical Arsenal</span>
-          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Skills &amp; Technologies</h2>
-        </div>
-        <label class="relative block no-print">
-          <span class="sr-only">Filter skills</span>
-          <input id="skillFilter" type="search" placeholder="Filter: kafka, terraform, python…" autocomplete="off"
-                 class="mono text-xs w-full sm:w-72 bg-slate-900/80 border border-slate-800 rounded-xl px-4 py-2.5 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500/60">
-        </label>
+    <!-- Work Experience -->
+    <section id="experience" class="space-y-10 reveal">
+      <div>
+        <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Career Progression</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Work Experience</h2>
       </div>
 
-      <div id="skillGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div class="spotlight-card reveal p-6 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 md:col-span-2 lg:col-span-3">
-          <div class="text-emerald-400 mono text-xs mb-2">00 / AI &amp; LLM ENGINEERING</div>
-          <h3 class="font-bold text-white text-lg mb-4">AI Tooling &amp; Intelligent Automation</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">GitHub Copilot</span><span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Claude</span><span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Cursor</span><span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Gemini</span><span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Internal AI coding assistants</span><span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure OpenAI Service</span><span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">OpenAI API</span><span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">LangChain</span><span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">RAG Pipelines</span><span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">LLM Alert Enrichment</span>
+      <div class="border-l-2 border-slate-800/90 pl-6 sm:pl-10 space-y-14">
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-emerald-400 bg-[#05080f] group-hover:bg-emerald-400 transition"></div>
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+            <h3 class="text-xl font-bold text-white">Software Engineer III</h3>
+            <span class="text-xs mono text-emerald-400 font-semibold">May 2024 — Present</span>
           </div>
+          <p class="text-sm text-slate-400 mb-4 font-medium">Walmart · Bentonville, AR</p>
+          <ul class="text-slate-300/90 text-sm space-y-2.5 list-disc list-outside ml-4 leading-relaxed">
+            <li>Architected and automated inventory migration workflows by re-platforming legacy VM runbooks onto cloud-native Kubernetes infrastructure using Python and CI/CD pipelines, eliminating manual SSH operations and reducing operational toil.</li>
+            <li>Designed and built intelligent Alert Controller REST APIs integrated with incident management platforms to dynamically suppress maintenance-window noise and escalate high-priority production alerts.</li>
+            <li>Integrated an LLM-driven contextual enrichment layer into the alerting pipeline to classify telemetry, infer service dependencies, and improve incident triage accuracy.</li>
+            <li>Authored automated Disaster Recovery (BCDR) playbooks and led cross-functional failover execution for 100+ microservices during a major multi-region cloud outage.</li>
+            <li>Provided tier-3 production engineering and on-call leadership across ~300 Marketplace application teams, resolving complex service mesh routing, Kubernetes orchestration, and golden-signal bottlenecks.</li>
+          </ul>
         </div>
 
-        <div class="spotlight-card reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
-          <div class="text-emerald-400 mono text-xs mb-2">01 / BACKEND</div>
-          <h3 class="font-bold text-white text-lg mb-4">Languages &amp; Frameworks</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Python</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Java</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">C#</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Spring / Spring Boot</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Microservices</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">RESTful APIs</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Flask</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Connexion</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">OpenAPI / Swagger</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">API Gateway &amp; Proxy</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Rate Limiting</span>
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-slate-600 bg-[#05080f] group-hover:border-emerald-400 group-hover:bg-emerald-400 transition"></div>
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+            <h3 class="text-xl font-bold text-white">Software Developer</h3>
+            <span class="text-xs mono text-slate-400">Jul 2023 — Apr 2024</span>
           </div>
+          <p class="text-sm text-slate-400 mb-4 font-medium">MAK Technologies LLC · Springboro, OH</p>
+          <ul class="text-slate-300/90 text-sm space-y-2.5 list-disc list-outside ml-4 leading-relaxed">
+            <li>Designed and developed backend Java microservices and RESTful APIs with strict schema validation, structured error contracts, and object-oriented domain modeling.</li>
+            <li>Containerized microservices with Docker and orchestrated multi-environment deployments on Azure Kubernetes Service (AKS) using Helm charts and custom liveness/readiness probes.</li>
+            <li>Engineered asynchronous event-driven architectures using Apache Kafka to decouple core services and buffer high-concurrency traffic spikes cleanly.</li>
+            <li>Built automated CI/CD pipelines with Jenkins, Maven, and SonarQube quality gates, while provisioning repeatable cloud infrastructure via Terraform and Bicep.</li>
+          </ul>
         </div>
 
-        <div class="spotlight-card reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
-          <div class="text-cyan-400 mono text-xs mb-2">02 / CLOUD &amp; CONTAINERS</div>
-          <h3 class="font-bold text-white text-lg mb-4">Platforms &amp; Orchestration</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">AWS</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Kubernetes (CKA)</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">AKS</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Docker</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Helm</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Service Mesh</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">WCNP</span>
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-slate-600 bg-[#05080f] group-hover:border-emerald-400 group-hover:bg-emerald-400 transition"></div>
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+            <h3 class="text-xl font-bold text-white">Cloud Engineer</h3>
+            <span class="text-xs mono text-slate-400">Oct 2022 — Jun 2023</span>
           </div>
+          <p class="text-sm text-slate-400 mb-4 font-medium">Microsoft · Redmond, WA</p>
+          <ul class="text-slate-300/90 text-sm space-y-2.5 list-disc list-outside ml-4 leading-relaxed">
+            <li>Spearheaded an automated cloud governance platform across 70,000+ enterprise subscriptions, reducing infrastructure deployment costs by 15% and cutting security incidents by 50%.</li>
+            <li>Built backend Java RESTful APIs to programmatically orchestrate custom Azure policy enforcement and dispatch real-time compliance alerts to Microsoft Teams and Outlook.</li>
+            <li>Architected Zero-Trust Identity &amp; Access Management (IAM) controls using Conditional Access and Privileged Identity Management (PIM) to eliminate standing administrative privileges.</li>
+            <li>Designed multi-tenant Azure DevOps CI/CD pipelines and modular ARM/Terraform templates that automated 80% of provisioning tasks and accelerated policy rollout times by 50%.</li>
+          </ul>
         </div>
 
-        <div class="spotlight-card reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
-          <div class="text-emerald-400 mono text-xs mb-2">03 / INFRASTRUCTURE &amp; CI/CD</div>
-          <h3 class="font-bold text-white text-lg mb-4">DevOps &amp; Automation</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Terraform</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">ARM</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Bicep</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Ansible</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure DevOps</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Jenkins</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Maven</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">JFrog</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">SonarQube</span>
+        <div class="relative group">
+          <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-3.5 h-3.5 rounded-full border-2 border-slate-600 bg-[#05080f] group-hover:border-emerald-400 group-hover:bg-emerald-400 transition"></div>
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline">
+            <h3 class="text-xl font-bold text-white">Azure Cloud Engineer</h3>
+            <span class="text-xs mono text-slate-400">Aug 2019 — Aug 2021</span>
           </div>
-        </div>
-
-        <div class="spotlight-card reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
-          <div class="text-cyan-400 mono text-xs mb-2">04 / OBSERVABILITY &amp; SRE</div>
-          <h3 class="font-bold text-white text-lg mb-4">Monitoring &amp; Reliability</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Prometheus</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Grafana</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Dynatrace</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure Monitor</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">OpenObserve</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">xMatters</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Incident Management</span>
-          </div>
-        </div>
-
-        <div class="spotlight-card reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
-          <div class="text-emerald-400 mono text-xs mb-2">05 / DATA &amp; SYSTEMS</div>
-          <h3 class="font-bold text-white text-lg mb-4">Messaging, Storage &amp; OS</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Apache Kafka</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">MySQL</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure SQL Database</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Cosmos DB</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Oracle</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Linux (Ubuntu, RHEL)</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Windows</span>
-          </div>
-        </div>
-
-        <div class="spotlight-card reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
-          <div class="text-cyan-400 mono text-xs mb-2">06 / SECURITY &amp; DR</div>
-          <h3 class="font-bold text-white text-lg mb-4">Governance &amp; Resilience</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure Policy</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure AD / Entra</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">PIM / JIT Access</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">SAW / SAS-ALT</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">BCDR</span>
-          </div>
+          <p class="text-sm text-slate-400 mb-4 font-medium">ZENQ · Hyderabad, India</p>
+          <ul class="text-slate-300/90 text-sm space-y-2.5 list-disc list-outside ml-4 leading-relaxed">
+            <li>Developed Java and Spring Boot RESTful APIs powering institutional financial analytics workflows, focusing on clean domain models and low-latency data retrieval.</li>
+            <li>Engineered cloud compliance and automated backup recovery across 100+ critical production workloads, achieving 99% recovery reliability and reducing audit findings by 30%.</li>
+            <li>Standardized multi-environment deployments by authoring 30+ reusable ARM and Terraform modules, cutting provisioning overhead by 25%.</li>
+          </ul>
         </div>
       </div>
-      <p id="skillEmpty" class="hidden text-sm mono text-slate-500">No matching skills.</p>
     </section>
 
-    <!-- Education -->
-    <section id="education" class="space-y-6">
-      <div class="reveal">
+    <!-- Featured Architectural Highlights -->
+    <section id="projects" class="space-y-6 reveal">
+      <div>
+        <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Featured Work</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Key Architectural Highlights</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="spotlight-card p-7 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-xs mono px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">AI-Augmented SRE</span>
+              <span class="text-xs mono text-slate-500">Enterprise Retail</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">LLM-Enriched Alert &amp; Incident Engine</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Designed an intelligent alert controller integrating LLMs with incident paging pipelines to classify telemetry context, automatically suppress maintenance noise, and route high-severity anomalies.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Python</span>
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">LLM APIs</span>
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">xMatters</span>
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">REST APIs</span>
+          </div>
+        </div>
+
+        <div class="spotlight-card p-7 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-xs mono px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Cloud Governance</span>
+              <span class="text-xs mono text-slate-500">Hyperscale Cloud</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Multi-Tenant Security &amp; Policy Orchestrator</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Spearheaded an automated governance engine enforcing custom compliance policies and Zero-Trust privileged identity controls across 70,000+ cloud subscriptions.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Java</span>
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Azure Policy</span>
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">PIM / IAM</span>
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Terraform</span>
+          </div>
+        </div>
+
+        <div class="spotlight-card p-7 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-xs mono px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Platform Resilience</span>
+              <span class="text-xs mono text-slate-500">High Availability</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">One-Click Disaster Recovery Automation</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Authored declarative BCDR playbooks and automated regional failover workflows capable of evacuating and restoring 100+ interdependent microservices during regional cloud outages.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Kubernetes</span>
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Service Mesh</span>
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">YAML Playbooks</span>
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">CI/CD</span>
+          </div>
+        </div>
+
+        <div class="spotlight-card p-7 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between space-y-5">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-xs mono px-2.5 py-1 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">Published Research</span>
+              <span class="text-xs mono text-slate-500">IJRCSEIT Journal</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Clinical ML Ensemble Diagnostic Models</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Co-authored peer-reviewed machine learning research evaluating ensemble classifiers (Random Forest, J48, C4.5, Naïve Bayes) on Electronic Health Records for early-stage liver cancer detection.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Machine Learning</span>
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Random Forest</span>
+            <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">SQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Stack -->
+    <section id="skills" class="space-y-6 reveal">
+      <div>
+        <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Technical Arsenal</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Skills &amp; Technologies</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+          <div class="text-emerald-400 mono text-xs mb-2">01 / BACKEND &amp; MESSAGING</div>
+          <h3 class="font-bold text-white text-lg mb-4">Core Engineering</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Java</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Python</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Spring Boot</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Microservices</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Apache Kafka</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">MySQL &amp; Oracle</span>
+          </div>
+        </div>
+
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+          <div class="text-cyan-400 mono text-xs mb-2">02 / CLOUD &amp; INFRASTRUCTURE</div>
+          <h3 class="font-bold text-white text-lg mb-4">Kubernetes &amp; IaaC</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Kubernetes (CKA)</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure AKS</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">AWS</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Docker &amp; Helm</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Terraform</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Service Mesh</span>
+          </div>
+        </div>
+
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+          <div class="text-emerald-400 mono text-xs mb-2">03 / SRE &amp; OBSERVABILITY</div>
+          <h3 class="font-bold text-white text-lg mb-4">Reliability &amp; CI/CD</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Prometheus &amp; Grafana</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Dynatrace</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure DevOps</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Jenkins</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">xMatters</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Honors -->
+    <section id="education" class="space-y-6 reveal">
+      <div>
         <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Foundation &amp; Distinctions</span>
         <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Education &amp; Honors</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="spotlight-card reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
           <div class="text-xs mono text-emerald-400 mb-2">2021 — 2022 · Tampa, FL</div>
           <h3 class="text-lg font-bold text-white">Master of Science</h3>
           <p class="text-sm text-slate-300 mt-1">Business Analytics &amp; Information Systems</p>
-          <p class="text-xs text-slate-400 mt-2">University of South Florida</p>
+          <p class="text-xs text-slate-400 mt-2">University of South Florida (USF)</p>
         </div>
-        <div class="spotlight-card reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
-          <div class="text-xs mono text-cyan-400 mb-2">2015 — 2019 · Guntur, India</div>
+
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+          <div class="text-xs mono text-cyan-400 mb-2">2015 — 2019 · India</div>
           <h3 class="text-lg font-bold text-white">Bachelor of Technology</h3>
           <p class="text-sm text-slate-300 mt-1">Computer Science &amp; Engineering</p>
           <p class="text-xs text-slate-400 mt-2">Jawaharlal Nehru Technological University</p>
         </div>
-        <div class="spotlight-card reveal p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
-          <div class="text-xs mono text-amber-400 mb-2">Achievement</div>
-          <h3 class="text-lg font-bold text-white">Chess Gold Medalist</h3>
-          <p class="text-sm text-slate-300 mt-1">Walmart Games, Bentonville</p>
-          <p class="text-xs text-slate-400 mt-2">Represented the Marketplace organization</p>
+
+        <div class="spotlight-card p-6 rounded-2xl border border-slate-800 bg-slate-900/40">
+          <div class="text-xs mono text-amber-400 mb-2">Competitive Distinctions</div>
+          <h3 class="text-lg font-bold text-white">Arena FIDE Master (AFM)</h3>
+          <p class="text-sm text-slate-300 mt-1">Walmart Associates Chess Gold Medalist</p>
+          <p class="text-xs text-slate-400 mt-2">Official FIDE Title &amp; Corporate Champion</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="reveal p-10 sm:p-14 rounded-3xl border border-slate-800 bg-gradient-to-b from-slate-900/80 to-[#060911] text-center space-y-5">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-        Open to senior engineering conversations
-      </div>
+    <!-- Contact Section -->
+    <section id="contact" class="p-10 sm:p-14 rounded-3xl border border-slate-800 bg-gradient-to-b from-slate-900/80 to-[#05080f] text-center space-y-5 reveal">
       <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Let's Build Resilient Systems</h2>
       <p class="text-slate-400 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
-        Distributed backend architecture, Kubernetes platform engineering, SRE and incident response, or new opportunities: my inbox is open.
+        Whether you want to discuss distributed backend architecture, Kubernetes platform engineering, or new opportunities—my inbox is always open.
       </p>
-      <div class="flex flex-wrap justify-center gap-4 pt-3 no-print">
-        <a href="mailto:shannmuka@gmail.com" class="px-7 py-3.5 rounded-xl bg-emerald-400 text-slate-950 font-bold text-sm hover:bg-emerald-300 transition shadow-lg shadow-emerald-500/10">Email Me Directly</a>
-        <a href="https://www.linkedin.com/in/buddabathinis/" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl border border-slate-700 bg-slate-900 text-white font-semibold text-sm hover:border-slate-600 transition">Connect on LinkedIn</a>
+      <div class="flex flex-wrap justify-center gap-4 pt-3">
+        <a href="mailto:shannmuka@gmail.com" class="px-7 py-3.5 rounded-xl bg-emerald-400 text-slate-950 font-bold text-sm hover:bg-emerald-300 transition shadow-lg shadow-emerald-500/10">
+          Email Me Directly
+        </a>
+        <a href="https://www.linkedin.com/in/buddabathinis/" target="_blank" class="px-7 py-3.5 rounded-xl border border-slate-700 bg-slate-900 text-white font-semibold text-sm hover:border-slate-600 transition">
+          Connect on LinkedIn
+        </a>
       </div>
     </section>
+
   </main>
 
   <footer class="border-t border-slate-800/60 py-8 text-center text-xs mono text-slate-500 relative z-10">
-    © <span id="year"></span> Shannmuka Buddabathini · Hosted on GitHub Pages
+    Engineered by Shannmuka Buddabathini · Modular HTML5 / CSS3 / ES6 JS
   </footer>
 
-  <!-- Command palette -->
-  <div id="cmdk" class="hidden fixed inset-0 z-[90] items-start justify-center pt-[15vh] px-4 bg-black/60 backdrop-blur-sm no-print" role="dialog" aria-modal="true" aria-label="Command palette">
-    <div class="w-full max-w-lg rounded-2xl border border-slate-700 bg-[#0b101b] shadow-2xl overflow-hidden">
-      <input id="cmdInput" type="text" autocomplete="off" spellcheck="false" placeholder="Jump to a section or run an action…" class="w-full bg-transparent px-5 py-4 text-sm mono text-slate-100 placeholder-slate-500 border-b border-slate-800 focus:outline-none" aria-controls="cmdList" aria-label="Search commands">
-      <ul id="cmdList" role="listbox" class="max-h-80 overflow-y-auto py-2"></ul>
-      <div class="px-5 py-2 border-t border-slate-800 text-[11px] mono text-slate-500 flex justify-between"><span>↑↓ navigate · ↵ select</span><span>esc close</span></div>
-    </div>
-  </div>
-
-  <button id="toTop" class="no-print fixed bottom-6 right-6 z-40 hidden w-10 h-10 rounded-full border border-emerald-500/40 bg-slate-900/90 text-emerald-400 hover:bg-emerald-400 hover:text-black transition" aria-label="Back to top">↑</button>
-
-  <script>
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Typewriter
-    (function () {
-      const words = ["Cloud-Native Platforms.", "Kubernetes Infrastructure.", "LLM-Powered Automation.", "AI-Augmented SRE Tooling."];
-      const target = document.getElementById('typewriter');
-      if (reduceMotion) { target.textContent = words[0]; return; }
-      let i = 0, j = 0, del = false;
-      (function loop() {
-        const cur = words[i];
-        target.textContent = cur.substring(0, j);
-        if (!del && j < cur.length) { j++; setTimeout(loop, 75); }
-        else if (del && j > 0) { j--; setTimeout(loop, 40); }
-        else { del = !del; if (!del) i = (i + 1) % words.length; setTimeout(loop, del ? 1600 : 300); }
-      })();
-    })();
-
-    // Card spotlight
-    document.querySelectorAll('.spotlight-card').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty('--mouse-x', (e.clientX - r.left) + 'px');
-        card.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
-      });
-    });
-
-    // Scroll reveal
-    const revealObs = new IntersectionObserver((entries) => {
-      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); revealObs.unobserve(en.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-    // Count-up stats
-    const countObs = new IntersectionObserver((entries) => {
-      entries.forEach(en => {
-        if (!en.isIntersecting) return;
-        const el = en.target; countObs.unobserve(el);
-        const end = +el.dataset.count, pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
-        if (reduceMotion) { el.textContent = pre + end + suf; return; }
-        const t0 = performance.now(), dur = 1200;
-        (function tick(t) {
-          const p = Math.min((t - t0) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = pre + Math.round(end * eased) + suf;
-          if (p < 1) requestAnimationFrame(tick);
-        })(t0);
-      });
-    }, { threshold: 0.6 });
-    document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
-
-    // Active nav + progress bar + back to top
-    const sections = ['about', 'experience', 'projects', 'certifications', 'skills', 'education']
-      .map(id => document.getElementById(id));
-    const links = document.querySelectorAll('.nav-link');
-    const bar = document.getElementById('progress');
-    const toTop = document.getElementById('toTop');
-    function onScroll() {
-      const h = document.documentElement;
-      bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
-      toTop.classList.toggle('hidden', h.scrollTop < 600);
-      let current = '';
-      sections.forEach(s => { if (s.getBoundingClientRect().top < 140) current = s.id; });
-      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
-
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn'), menu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => {
-      const open = menu.classList.toggle('hidden') === false;
-      menuBtn.setAttribute('aria-expanded', open);
-    });
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      menu.classList.add('hidden'); menuBtn.setAttribute('aria-expanded', 'false');
-    }));
-
-    // Copy email
-    document.getElementById('copyEmail').addEventListener('click', async () => {
-      const label = document.getElementById('copyLabel');
-      try { await navigator.clipboard.writeText('shannmuka@gmail.com'); label.textContent = 'Copied ✓'; }
-      catch { label.textContent = 'shannmuka@gmail.com'; window.location.href = 'mailto:shannmuka@gmail.com'; return; }
-      setTimeout(() => label.textContent = 'shannmuka@gmail.com', 1600);
-    });
-
-    // Skill filter
-    const filter = document.getElementById('skillFilter');
-    const empty = document.getElementById('skillEmpty');
-    filter.addEventListener('input', () => {
-      const q = filter.value.trim().toLowerCase();
-      let total = 0;
-      document.querySelectorAll('#skillGrid > div').forEach(card => {
-        let hits = 0;
-        card.querySelectorAll('.skill').forEach(s => {
-          const m = !q || s.textContent.toLowerCase().includes(q);
-          s.classList.toggle('opacity-20', !m);
-          s.classList.toggle('ring-1', !!q && m);
-          s.classList.toggle('ring-emerald-400/60', !!q && m);
-          if (m) hits++;
-        });
-        card.classList.toggle('hidden', q && hits === 0);
-        total += hits;
-      });
-      empty.classList.toggle('hidden', !q || total > 0);
-    });
-
-    // Command palette
-    (function () {
-      const box = document.getElementById('cmdk'), input = document.getElementById('cmdInput'), list = document.getElementById('cmdList');
-      const isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
-      document.getElementById('cmdKey').textContent = isMac ? '⌘ K' : 'Ctrl K';
-      const go = id => () => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' }); };
-      const open = url => () => window.open(url, '_blank', 'noopener');
-      const ITEMS = [
-        { l: 'Impact', h: 'section', a: go('about') }, { l: 'Experience', h: 'section', a: go('experience') },
-        { l: 'Architecture', h: 'section', a: go('projects') }, { l: 'Credentials', h: 'section', a: go('certifications') },
-        { l: 'Tech Stack', h: 'section', a: go('skills') }, { l: 'Education', h: 'section', a: go('education') },
-        { l: 'Contact', h: 'section', a: go('contact') },
-        { l: 'Download resume', h: 'action', a: () => document.querySelector('a[download]').click() },
-        { l: 'Copy email', h: 'action', a: () => document.getElementById('copyEmail').click() },
-        { l: 'Open LinkedIn', h: 'link', a: open('https://www.linkedin.com/in/buddabathinis/') },
-        { l: 'Open GitHub', h: 'link', a: open('https://github.com/sudo-shann') },
-        { l: 'Open Medium', h: 'link', a: open('https://medium.com/@shannmuka') }
-      ];
-      let shown = ITEMS, sel = 0, last = null;
-      function draw() {
-        list.innerHTML = '';
-        shown.forEach((it, i) => {
-          const li = document.createElement('li');
-          li.setAttribute('role', 'option'); li.setAttribute('aria-selected', i === sel);
-          li.className = 'flex justify-between items-center px-5 py-2.5 text-sm cursor-pointer ' + (i === sel ? 'bg-emerald-500/10 text-emerald-300' : 'text-slate-300');
-          li.innerHTML = '<span></span><span class="text-[11px] mono text-slate-500"></span>';
-          li.children[0].textContent = it.l; li.children[1].textContent = it.h;
-          li.addEventListener('mousemove', () => { if (sel !== i) { sel = i; draw(); } });
-          li.addEventListener('click', () => run(i));
-          list.appendChild(li);
-        });
-        if (!shown.length) list.innerHTML = '<li class="px-5 py-3 text-sm mono text-slate-500">No matches</li>';
-      }
-      function run(i) { const it = shown[i]; if (!it) return; close(); setTimeout(it.a, 50); }
-      function show() { last = document.activeElement; box.classList.remove('hidden'); box.classList.add('flex'); input.value = ''; shown = ITEMS; sel = 0; draw(); input.focus(); }
-      function close() { box.classList.add('hidden'); box.classList.remove('flex'); if (last && last.focus) last.focus(); }
-      input.addEventListener('input', () => { const q = input.value.trim().toLowerCase(); shown = ITEMS.filter(x => (x.l + ' ' + x.h).toLowerCase().includes(q)); sel = 0; draw(); });
-      input.addEventListener('keydown', e => {
-        if (e.key === 'ArrowDown') { e.preventDefault(); sel = Math.min(sel + 1, shown.length - 1); draw(); }
-        else if (e.key === 'ArrowUp') { e.preventDefault(); sel = Math.max(sel - 1, 0); draw(); }
-        else if (e.key === 'Enter') { e.preventDefault(); run(sel); }
-      });
-      box.addEventListener('mousedown', e => { if (e.target === box) close(); });
-      document.addEventListener('keydown', e => {
-        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); box.classList.contains('hidden') ? show() : close(); }
-        else if (e.key === 'Escape' && !box.classList.contains('hidden')) close();
-      });
-      document.getElementById('cmdOpen').addEventListener('click', show);
-    })();
-
-    // Alert Controller flow player
-    (function () {
-      const svg = document.getElementById('alertSvg'); if (!svg) return;
-      const cap = document.getElementById('flowCap'), stp = document.getElementById('flowStep');
-      const play = document.getElementById('flowPlay');
-      const FLOWS = {
-        A: [
-          { n: ['callers','api','ctl'], e: ['e1','e3'], t: "A team creates a maintenance exception through the API. It returns an exception ID and a one-time approval token." },
-          { n: ['ctl','biz','dbh','tbl','s-pending'], e: ['e4','e5','e6'], t: "The exception is stored with status pending, together with its approval token." },
-          { n: ['biz'], e: [], t: "For application-level exceptions, an approval request goes to the owning team." },
-          { n: ['callers','api','ctl','biz'], e: ['e1','e3','e4'], t: "The approver submits the exception ID and token, and the service validates them." },
-          { n: ['biz','dbh','tbl','s-scheduled'], e: ['e5','e6'], t: "On success the exception moves to scheduled." },
-          { n: ['sched','s-scheduled','s-active','s-completed'], e: [], t: "An external scheduler moves it from scheduled to active to completed. Suppression only applies while an exception is active." }
-        ],
-        B: [
-          { n: ['hook','api','ctl'], e: ['e2','e3'], t: "The monitoring webhook posts the alert payload. A required routing label is validated, and requests without one are rejected." },
-          { n: ['ctl','biz'], e: ['e4'], t: "Labels are normalized into candidate scopes: messaging, VM platform, container platform and database." },
-          { n: ['biz','llm'], e: ['e8'], t: "The LLM enrichment layer classifies the alert and infers application context." },
-          { n: ['biz','dbh','tbl'], e: ['e5','e6'], t: "For each candidate scope the service looks for an active exception for that team. Matching is case-insensitive and supports wildcards. No match leaves the alert untouched." },
-          { n: ['biz','xmc','xm'], e: ['e7','e9'], t: "On a match, the paging platform is queried for the team's active events, and each is compared with the incoming scope." },
-          { n: ['xmc','xm','tbl'], e: ['e7','e9'], t: "Matched events are annotated, terminated and written to an audit log, so nobody is paged." },
-          { n: ['xm','oncall'], e: ['e10'], t: "Unmatched events stay active and are returned as escalated, so on-call is still paged." },
-          { n: ['callers','api','ctl'], e: ['e1','e3'], t: "The response lists suppressed and escalated events, and callers can read back the suppression record for any exception." }
-        ]
-      };
-      let flow = 'B', i = 0, timer = null;
-      const $ = id => svg.querySelector('#' + id);
-      function render() {
-        svg.querySelectorAll('.on').forEach(el => { el.classList.remove('on'); if (el.matches('.ed')) el.setAttribute('marker-end', 'url(#arrOff)'); });
-        const s = FLOWS[flow][i];
-        svg.classList.add('playing');
-        s.n.forEach(id => { const el = $('n-' + id); if (el) el.classList.add('on'); });
-        s.e.forEach(id => { const el = $(id); if (el) { el.classList.add('on'); el.setAttribute('marker-end', 'url(#arrOn)'); } });
-        stp.textContent = flow + ' · ' + (i + 1) + '/' + FLOWS[flow].length;
-        cap.textContent = s.t;
-        document.querySelectorAll('.flow-tab').forEach(b => {
-          const on = b.dataset.flow === flow;
-          b.setAttribute('aria-pressed', on);
-          b.classList.toggle('border-emerald-400', on); b.classList.toggle('text-emerald-300', on);
-        });
-      }
-      function stop() { clearInterval(timer); timer = null; play.textContent = (i === FLOWS[flow].length - 1) ? 'Replay' : 'Play'; }
-      function next() { if (i < FLOWS[flow].length - 1) { i++; render(); if (i === FLOWS[flow].length - 1) stop(); } }
-      function start() { if (i === FLOWS[flow].length - 1) { i = 0; render(); } clearInterval(timer); timer = setInterval(next, 3500); play.textContent = 'Pause'; }
-      play.addEventListener('click', () => timer ? stop() : start());
-      document.getElementById('flowNext').addEventListener('click', () => { stop(); if (i < FLOWS[flow].length - 1) i++; render(); play.textContent = 'Play'; });
-      document.getElementById('flowPrev').addEventListener('click', () => { stop(); if (i > 0) i--; render(); play.textContent = 'Play'; });
-      document.querySelectorAll('.flow-tab').forEach(b => b.addEventListener('click', () => { flow = b.dataset.flow; i = 0; render(); reduceMotion ? stop() : start(); }));
-      render(); stop(); play.textContent = 'Play';
-      if (!reduceMotion) new IntersectionObserver((en, o) => { if (en[0].isIntersecting) { o.disconnect(); start(); } }, { threshold: 0.4 }).observe(svg);
-    })();
-
-    // Multi-Tenant Cloud Governance & JIT flow player
-    (function () {
-      const svg = document.getElementById('pttSvg'); if (!svg) return;
-      const cap = document.getElementById('pttCap'), stp = document.getElementById('pttStep');
-      const play = document.getElementById('pttPlay');
-      const FLOWS = {
-        A: [
-          { n: ['p-devops','p-pillars','p-files'], e: ['pe5','pe9'], t: "Custom and built-in Azure Policy JSON definitions across 8 security pillars are published by Azure DevOps pipelines (authenticated via Service Principals) into the Management Plane's auto-rollout and manual-rollout file shares." },
-          { n: ['p-files','p-mjobs','p-kv'], e: ['pe6','pe8'], t: "The Sync Engine retrieves storage credentials from Azure Key Vault using its Managed Identity and reads the queued policy definitions." },
-          { n: ['p-mjobs','p-sstore'], e: ['pe10'], t: "The Management Plane distributes policy definitions and rollout jobs across tenant boundaries into each onboarded division's local Service Plane queue." },
-          { n: ['p-sstore','p-sweb','p-sumsi'], e: ['pe11','pe13'], t: "The Service Plane Policy Worker pulls the queued jobs and authenticates via a least-privilege Managed Identity holding the Resource Policy Contributor role." },
-          { n: ['p-sumsi','p-subs','p-cat1','p-cat2','p-cat3','p-cat4'], e: ['pe14'], t: "Policies are enforced across 70,000+ subscriptions—covering Entra ID-only auth, PIM/least privilege, TLS 1.2+/TDE encryption, Defender for Cloud, DDoS/WAF, and Classic-to-ARM migration—cutting rollout time by 50%." }
-        ],
-        B: [
-          { n: ['p-stree','p-mjobs','p-cosmos'], e: ['pe4','pe3'], t: "Onboarded divisions register their organizational directory ID. The Sync Engine automatically pulls tenant, service, and subscription hierarchies into Azure Cosmos DB." },
-          { n: ['p-subs','p-sweb','p-sstore'], e: ['pe11','pe14'], t: "Inside each onboarded tenant, the Policy Worker continuously scans subscription and resource compliance against assigned security policies." },
-          { n: ['p-sweb','p-mapi','p-cosmos'], e: ['pe15','pe3'], t: "Compliance results report back to the central Orchestrator API and are stored in Cosmos DB, driving 99% resource compliance and a 50% reduction in security incidents." },
-          { n: ['p-mapi','p-bot','p-teams'], e: ['pe2','pe1'], t: "The Orchestrator API sends real-time compliance and deployment notifications to service owners and security admins in Microsoft Teams and Outlook." },
-          { n: ['p-teams','p-bot','p-mapi','p-sweb','p-subs'], e: ['pe1','pe2','pe15','pe14'], t: "Because the Management Plane is decoupled from the Service Plane, admins retain central control to trigger manual policy rollouts or instant rollbacks across any onboarded subscription via the Teams ChatOps Bot." }
-        ],
-        C: [
-          { n: ['p-teams','p-bot','p-stree'], e: ['pe1'], t: "Engineers request Just-In-Time (JIT) privilege elevation in Microsoft Teams. The ChatOps Bot enforces OAuth 2.0 Conditional Access—requiring a Secure Admin Workstation (SAW / SAS-ALT) for privileged roles—and verifies reporting hierarchy via Microsoft Graph." },
-          { n: ['p-bot','p-mapi','p-cosmos','p-kv'], e: ['pe2','pe3','pe8'], t: "The Bot forwards the request to the Orchestrator API, which validates subscription ownership and JIT policy rules in Cosmos DB." },
-          { n: ['p-mapi','p-sfunc','p-sstore'], e: ['pe16','pe12'], t: "Upon approval, the Management Plane triggers the serverless JIT Access Function in the target Service Plane via the local JIT request queue." },
-          { n: ['p-sfunc','p-sumsi','p-subs','p-cat1'], e: ['pe13','pe14'], t: "The Function App assumes a dedicated JIT Managed Identity with the User Access Administrator role to grant time-bound RBAC access, eliminating permanent standing privileges." },
-          { n: ['p-mapi','p-bot','p-teams'], e: ['pe2','pe1'], t: "Once time-bound JIT access is provisioned (or automatically revoked upon expiration), the requester and approvers receive an instant confirmation in Microsoft Teams." }
-        ]
-      };
-      let flow = 'A', i = 0, timer = null;
-      const $ = id => svg.querySelector('#' + id);
-      function render() {
-        svg.querySelectorAll('.on').forEach(el => { el.classList.remove('on'); if (el.matches('.ed')) el.setAttribute('marker-end', 'url(#pttArrOff)'); });
-        const s = FLOWS[flow][i];
-        svg.classList.add('playing');
-        s.n.forEach(id => { const el = $('n-' + id); if (el) el.classList.add('on'); });
-        s.e.forEach(id => { const el = $(id); if (el) { el.classList.add('on'); el.setAttribute('marker-end', 'url(#pttArrOn)'); } });
-        stp.textContent = flow + ' · ' + (i + 1) + '/' + FLOWS[flow].length;
-        cap.textContent = s.t;
-        document.querySelectorAll('.ptt-tab').forEach(b => {
-          const on = b.dataset.pttFlow === flow;
-          b.setAttribute('aria-pressed', on);
-          b.classList.toggle('border-cyan-400', on); b.classList.toggle('text-cyan-300', on);
-        });
-      }
-      function stop() { clearInterval(timer); timer = null; play.textContent = (i === FLOWS[flow].length - 1) ? 'Replay' : 'Play'; }
-      function next() { if (i < FLOWS[flow].length - 1) { i++; render(); if (i === FLOWS[flow].length - 1) stop(); } }
-      function start() { if (i === FLOWS[flow].length - 1) { i = 0; render(); } clearInterval(timer); timer = setInterval(next, 3800); play.textContent = 'Pause'; }
-      play.addEventListener('click', () => timer ? stop() : start());
-      document.getElementById('pttNext').addEventListener('click', () => { stop(); if (i < FLOWS[flow].length - 1) i++; render(); play.textContent = 'Play'; });
-      document.getElementById('pttPrev').addEventListener('click', () => { stop(); if (i > 0) i--; render(); play.textContent = 'Play'; });
-      document.querySelectorAll('.ptt-tab').forEach(b => b.addEventListener('click', () => { flow = b.dataset.pttFlow; i = 0; render(); reduceMotion ? stop() : start(); }));
-      render(); stop(); play.textContent = 'Play';
-      if (!reduceMotion) new IntersectionObserver((en, o) => { if (en[0].isIntersecting) { o.disconnect(); start(); } }, { threshold: 0.35 }).observe(svg);
-    })();
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
