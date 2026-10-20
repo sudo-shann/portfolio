@@ -89,7 +89,7 @@
       background: linear-gradient(90deg, #34d399, #22d3ee); border-radius: 2px;
     }
 
-    /* Animated flow line in architecture diagram */
+    /* Animated flow line in architecture diagrams */
     .flow { stroke-dasharray: 6 6; animation: dash 1.2s linear infinite; }
     @keyframes dash { to { stroke-dashoffset: -24; } }
 
@@ -102,16 +102,20 @@
       .flow, .cursor-blink, .animate-ping { animation: none !important; }
     }
 
-
-    /* Alert Controller diagram */
-    #alertSvg .nd rect { transition: stroke .3s, fill .3s; }
-    #alertSvg.playing .nd:not(.on), #alertSvg.playing .ed:not(.on) { opacity: .4; transition: opacity .3s; }
+    /* Interactive architecture diagrams (#alertSvg & #pttSvg) */
+    #alertSvg .nd rect, #pttSvg .nd rect { transition: stroke .3s, fill .3s; }
+    #alertSvg.playing .nd:not(.on), #alertSvg.playing .ed:not(.on),
+    #pttSvg.playing .nd:not(.on), #pttSvg.playing .ed:not(.on) { opacity: .38; transition: opacity .3s; }
     #alertSvg .nd.on rect { stroke: #34d399; stroke-width: 2.5; fill: #0a3a30; }
-    #alertSvg .ed { stroke: #334155; stroke-width: 2; fill: none; }
+    #pttSvg .nd.on rect { stroke: #22d3ee; stroke-width: 2.5; fill: #083344; }
+    #alertSvg .ed, #pttSvg .ed { stroke: #334155; stroke-width: 2; fill: none; }
     #alertSvg .ed.on { stroke: #34d399; stroke-dasharray: 6 6; animation: dash 1.2s linear infinite; }
+    #pttSvg .ed.on { stroke: #22d3ee; stroke-dasharray: 6 6; animation: dash 1.2s linear infinite; }
     #alertSvg .sm { stroke: #475569; stroke-width: 1.5; fill: none; }
     #alertSvg .sm.am { stroke: #f59e0b; stroke-dasharray: 5 4; }
-    @media (prefers-reduced-motion: reduce) { #alertSvg .ed.on { animation: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      #alertSvg .ed.on, #pttSvg .ed.on { animation: none; }
+    }
 
     /* Animated bars */
     .bar { width: 0; transition: width 1.1s cubic-bezier(.2,.8,.2,1); }
@@ -379,19 +383,20 @@
           </div>
           <p class="text-sm text-slate-400 mb-4 font-medium">Microsoft · Redmond, WA</p>
           <ul class="text-slate-300/90 text-sm space-y-2.5 list-disc list-outside ml-4 leading-relaxed">
-            <li>Spearheaded an automated cloud governance solution for the Security Intelligence &amp; Engineering division that onboarded a tenant with <strong class="text-white font-semibold">70,000+ subscriptions</strong>, reducing deployment costs by 15%.</li>
-            <li>Built Java REST APIs to orchestrate Azure custom and built-in policies and send notification events to Microsoft Teams and Outlook.</li>
-            <li>Authored custom Azure Policies to reach <strong class="text-white font-semibold">99% compliance</strong> and a <strong class="text-white font-semibold">50% reduction in security incidents</strong>.</li>
-            <li>Implemented Conditional Access (SAW / SAS-ALT) and Azure PIM controls to prevent permanent privileged access at subscription and resource-group level.</li>
-            <li>Architected Azure DevOps pipelines deploying policies plus Java and C# .NET apps across tenants, cutting policy rollout time by 50%.</li>
-            <li>Built ARM and Terraform automation covering 80% of deployment tasks, plus PowerShell tooling for resource lifecycle.</li>
+            <li>Spearheaded an automated cloud governance solution for the Security Intelligence &amp; Engineering (SI&amp;E) division that onboarded a tenant with <strong class="text-white font-semibold">70,000+ subscriptions</strong>, reducing deployment costs by 15%.</li>
+            <li>Built backend Java REST APIs to orchestrate Azure custom and built-in policies and send notification events to Microsoft Teams and Outlook.</li>
+            <li>Authored custom Azure Policies alongside built-in policies to reach <strong class="text-white font-semibold">99% compliance</strong> across all Azure resources in the Microsoft tenant, resulting in a <strong class="text-white font-semibold">50% reduction in security incidents</strong>.</li>
+            <li>Implemented Privileged Identity Management (PIM) in Azure custom policies to prevent permanent privileged access, plus an Azure AD (B2B/B2C) IAM framework with Conditional Access (SAW, SAS-ALT).</li>
+            <li>Architected an Azure DevOps pipeline, authenticated with Service Principals, to deploy Azure policies and Java and C# .NET applications across multiple tenants, cutting policy rollout time by 50%.</li>
+            <li>Automated 80% of deployment tasks with ARM templates and Terraform, and wrote PowerShell scripts to create and delete Azure resources and publish policy files to file shares.</li>
           </ul>
           <div class="flex flex-wrap gap-2 mt-4">
             <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Java</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">C# .NET 6</span>
             <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Azure Policy</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">PIM / Conditional Access</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">PIM / SAW / SAS-ALT</span>
             <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Azure DevOps</span>
-            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">Terraform</span>
+            <span class="px-2.5 py-1 rounded-md text-xs mono bg-slate-900 border border-slate-800 text-slate-300">ARM &amp; Terraform</span>
           </div>
         </article>
 
@@ -444,13 +449,13 @@
     </section>
 
     <!-- Architecture highlights -->
-    <section id="projects" class="space-y-6">
+    <section id="projects" class="space-y-8">
       <div class="reveal">
         <span class="mono text-xs text-emerald-400 uppercase tracking-widest">// Featured Work</span>
         <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mt-1">Key Architectural Highlights</h2>
       </div>
 
-      <!-- Featured: Alert pipeline diagram -->
+      <!-- Featured 1: Alert pipeline diagram -->
       <div class="spotlight-card reveal p-7 rounded-2xl border border-slate-800 bg-slate-900/40 space-y-5">
         <div class="flex flex-wrap justify-between items-center gap-2">
           <span class="text-xs mono px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">AI-Augmented SRE</span>
@@ -492,7 +497,256 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Featured 2: Microsoft PTT Multi-Tenant Cloud Governance & JIT Engine -->
+      <div class="spotlight-card reveal p-7 rounded-2xl border border-slate-800 bg-slate-900/40 space-y-5">
+        <div class="flex flex-wrap justify-between items-center gap-2">
+          <span class="text-xs mono px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Multi-Tenant Cloud Governance &amp; PIM</span>
+          <span class="text-xs mono text-slate-500">Microsoft · Security Intelligence &amp; Engineering (SI&amp;E)</span>
+        </div>
+        <h3 class="text-2xl font-bold text-white">Protect the Tenant (PTT) · Policy Orchestrator &amp; JIT Engine</h3>
+        <p class="text-sm text-slate-400 leading-relaxed max-w-4xl">
+          Hub-and-spoke governance architecture separating the central <strong class="text-slate-200 font-semibold">Management Plane</strong> (control, policy authoring, Service Tree hierarchy sync, and Microsoft Teams Bot workflows) from the distributed <strong class="text-slate-200 font-semibold">Service Plane</strong> deployed into onboarded tenants across <strong class="text-slate-200 font-semibold">70,000+ subscriptions</strong>. Custom and built-in Azure Policies are published via Azure DevOps to <code class="mono text-xs text-cyan-300">auto-rollout</code> and <code class="mono text-xs text-cyan-300">manual-rollout</code> file shares, synced to target Service Planes for least-privilege rollout and rollback, while an Azure Function provisions time-bound Just-In-Time (JIT / PIM) access verified via SAW Conditional Access and Microsoft Graph.
+        </p>
+
+        <div class="no-print flex flex-wrap items-center gap-2 mono text-xs" role="group" aria-label="PTT Governance flow player">
+          <button type="button" data-ptt-flow="A" class="ptt-tab px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400">A · Policy rollout</button>
+          <button type="button" data-ptt-flow="B" class="ptt-tab px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400">B · Service Tree sync &amp; audit</button>
+          <button type="button" data-ptt-flow="C" class="ptt-tab px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400">C · SAW &amp; JIT (PIM) access</button>
+          <span class="mx-1 text-slate-700">|</span>
+          <button type="button" id="pttPrev" class="px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400" aria-label="Previous step">◀</button>
+          <button type="button" id="pttPlay" class="px-3 py-1.5 rounded-lg border border-cyan-500/40 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20">Pause</button>
+          <button type="button" id="pttNext" class="px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400" aria-label="Next step">▶</button>
+        </div>
+
+        <div class="text-sm text-slate-300 leading-relaxed min-h-[3.5rem] p-3 rounded-xl bg-slate-950/60 border border-slate-800" aria-live="polite">
+          <span id="pttStep" class="mono text-cyan-400 text-xs mr-2"></span><span id="pttCap"></span>
+        </div>
+
+        <figure class="overflow-x-auto">
+          <svg id="pttSvg" viewBox="0 0 1000 520" class="min-w-[820px] w-full" role="img" aria-label="Protect the Tenant (PTT) two-plane architecture: Top Management Plane contains MS Teams and Outlook, Azure DevOps and PTT-Policies repository, Azure Bot and Bot WebApp, Policy Storage with auto-rollout and manual-rollout file shares, Management API, Management WebJobs, Azure Cosmos DB, Azure Key Vault, and Microsoft Service Tree with Entra ID SAW Conditional Access. Bottom Service Plane deployed per onboarded tenant/subscription contains Service Plane Storage, Service Plane WebApp running PolicyRollout and PolicyResults WebJobs, JIT Function App, User-Assigned Managed Identities, and 70,000+ target subscriptions governed across 8 security policy pillars.">
+            <defs>
+              <marker id="pttArrOff" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0 0L10 5L0 10z" fill="#475569"/>
+              </marker>
+              <marker id="pttArrOn" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0 0L10 5L0 10z" fill="#22d3ee"/>
+              </marker>
+            </defs>
+
+            <g font-family="JetBrains Mono, monospace" text-anchor="middle">
+              <!-- Plane Boundaries -->
+              <rect x="8" y="10" width="984" height="232" rx="12" fill="#070d18" stroke="#1e293b" stroke-dasharray="6 4"/>
+              <text x="24" y="29" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="start">MANAGEMENT PLANE (CENTRAL CONTROL &amp; ADMIN HUB · SI&amp;E GOVERNANCE TENANT)</text>
+
+              <rect x="8" y="256" width="984" height="254" rx="12" fill="#070d18" stroke="#0e7490" stroke-dasharray="6 4"/>
+              <text x="24" y="275" fill="#22d3ee" font-size="10.5" font-weight="700" text-anchor="start">SERVICE PLANE (DISTRIBUTED EXECUTION · DEPLOYED PER ONBOARDED TENANT / 70,000+ SUBSCRIPTIONS)</text>
+
+              <!-- Edges -->
+              <path class="ed" id="pe1" d="M164 82 H193" marker-end="url(#pttArrOff)"/>
+              <path class="ed" id="pe2" d="M340 82 H373" marker-end="url(#pttArrOff)"/>
+              <path class="ed" id="pe3" d="M540 82 H573" marker-end="url(#pttArrOff)"/>
+              <path class="ed" id="pe4" d="M755 82 H722" marker-end="url(#pttArrOff)"/>
+              <path class="ed" id="pe5" d="M164 184 H193" marker-end="url(#pttArrOff)"/>
+              <path class="ed" id="pe6" d="M340 184 H373" marker-end="url(#pttArrOff)"/>
+              <path class="ed" id="pe7" d="M457 122 V142" marker-end="url(#pttArrOff)"/>
+              <path class="ed" id="pe8" d="M540 184 H573" marker-end="url(#pttArrOff)"/>
+              <path class="ed" id="pe9" d="M755 184 H722" marker-end="url(#pttArrOff)"/>
+              <!-- Cross-Plane Edges -->
+              <path class="ed" id="pe10" d="M457 226 L110 288" marker-end="url(#pttArrOff)"/>
+              <path class="ed" id="pe15" d="M302 290 L457 124" marker-end="url(#pttArrOff)"/>
+              <path class="ed" id="pe16" d="M457 124 L512 288" marker-end="url(#pttArrOff)"/>
+              <!-- Service Plane Edges -->
+              <path class="ed" id="pe11" d="M179 332 H213" marker-end="url(#pttArrOff)"/>
+              <path class="ed" id="pe12" d="M390 332 H423" marker-end="url(#pttArrOff)"/>
+              <path class="ed" id="pe13" d="M600 332 H633" marker-end="url(#pttArrOff)"/>
+              <path class="ed" id="pe14" d="M795 332 H823" marker-end="url(#pttArrOff)"/>
+
+              <!-- Management Plane Nodes -->
+              <g class="nd" id="n-p-teams">
+                <rect x="24" y="42" width="140" height="80" rx="10" fill="#0b101b" stroke="#475569" stroke-dasharray="5 4"/>
+                <text x="94" y="61" fill="#e2e8f0" font-weight="700" font-size="11.5">Teams &amp; Outlook</text>
+                <text x="94" y="77" fill="#94a3b8" font-size="9.5">PTT-Bot channel UI</text>
+                <text x="94" y="92" fill="#94a3b8" font-size="9.5">JIT requests · alerts</text>
+                <text x="94" y="107" fill="#94a3b8" font-size="9.5">admin rollout / back</text>
+              </g>
+
+              <g class="nd" id="n-p-devops">
+                <rect x="24" y="144" width="140" height="82" rx="10" fill="#0b101b" stroke="#334155"/>
+                <text x="94" y="163" fill="#e2e8f0" font-weight="700" font-size="11.5">Azure DevOps</text>
+                <text x="94" y="179" fill="#94a3b8" font-size="9.5">Service Principal CI/CD</text>
+                <text x="94" y="194" fill="#94a3b8" font-size="9.5">ARM · Terraform · PS1</text>
+                <text x="94" y="209" fill="#94a3b8" font-size="9.5">Java &amp; .NET 6 deploy</text>
+              </g>
+
+              <g class="nd" id="n-p-bot">
+                <rect x="195" y="42" width="145" height="80" rx="10" fill="#06241f" stroke="#10b981"/>
+                <text x="267.5" y="61" fill="#34d399" font-weight="700" font-size="11.5">Azure Bot &amp; App</text>
+                <text x="267.5" y="77" fill="#94a3b8" font-size="9.5">PTA-TestBot (/messages)</text>
+                <text x="267.5" y="92" fill="#94a3b8" font-size="9.5">OAuth2 · SAW · JIT</text>
+                <text x="267.5" y="107" fill="#94a3b8" font-size="9.5">botstatedata blob</text>
+              </g>
+
+              <g class="nd" id="n-p-files">
+                <rect x="195" y="144" width="145" height="82" rx="10" fill="#0b101b" stroke="#334155"/>
+                <text x="267.5" y="163" fill="#e2e8f0" font-weight="700" font-size="11.5">Policy Storage</text>
+                <text x="267.5" y="179" fill="#67e8f9" font-size="9.5">share: auto-rollout</text>
+                <text x="267.5" y="194" fill="#fbbf24" font-size="9.5">share: manual-rollout</text>
+                <text x="267.5" y="209" fill="#94a3b8" font-size="9.5">sync storage queues</text>
+              </g>
+
+              <g class="nd" id="n-p-mapi">
+                <rect x="375" y="42" width="165" height="80" rx="10" fill="#06241f" stroke="#10b981"/>
+                <text x="457.5" y="61" fill="#34d399" font-weight="700" font-size="11.5">Management API</text>
+                <text x="457.5" y="77" fill="#94a3b8" font-size="9.5">Java &amp; .NET 6 REST APIs</text>
+                <text x="457.5" y="92" fill="#94a3b8" font-size="9.5">orchestrates planes</text>
+                <text x="457.5" y="107" fill="#94a3b8" font-size="9.5">POST /api/notify</text>
+              </g>
+
+              <g class="nd" id="n-p-mjobs">
+                <rect x="375" y="144" width="165" height="82" rx="10" fill="#0b101b" stroke="#334155"/>
+                <text x="457.5" y="163" fill="#e2e8f0" font-weight="700" font-size="11.5">Mgmt WebJobs</text>
+                <text x="457.5" y="179" fill="#94a3b8" font-size="9.5">ManagementPolicySyn</text>
+                <text x="457.5" y="194" fill="#94a3b8" font-size="9.5">MetaDataSyncDailyJob</text>
+                <text x="457.5" y="209" fill="#94a3b8" font-size="9.5">UMSI: CsRunIdentityId</text>
+              </g>
+
+              <g class="nd" id="n-p-cosmos">
+                <rect x="575" y="42" width="145" height="80" rx="10" fill="#0b101b" stroke="#334155"/>
+                <text x="647.5" y="61" fill="#e2e8f0" font-weight="700" font-size="11.5">Cosmos DB NoSQL</text>
+                <text x="647.5" y="77" fill="#94a3b8" font-size="9.5">service &amp; sub tree</text>
+                <text x="647.5" y="92" fill="#94a3b8" font-size="9.5">JIT &amp; access policies</text>
+                <text x="647.5" y="107" fill="#94a3b8" font-size="9.5">compliance state</text>
+              </g>
+
+              <g class="nd" id="n-p-kv">
+                <rect x="575" y="144" width="145" height="82" rx="10" fill="#0b101b" stroke="#334155"/>
+                <text x="647.5" y="163" fill="#e2e8f0" font-weight="700" font-size="11.5">Azure Key Vault</text>
+                <text x="647.5" y="179" fill="#94a3b8" font-size="9.5">Premium HSM · IP ACL</text>
+                <text x="647.5" y="194" fill="#94a3b8" font-size="9.5">Storage &amp; DocDB keys</text>
+                <text x="647.5" y="209" fill="#94a3b8" font-size="9.5">CsAppSecret · CsSslCert</text>
+              </g>
+
+              <g class="nd" id="n-p-stree">
+                <rect x="755" y="42" width="220" height="80" rx="10" fill="#0b101b" stroke="#f59e0b" stroke-dasharray="5 4"/>
+                <text x="865" y="61" fill="#fbbf24" font-weight="700" font-size="11.5">Service Tree &amp; Entra ID</text>
+                <text x="865" y="77" fill="#94a3b8" font-size="9.5">division_tenant onboarding</text>
+                <text x="865" y="92" fill="#94a3b8" font-size="9.5">SAW / SAS-ALT Conditional Access</text>
+                <text x="865" y="107" fill="#94a3b8" font-size="9.5">MS Graph reporting hierarchy</text>
+              </g>
+
+              <g class="nd" id="n-p-pillars">
+                <rect x="755" y="144" width="220" height="82" rx="10" fill="#0b101b" stroke="#22d3ee" stroke-dasharray="5 4"/>
+                <text x="865" y="163" fill="#67e8f9" font-weight="700" font-size="11.5">PTT-Policies Repo (JSON)</text>
+                <text x="865" y="179" fill="#94a3b8" font-size="9.5">custom &amp; built-in definitions</text>
+                <text x="865" y="194" fill="#94a3b8" font-size="9.5">8 security &amp; compliance pillars</text>
+                <text x="865" y="209" fill="#94a3b8" font-size="9.5">versioned per tenant scope</text>
+              </g>
+
+              <!-- Service Plane Nodes -->
+              <g class="nd" id="n-p-sstore">
+                <rect x="24" y="290" width="155" height="84" rx="10" fill="#0b101b" stroke="#334155"/>
+                <text x="101.5" y="310" fill="#e2e8f0" font-weight="700" font-size="11.5">Service Storage</text>
+                <text x="101.5" y="326" fill="#94a3b8" font-size="9.5">policy &amp; JIT queues</text>
+                <text x="101.5" y="341" fill="#94a3b8" font-size="9.5">AzureWebJobsStorage</text>
+                <text x="101.5" y="356" fill="#94a3b8" font-size="9.5">rollout audit logs</text>
+              </g>
+
+              <g class="nd" id="n-p-sweb">
+                <rect x="215" y="290" width="175" height="84" rx="10" fill="#082f49" stroke="#06b6d4"/>
+                <text x="302.5" y="310" fill="#67e8f9" font-weight="700" font-size="11.5">Service Plane WebApp</text>
+                <text x="302.5" y="326" fill="#94a3b8" font-size="9.5">ServicePlanePolicyRollout</text>
+                <text x="302.5" y="341" fill="#94a3b8" font-size="9.5">ServicePlanePolicyResults</text>
+                <text x="302.5" y="356" fill="#94a3b8" font-size="9.5">auto rollout &amp; rollback</text>
+              </g>
+
+              <g class="nd" id="n-p-sfunc">
+                <rect x="425" y="290" width="175" height="84" rx="10" fill="#082f49" stroke="#06b6d4"/>
+                <text x="512.5" y="310" fill="#67e8f9" font-weight="700" font-size="11.5">JIT Function App</text>
+                <text x="512.5" y="326" fill="#94a3b8" font-size="9.5">ServicePlaneJitProvisioner</text>
+                <text x="512.5" y="341" fill="#94a3b8" font-size="9.5">time-bound RBAC elevation</text>
+                <text x="512.5" y="356" fill="#94a3b8" font-size="9.5">blocks standing access</text>
+              </g>
+
+              <g class="nd" id="n-p-sumsi">
+                <rect x="635" y="290" width="160" height="84" rx="10" fill="#0b101b" stroke="#334155"/>
+                <text x="715" y="310" fill="#e2e8f0" font-weight="700" font-size="11.5">Managed Identities</text>
+                <text x="715" y="326" fill="#34d399" font-size="9.5">Policy: Policy Contributor</text>
+                <text x="715" y="341" fill="#fbbf24" font-size="9.5">JIT: User Access Admin</text>
+                <text x="715" y="356" fill="#94a3b8" font-size="9.5">ServicePlane-NoRoles ARM</text>
+              </g>
+
+              <g class="nd" id="n-p-subs">
+                <rect x="825" y="290" width="150" height="84" rx="10" fill="#06241f" stroke="#10b981"/>
+                <text x="900" y="310" fill="#34d399" font-weight="700" font-size="11.5">70,000+ Subs</text>
+                <text x="900" y="326" fill="#e2e8f0" font-size="9.5">99% policy compliance</text>
+                <text x="900" y="341" fill="#94a3b8" font-size="9.5">-50% security incidents</text>
+                <text x="900" y="356" fill="#94a3b8" font-size="9.5">-15% deployment cost</text>
+              </g>
+
+              <!-- 8 PTT Policy Pillars grouped into 4 domain cards -->
+              <text x="24" y="398" fill="#64748b" font-size="9.5" font-weight="700" text-anchor="start">ENFORCED PTT POLICY DOMAINS ACROSS ONBOARDED SUBSCRIPTIONS &amp; RESOURCE GROUPS</text>
+
+              <g class="nd" id="n-p-cat1">
+                <rect x="24" y="408" width="225" height="88" rx="9" fill="#0b101b" stroke="#1e293b"/>
+                <text x="136.5" y="426" fill="#67e8f9" font-weight="700" font-size="10.5">1 · Identity, PIM &amp; Least Priv</text>
+                <text x="136.5" y="443" fill="#94a3b8" font-size="9.5">No permanent Sub / RG Owner</text>
+                <text x="136.5" y="458" fill="#94a3b8" font-size="9.5">Remove external Guest accounts</text>
+                <text x="136.5" y="473" fill="#94a3b8" font-size="9.5">Require SC-ALT / SAS-ALT &amp; AAD SQL</text>
+              </g>
+
+              <g class="nd" id="n-p-cat2">
+                <rect x="265" y="408" width="225" height="88" rx="9" fill="#0b101b" stroke="#1e293b"/>
+                <text x="377.5" y="426" fill="#34d399" font-weight="700" font-size="10.5">2 · Encryption &amp; Internet First</text>
+                <text x="377.5" y="443" fill="#94a3b8" font-size="9.5">SQL TDE at rest · TLS 1.2+ / HTTPS</text>
+                <text x="377.5" y="458" fill="#94a3b8" font-size="9.5">VNet DDoS Standard &amp; Subnet NSGs</text>
+                <text x="377.5" y="473" fill="#94a3b8" font-size="9.5">AppGateway &amp; FrontDoor WAF</text>
+              </g>
+
+              <g class="nd" id="n-p-cat3">
+                <rect x="506" y="408" width="225" height="88" rx="9" fill="#0b101b" stroke="#1e293b"/>
+                <text x="618.5" y="426" fill="#fbbf24" font-weight="700" font-size="10.5">3 · Defender &amp; Audit Monitoring</text>
+                <text x="618.5" y="443" fill="#94a3b8" font-size="9.5">Defender: ARM/K8s/KV/SQL/VM/DNS</text>
+                <text x="618.5" y="458" fill="#94a3b8" font-size="9.5">SQL Auditing to Log Analytics</text>
+                <text x="618.5" y="473" fill="#94a3b8" font-size="9.5">Cosmos/MySQL/PG Threat Detection</text>
+              </g>
+
+              <g class="nd" id="n-p-cat4">
+                <rect x="747" y="408" width="228" height="88" rx="9" fill="#0b101b" stroke="#1e293b"/>
+                <text x="861" y="426" fill="#c084fc" font-weight="700" font-size="10.5">4 · Lifecycle &amp; Vulnerability</text>
+                <text x="861" y="443" fill="#94a3b8" font-size="9.5">Migrate Classic to ARM resources</text>
+                <text x="861" y="458" fill="#94a3b8" font-size="9.5">SQL Vulnerability Assessments</text>
+                <text x="861" y="473" fill="#94a3b8" font-size="9.5">Antimalware &amp; Auto OS updates</text>
+              </g>
+            </g>
+          </svg>
+          <figcaption class="text-[11px] mono text-slate-500 mt-2">Decoupled Management Plane vs. Service Plane architecture. Onboarded tenants deploy only the Service Plane via ARM/Terraform while central admins retain full rollout, audit, and rollback control.</figcaption>
+        </figure>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+          <div class="space-y-1.5" role="img" aria-label="99 percent compliance achieved across 70,000 plus Azure subscriptions">
+            <div class="flex justify-between text-[11px] mono text-slate-400"><span>Tenant Resource Compliance (70,000+ subscriptions)</span><span class="text-cyan-400">99% compliant</span></div>
+            <div class="h-2.5 rounded overflow-hidden bg-slate-800"><div class="bar h-2.5 bg-gradient-to-r from-cyan-400 to-emerald-400" style="--w:99%"></div></div>
+          </div>
+          <div class="space-y-1.5" role="img" aria-label="80 percent deployment tasks automated and 50 percent faster policy rollout">
+            <div class="flex justify-between text-[11px] mono text-slate-400"><span>ARM / Terraform Automation &amp; Rollout Speedup</span><span class="text-emerald-400">80% automated · -50% rollout time</span></div>
+            <div class="h-2.5 rounded overflow-hidden bg-slate-800"><div class="bar h-2.5 bg-emerald-400" style="--w:80%"></div></div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-1.5">
+          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Java REST APIs</span>
+          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">C# .NET 6 WebJobs</span>
+          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Azure Policy (Custom &amp; Built-in)</span>
+          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Azure PIM / JIT Functions</span>
+          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">SAW / SAS-ALT Conditional Access</span>
+          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Cosmos DB</span>
+          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">MS Teams Bot</span>
+          <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Azure DevOps · ARM · Terraform</span>
+        </div>
+      </div>
+
+      <!-- Secondary 2-Column Highlight Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="spotlight-card reveal p-7 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between space-y-5">
           <div class="space-y-3">
             <span class="text-xs mono px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 inline-block">Platform Resilience</span>
@@ -514,28 +768,6 @@
               <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Kubernetes</span>
               <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">YAML</span>
               <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">BCDR</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="spotlight-card reveal p-7 rounded-2xl border border-slate-800 bg-slate-900/40 flex flex-col justify-between space-y-5">
-          <div class="space-y-3">
-            <span class="text-xs mono px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 inline-block">Cloud Governance</span>
-            <h3 class="text-xl font-bold text-white">Multi-Tenant Policy Orchestrator</h3>
-            <p class="text-sm text-slate-400 leading-relaxed">
-              Automated governance for Microsoft's Security Intelligence &amp; Engineering division with Java APIs applying Azure policies and notifying stakeholders through Teams and Outlook.
-            </p>
-          </div>
-          <div class="space-y-3 pt-2">
-            <div class="grid grid-cols-3 gap-2 pt-2 border-t border-slate-800/80">
-              <div><div class="text-lg font-bold text-cyan-400 mono">70K+</div><div class="text-[11px] text-slate-400">Subs</div></div>
-              <div><div class="text-lg font-bold text-cyan-400 mono">99%</div><div class="text-[11px] text-slate-400">Compliant</div></div>
-              <div><div class="text-lg font-bold text-cyan-400 mono">-50%</div><div class="text-[11px] text-slate-400">Incidents</div></div>
-            </div>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Java</span>
-              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">Azure Policy</span>
-              <span class="px-2 py-0.5 rounded text-[11px] mono bg-slate-800 text-slate-300">PIM</span>
             </div>
           </div>
         </div>
@@ -702,6 +934,7 @@
             <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Apache Kafka</span>
             <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">MySQL</span>
             <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure SQL Database</span>
+            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Cosmos DB</span>
             <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Oracle</span>
             <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Linux (Ubuntu, RHEL)</span>
             <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Windows</span>
@@ -714,7 +947,8 @@
           <div class="flex flex-wrap gap-2">
             <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure Policy</span>
             <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">Azure AD / Entra</span>
-            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">PIM</span>
+            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">PIM / JIT Access</span>
+            <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">SAW / SAS-ALT</span>
             <span class="skill px-2.5 py-1 rounded-md text-xs mono bg-slate-800/90 text-slate-200">BCDR</span>
           </div>
         </div>
@@ -770,7 +1004,6 @@
   <footer class="border-t border-slate-800/60 py-8 text-center text-xs mono text-slate-500 relative z-10">
     © <span id="year"></span> Shannmuka Buddabathini · Hosted on GitHub Pages
   </footer>
-
 
   <!-- Command palette -->
   <div id="cmdk" class="hidden fixed inset-0 z-[90] items-start justify-center pt-[15vh] px-4 bg-black/60 backdrop-blur-sm no-print" role="dialog" aria-modal="true" aria-label="Command palette">
@@ -892,7 +1125,6 @@
       });
       empty.classList.toggle('hidden', !q || total > 0);
     });
-  
 
     // Command palette
     (function () {
@@ -994,6 +1226,61 @@
       document.querySelectorAll('.flow-tab').forEach(b => b.addEventListener('click', () => { flow = b.dataset.flow; i = 0; render(); reduceMotion ? stop() : start(); }));
       render(); stop(); play.textContent = 'Play';
       if (!reduceMotion) new IntersectionObserver((en, o) => { if (en[0].isIntersecting) { o.disconnect(); start(); } }, { threshold: 0.4 }).observe(svg);
+    })();
+
+    // Protect the Tenant (PTT) Governance flow player
+    (function () {
+      const svg = document.getElementById('pttSvg'); if (!svg) return;
+      const cap = document.getElementById('pttCap'), stp = document.getElementById('pttStep');
+      const play = document.getElementById('pttPlay');
+      const FLOWS = {
+        A: [
+          { n: ['p-devops','p-pillars','p-files'], e: ['pe5','pe9'], t: "Custom and built-in Azure Policy JSONs across 8 security pillars are published by Azure DevOps pipelines (authenticated via Service Principals) into the Management Plane's auto-rollout and manual-rollout Azure File Shares." },
+          { n: ['p-files','p-mjobs','p-kv'], e: ['pe6','pe8'], t: "ManagementPolicySynDailyJob retrieves SAS credentials (PolicyFileStorageAccessKey & PolicyJobStorageAccessKey) from Azure Key Vault via Managed Identity and reads queued policy definitions." },
+          { n: ['p-mjobs','p-sstore'], e: ['pe10'], t: "The Management Plane syncs policy definitions and rollout messages across tenant boundaries into each onboarded division's Service Plane Storage Account queues." },
+          { n: ['p-sstore','p-sweb','p-sumsi'], e: ['pe11','pe13'], t: "ServicePlanePolicyRollout (continuous WebJob) pulls the queued jobs and authenticates via the Service Plane User-Assigned Managed Identity holding the Resource Policy Contributor role." },
+          { n: ['p-sumsi','p-subs','p-cat1','p-cat2','p-cat3','p-cat4'], e: ['pe14'], t: "Policies are enforced across 70,000+ subscriptions covering AAD-only auth, PIM/least privilege, TLS 1.2+/TDE encryption, Defender for Cloud, DDoS/WAF, and Classic-to-ARM migration—cutting rollout time by 50%." }
+        ],
+        B: [
+          { n: ['p-stree','p-mjobs','p-cosmos'], e: ['pe4','pe3'], t: "Onboarded divisions register their Service Tree ID and certificate. MetaDataSyncDailyJob pulls division, service, and subscription hierarchies from Microsoft Service Tree into Azure Cosmos DB for NoSQL." },
+          { n: ['p-subs','p-sweb','p-sstore'], e: ['pe11','pe14'], t: "Inside each onboarded tenant, the ServicePlanePolicyResults WebJob continuously evaluates subscription and resource compliance against assigned policies." },
+          { n: ['p-sweb','p-mapi','p-cosmos'], e: ['pe15','pe3'], t: "Compliance telemetry reports back to the Management Plane API (ManagementEndpoint) and is stored in Cosmos DB, achieving 99% resource compliance and 50% fewer security incidents." },
+          { n: ['p-mapi','p-bot','p-teams'], e: ['pe2','pe1'], t: "The Management API sends real-time compliance and deployment notifications (/api/notify) to engineering owners and security admins in Microsoft Teams and Outlook." },
+          { n: ['p-teams','p-bot','p-mapi','p-sweb','p-subs'], e: ['pe1','pe2','pe15','pe14'], t: "Because the Management Plane is decoupled from the Service Plane, admins retain central control to trigger manual policy rollouts or instant rollbacks across any onboarded subscription via the Teams Bot." }
+        ],
+        C: [
+          { n: ['p-teams','p-bot','p-stree'], e: ['pe1'], t: "Users request Just-In-Time (JIT) privilege elevation in Microsoft Teams (PTT-Bot). The Bot enforces OAuth 2.0 Conditional Access—requiring a Secure Admin Workstation (SAW / SAS-ALT) for privileged actions—and validates reporting hierarchy via Microsoft Graph." },
+          { n: ['p-bot','p-mapi','p-cosmos','p-kv'], e: ['pe2','pe3','pe8'], t: "The Bot forwards the request to ManagementApi, which verifies subscription ownership and JIT policy rules in Cosmos DB while persisting conversation state in botstatedata blob storage." },
+          { n: ['p-mapi','p-sfunc','p-sstore'], e: ['pe16','pe12'], t: "Upon approval, the Management Plane triggers ServicePlaneJitProvisioner (Azure Function App in the target Service Plane) via the JIT storage queue." },
+          { n: ['p-sfunc','p-sumsi','p-subs','p-cat1'], e: ['pe13','pe14'], t: "The Function App assumes the JIT User-Assigned Managed Identity (ServicePlaneJitClientId) with the User Access Administrator role to grant time-bound RBAC access, preventing permanent privileged access." },
+          { n: ['p-mapi','p-bot','p-teams'], e: ['pe2','pe1'], t: "Once time-bound JIT access is provisioned (or automatically revoked upon expiration), the requester and approvers receive an instant confirmation in Microsoft Teams." }
+        ]
+      };
+      let flow = 'A', i = 0, timer = null;
+      const $ = id => svg.querySelector('#' + id);
+      function render() {
+        svg.querySelectorAll('.on').forEach(el => { el.classList.remove('on'); if (el.matches('.ed')) el.setAttribute('marker-end', 'url(#pttArrOff)'); });
+        const s = FLOWS[flow][i];
+        svg.classList.add('playing');
+        s.n.forEach(id => { const el = $('n-' + id); if (el) el.classList.add('on'); });
+        s.e.forEach(id => { const el = $(id); if (el) { el.classList.add('on'); el.setAttribute('marker-end', 'url(#pttArrOn)'); } });
+        stp.textContent = flow + ' · ' + (i + 1) + '/' + FLOWS[flow].length;
+        cap.textContent = s.t;
+        document.querySelectorAll('.ptt-tab').forEach(b => {
+          const on = b.dataset.pttFlow === flow;
+          b.setAttribute('aria-pressed', on);
+          b.classList.toggle('border-cyan-400', on); b.classList.toggle('text-cyan-300', on);
+        });
+      }
+      function stop() { clearInterval(timer); timer = null; play.textContent = (i === FLOWS[flow].length - 1) ? 'Replay' : 'Play'; }
+      function next() { if (i < FLOWS[flow].length - 1) { i++; render(); if (i === FLOWS[flow].length - 1) stop(); } }
+      function start() { if (i === FLOWS[flow].length - 1) { i = 0; render(); } clearInterval(timer); timer = setInterval(next, 3800); play.textContent = 'Pause'; }
+      play.addEventListener('click', () => timer ? stop() : start());
+      document.getElementById('pttNext').addEventListener('click', () => { stop(); if (i < FLOWS[flow].length - 1) i++; render(); play.textContent = 'Play'; });
+      document.getElementById('pttPrev').addEventListener('click', () => { stop(); if (i > 0) i--; render(); play.textContent = 'Play'; });
+      document.querySelectorAll('.ptt-tab').forEach(b => b.addEventListener('click', () => { flow = b.dataset.pttFlow; i = 0; render(); reduceMotion ? stop() : start(); }));
+      render(); stop(); play.textContent = 'Play';
+      if (!reduceMotion) new IntersectionObserver((en, o) => { if (en[0].isIntersecting) { o.disconnect(); start(); } }, { threshold: 0.35 }).observe(svg);
     })();
   </script>
 </body>
