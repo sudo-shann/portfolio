@@ -497,20 +497,20 @@
         </div>
       </div>
 
-      <!-- Featured 2: Microsoft PTT Multi-Tenant Cloud Governance & JIT Engine -->
+      <!-- Featured 2: Microsoft Multi-Tenant Cloud Governance & JIT Engine -->
       <div class="spotlight-card reveal p-7 rounded-2xl border border-slate-800 bg-slate-900/40 space-y-5">
         <div class="flex flex-wrap justify-between items-center gap-2">
           <span class="text-xs mono px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">Multi-Tenant Cloud Governance &amp; PIM</span>
           <span class="text-xs mono text-slate-500">Microsoft · Security Intelligence &amp; Engineering (SI&amp;E)</span>
         </div>
-        <h3 class="text-2xl font-bold text-white">Protect the Tenant (PTT) · Policy Orchestrator &amp; JIT Engine</h3>
+        <h3 class="text-2xl font-bold text-white">Multi-Tenant Policy Orchestrator &amp; JIT Access Engine</h3>
         <p class="text-sm text-slate-400 leading-relaxed max-w-4xl">
-          Hub-and-spoke governance architecture separating the central <strong class="text-slate-200 font-semibold">Management Plane</strong> (control, policy authoring, Service Tree hierarchy sync, and Microsoft Teams Bot workflows) from the distributed <strong class="text-slate-200 font-semibold">Service Plane</strong> deployed into onboarded tenants across <strong class="text-slate-200 font-semibold">70,000+ subscriptions</strong>. Custom and built-in Azure Policies are published via Azure DevOps to <code class="mono text-xs text-cyan-300">auto-rollout</code> and <code class="mono text-xs text-cyan-300">manual-rollout</code> file shares, synced to target Service Planes for least-privilege rollout and rollback, while an Azure Function provisions time-bound Just-In-Time (JIT / PIM) access verified via SAW Conditional Access and Microsoft Graph.
+          Hub-and-spoke governance architecture separating the central <strong class="text-slate-200 font-semibold">Management Plane</strong> (policy orchestration, organizational directory sync, and Microsoft Teams ChatOps workflows) from the lightweight <strong class="text-slate-200 font-semibold">Service Plane</strong> deployed across <strong class="text-slate-200 font-semibold">70,000+ subscriptions</strong>. Custom and built-in Azure Policies are published via Azure DevOps to <code class="mono text-xs text-cyan-300">auto-rollout</code> and <code class="mono text-xs text-cyan-300">manual-rollout</code> file shares, distributed to target Service Planes for least-privilege rollout and rollback, while a serverless Function App provisions time-bound Just-In-Time (JIT / PIM) access verified via SAW Conditional Access and Microsoft Graph.
         </p>
 
-        <div class="no-print flex flex-wrap items-center gap-2 mono text-xs" role="group" aria-label="PTT Governance flow player">
+        <div class="no-print flex flex-wrap items-center gap-2 mono text-xs" role="group" aria-label="Cloud Governance flow player">
           <button type="button" data-ptt-flow="A" class="ptt-tab px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400">A · Policy rollout</button>
-          <button type="button" data-ptt-flow="B" class="ptt-tab px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400">B · Service Tree sync &amp; audit</button>
+          <button type="button" data-ptt-flow="B" class="ptt-tab px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400">B · Directory sync &amp; audit</button>
           <button type="button" data-ptt-flow="C" class="ptt-tab px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400">C · SAW &amp; JIT (PIM) access</button>
           <span class="mx-1 text-slate-700">|</span>
           <button type="button" id="pttPrev" class="px-3 py-1.5 rounded-lg border border-slate-700 text-slate-300 hover:border-cyan-400" aria-label="Previous step">◀</button>
@@ -523,7 +523,7 @@
         </div>
 
         <figure class="overflow-x-auto">
-          <svg id="pttSvg" viewBox="0 0 1000 520" class="min-w-[820px] w-full" role="img" aria-label="Protect the Tenant (PTT) two-plane architecture: Top Management Plane contains MS Teams and Outlook, Azure DevOps and PTT-Policies repository, Azure Bot and Bot WebApp, Policy Storage with auto-rollout and manual-rollout file shares, Management API, Management WebJobs, Azure Cosmos DB, Azure Key Vault, and Microsoft Service Tree with Entra ID SAW Conditional Access. Bottom Service Plane deployed per onboarded tenant/subscription contains Service Plane Storage, Service Plane WebApp running PolicyRollout and PolicyResults WebJobs, JIT Function App, User-Assigned Managed Identities, and 70,000+ target subscriptions governed across 8 security policy pillars.">
+          <svg id="pttSvg" viewBox="0 0 1000 520" class="min-w-[820px] w-full" role="img" aria-label="Two-plane cloud governance architecture: Top Management Plane contains Teams and Outlook, Azure DevOps CI/CD, ChatOps Bot, Policy Storage with auto-rollout and manual-rollout shares, Orchestrator API, Sync Engine WebJobs, Cosmos DB, Azure Key Vault, and Entra ID with Org Directory. Bottom Service Plane deployed per onboarded tenant/subscription contains Local Queue Store, Policy Worker App, JIT Access Function, Managed Identities, and 70,000+ target subscriptions governed across 8 security pillars.">
             <defs>
               <marker id="pttArrOff" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
                 <path d="M0 0L10 5L0 10z" fill="#475569"/>
@@ -565,114 +565,114 @@
               <g class="nd" id="n-p-teams">
                 <rect x="24" y="42" width="140" height="80" rx="10" fill="#0b101b" stroke="#475569" stroke-dasharray="5 4"/>
                 <text x="94" y="61" fill="#e2e8f0" font-weight="700" font-size="11.5">Teams &amp; Outlook</text>
-                <text x="94" y="77" fill="#94a3b8" font-size="9.5">PTT-Bot channel UI</text>
-                <text x="94" y="92" fill="#94a3b8" font-size="9.5">JIT requests · alerts</text>
-                <text x="94" y="107" fill="#94a3b8" font-size="9.5">admin rollout / back</text>
+                <text x="94" y="77" fill="#94a3b8" font-size="9.5">admin &amp; user portal</text>
+                <text x="94" y="92" fill="#94a3b8" font-size="9.5">JIT access requests</text>
+                <text x="94" y="107" fill="#94a3b8" font-size="9.5">compliance alerts</text>
               </g>
 
               <g class="nd" id="n-p-devops">
                 <rect x="24" y="144" width="140" height="82" rx="10" fill="#0b101b" stroke="#334155"/>
                 <text x="94" y="163" fill="#e2e8f0" font-weight="700" font-size="11.5">Azure DevOps</text>
-                <text x="94" y="179" fill="#94a3b8" font-size="9.5">Service Principal CI/CD</text>
-                <text x="94" y="194" fill="#94a3b8" font-size="9.5">ARM · Terraform · PS1</text>
-                <text x="94" y="209" fill="#94a3b8" font-size="9.5">Java &amp; .NET 6 deploy</text>
+                <text x="94" y="179" fill="#94a3b8" font-size="9.5">Service Principal</text>
+                <text x="94" y="194" fill="#94a3b8" font-size="9.5">ARM · Terraform</text>
+                <text x="94" y="209" fill="#94a3b8" font-size="9.5">multi-tenant CI/CD</text>
               </g>
 
               <g class="nd" id="n-p-bot">
                 <rect x="195" y="42" width="145" height="80" rx="10" fill="#06241f" stroke="#10b981"/>
-                <text x="267.5" y="61" fill="#34d399" font-weight="700" font-size="11.5">Azure Bot &amp; App</text>
-                <text x="267.5" y="77" fill="#94a3b8" font-size="9.5">PTA-TestBot (/messages)</text>
-                <text x="267.5" y="92" fill="#94a3b8" font-size="9.5">OAuth2 · SAW · JIT</text>
-                <text x="267.5" y="107" fill="#94a3b8" font-size="9.5">botstatedata blob</text>
+                <text x="267.5" y="61" fill="#34d399" font-weight="700" font-size="11.5">ChatOps Bot</text>
+                <text x="267.5" y="77" fill="#94a3b8" font-size="9.5">Azure Bot Service</text>
+                <text x="267.5" y="92" fill="#94a3b8" font-size="9.5">OAuth 2.0 · SAW auth</text>
+                <text x="267.5" y="107" fill="#94a3b8" font-size="9.5">rollout &amp; JIT commands</text>
               </g>
 
               <g class="nd" id="n-p-files">
                 <rect x="195" y="144" width="145" height="82" rx="10" fill="#0b101b" stroke="#334155"/>
                 <text x="267.5" y="163" fill="#e2e8f0" font-weight="700" font-size="11.5">Policy Storage</text>
-                <text x="267.5" y="179" fill="#67e8f9" font-size="9.5">share: auto-rollout</text>
-                <text x="267.5" y="194" fill="#fbbf24" font-size="9.5">share: manual-rollout</text>
-                <text x="267.5" y="209" fill="#94a3b8" font-size="9.5">sync storage queues</text>
+                <text x="267.5" y="179" fill="#67e8f9" font-size="9.5">auto-rollout share</text>
+                <text x="267.5" y="194" fill="#fbbf24" font-size="9.5">manual-rollout share</text>
+                <text x="267.5" y="209" fill="#94a3b8" font-size="9.5">sync message queues</text>
               </g>
 
               <g class="nd" id="n-p-mapi">
                 <rect x="375" y="42" width="165" height="80" rx="10" fill="#06241f" stroke="#10b981"/>
-                <text x="457.5" y="61" fill="#34d399" font-weight="700" font-size="11.5">Management API</text>
-                <text x="457.5" y="77" fill="#94a3b8" font-size="9.5">Java &amp; .NET 6 REST APIs</text>
-                <text x="457.5" y="92" fill="#94a3b8" font-size="9.5">orchestrates planes</text>
-                <text x="457.5" y="107" fill="#94a3b8" font-size="9.5">POST /api/notify</text>
+                <text x="457.5" y="61" fill="#34d399" font-weight="700" font-size="11.5">Orchestrator API</text>
+                <text x="457.5" y="77" fill="#94a3b8" font-size="9.5">Java &amp; .NET REST APIs</text>
+                <text x="457.5" y="92" fill="#94a3b8" font-size="9.5">central control plane</text>
+                <text x="457.5" y="107" fill="#94a3b8" font-size="9.5">event notifications</text>
               </g>
 
               <g class="nd" id="n-p-mjobs">
                 <rect x="375" y="144" width="165" height="82" rx="10" fill="#0b101b" stroke="#334155"/>
-                <text x="457.5" y="163" fill="#e2e8f0" font-weight="700" font-size="11.5">Mgmt WebJobs</text>
-                <text x="457.5" y="179" fill="#94a3b8" font-size="9.5">ManagementPolicySyn</text>
-                <text x="457.5" y="194" fill="#94a3b8" font-size="9.5">MetaDataSyncDailyJob</text>
-                <text x="457.5" y="209" fill="#94a3b8" font-size="9.5">UMSI: CsRunIdentityId</text>
+                <text x="457.5" y="163" fill="#e2e8f0" font-weight="700" font-size="11.5">Sync Engine</text>
+                <text x="457.5" y="179" fill="#94a3b8" font-size="9.5">background WebJobs</text>
+                <text x="457.5" y="194" fill="#94a3b8" font-size="9.5">policy distribution</text>
+                <text x="457.5" y="209" fill="#94a3b8" font-size="9.5">tenant metadata sync</text>
               </g>
 
               <g class="nd" id="n-p-cosmos">
                 <rect x="575" y="42" width="145" height="80" rx="10" fill="#0b101b" stroke="#334155"/>
-                <text x="647.5" y="61" fill="#e2e8f0" font-weight="700" font-size="11.5">Cosmos DB NoSQL</text>
-                <text x="647.5" y="77" fill="#94a3b8" font-size="9.5">service &amp; sub tree</text>
-                <text x="647.5" y="92" fill="#94a3b8" font-size="9.5">JIT &amp; access policies</text>
+                <text x="647.5" y="61" fill="#e2e8f0" font-weight="700" font-size="11.5">Cosmos DB</text>
+                <text x="647.5" y="77" fill="#94a3b8" font-size="9.5">tenant hierarchy</text>
+                <text x="647.5" y="92" fill="#94a3b8" font-size="9.5">JIT &amp; RBAC rules</text>
                 <text x="647.5" y="107" fill="#94a3b8" font-size="9.5">compliance state</text>
               </g>
 
               <g class="nd" id="n-p-kv">
                 <rect x="575" y="144" width="145" height="82" rx="10" fill="#0b101b" stroke="#334155"/>
                 <text x="647.5" y="163" fill="#e2e8f0" font-weight="700" font-size="11.5">Azure Key Vault</text>
-                <text x="647.5" y="179" fill="#94a3b8" font-size="9.5">Premium HSM · IP ACL</text>
-                <text x="647.5" y="194" fill="#94a3b8" font-size="9.5">Storage &amp; DocDB keys</text>
-                <text x="647.5" y="209" fill="#94a3b8" font-size="9.5">CsAppSecret · CsSslCert</text>
+                <text x="647.5" y="179" fill="#94a3b8" font-size="9.5">HSM-backed secrets</text>
+                <text x="647.5" y="194" fill="#94a3b8" font-size="9.5">SAS &amp; DB credentials</text>
+                <text x="647.5" y="209" fill="#94a3b8" font-size="9.5">SSL certs · IP ACLs</text>
               </g>
 
               <g class="nd" id="n-p-stree">
                 <rect x="755" y="42" width="220" height="80" rx="10" fill="#0b101b" stroke="#f59e0b" stroke-dasharray="5 4"/>
-                <text x="865" y="61" fill="#fbbf24" font-weight="700" font-size="11.5">Service Tree &amp; Entra ID</text>
-                <text x="865" y="77" fill="#94a3b8" font-size="9.5">division_tenant onboarding</text>
+                <text x="865" y="61" fill="#fbbf24" font-weight="700" font-size="11.5">Entra ID &amp; Org Directory</text>
+                <text x="865" y="77" fill="#94a3b8" font-size="9.5">tenant &amp; subscription catalog</text>
                 <text x="865" y="92" fill="#94a3b8" font-size="9.5">SAW / SAS-ALT Conditional Access</text>
                 <text x="865" y="107" fill="#94a3b8" font-size="9.5">MS Graph reporting hierarchy</text>
               </g>
 
               <g class="nd" id="n-p-pillars">
                 <rect x="755" y="144" width="220" height="82" rx="10" fill="#0b101b" stroke="#22d3ee" stroke-dasharray="5 4"/>
-                <text x="865" y="163" fill="#67e8f9" font-weight="700" font-size="11.5">PTT-Policies Repo (JSON)</text>
+                <text x="865" y="163" fill="#67e8f9" font-weight="700" font-size="11.5">Policy Repo (JSON)</text>
                 <text x="865" y="179" fill="#94a3b8" font-size="9.5">custom &amp; built-in definitions</text>
                 <text x="865" y="194" fill="#94a3b8" font-size="9.5">8 security &amp; compliance pillars</text>
-                <text x="865" y="209" fill="#94a3b8" font-size="9.5">versioned per tenant scope</text>
+                <text x="865" y="209" fill="#94a3b8" font-size="9.5">per-subscription scoping</text>
               </g>
 
               <!-- Service Plane Nodes -->
               <g class="nd" id="n-p-sstore">
                 <rect x="24" y="290" width="155" height="84" rx="10" fill="#0b101b" stroke="#334155"/>
-                <text x="101.5" y="310" fill="#e2e8f0" font-weight="700" font-size="11.5">Service Storage</text>
-                <text x="101.5" y="326" fill="#94a3b8" font-size="9.5">policy &amp; JIT queues</text>
-                <text x="101.5" y="341" fill="#94a3b8" font-size="9.5">AzureWebJobsStorage</text>
-                <text x="101.5" y="356" fill="#94a3b8" font-size="9.5">rollout audit logs</text>
+                <text x="101.5" y="310" fill="#e2e8f0" font-weight="700" font-size="11.5">Local Queue Store</text>
+                <text x="101.5" y="326" fill="#94a3b8" font-size="9.5">policy rollout queue</text>
+                <text x="101.5" y="341" fill="#94a3b8" font-size="9.5">JIT request queue</text>
+                <text x="101.5" y="356" fill="#94a3b8" font-size="9.5">compliance audit logs</text>
               </g>
 
               <g class="nd" id="n-p-sweb">
                 <rect x="215" y="290" width="175" height="84" rx="10" fill="#082f49" stroke="#06b6d4"/>
-                <text x="302.5" y="310" fill="#67e8f9" font-weight="700" font-size="11.5">Service Plane WebApp</text>
-                <text x="302.5" y="326" fill="#94a3b8" font-size="9.5">ServicePlanePolicyRollout</text>
-                <text x="302.5" y="341" fill="#94a3b8" font-size="9.5">ServicePlanePolicyResults</text>
+                <text x="302.5" y="310" fill="#67e8f9" font-weight="700" font-size="11.5">Policy Worker App</text>
+                <text x="302.5" y="326" fill="#94a3b8" font-size="9.5">applies Azure Policies</text>
+                <text x="302.5" y="341" fill="#94a3b8" font-size="9.5">continuous audit scan</text>
                 <text x="302.5" y="356" fill="#94a3b8" font-size="9.5">auto rollout &amp; rollback</text>
               </g>
 
               <g class="nd" id="n-p-sfunc">
                 <rect x="425" y="290" width="175" height="84" rx="10" fill="#082f49" stroke="#06b6d4"/>
-                <text x="512.5" y="310" fill="#67e8f9" font-weight="700" font-size="11.5">JIT Function App</text>
-                <text x="512.5" y="326" fill="#94a3b8" font-size="9.5">ServicePlaneJitProvisioner</text>
-                <text x="512.5" y="341" fill="#94a3b8" font-size="9.5">time-bound RBAC elevation</text>
-                <text x="512.5" y="356" fill="#94a3b8" font-size="9.5">blocks standing access</text>
+                <text x="512.5" y="310" fill="#67e8f9" font-weight="700" font-size="11.5">JIT Access Function</text>
+                <text x="512.5" y="326" fill="#94a3b8" font-size="9.5">serverless provisioner</text>
+                <text x="512.5" y="341" fill="#94a3b8" font-size="9.5">time-bound RBAC grant</text>
+                <text x="512.5" y="356" fill="#94a3b8" font-size="9.5">auto-revokes on expiry</text>
               </g>
 
               <g class="nd" id="n-p-sumsi">
                 <rect x="635" y="290" width="160" height="84" rx="10" fill="#0b101b" stroke="#334155"/>
                 <text x="715" y="310" fill="#e2e8f0" font-weight="700" font-size="11.5">Managed Identities</text>
-                <text x="715" y="326" fill="#34d399" font-size="9.5">Policy: Policy Contributor</text>
-                <text x="715" y="341" fill="#fbbf24" font-size="9.5">JIT: User Access Admin</text>
-                <text x="715" y="356" fill="#94a3b8" font-size="9.5">ServicePlane-NoRoles ARM</text>
+                <text x="715" y="326" fill="#34d399" font-size="9.5">Policy Contributor role</text>
+                <text x="715" y="341" fill="#fbbf24" font-size="9.5">User Access Admin role</text>
+                <text x="715" y="356" fill="#94a3b8" font-size="9.5">least-privilege RBAC</text>
               </g>
 
               <g class="nd" id="n-p-subs">
@@ -683,8 +683,8 @@
                 <text x="900" y="356" fill="#94a3b8" font-size="9.5">-15% deployment cost</text>
               </g>
 
-              <!-- 8 PTT Policy Pillars grouped into 4 domain cards -->
-              <text x="24" y="398" fill="#64748b" font-size="9.5" font-weight="700" text-anchor="start">ENFORCED PTT POLICY DOMAINS ACROSS ONBOARDED SUBSCRIPTIONS &amp; RESOURCE GROUPS</text>
+              <!-- 8 Policy Pillars grouped into 4 domain cards -->
+              <text x="24" y="398" fill="#64748b" font-size="9.5" font-weight="700" text-anchor="start">8 SECURITY &amp; COMPLIANCE PILLARS ENFORCED ACROSS ONBOARDED SUBSCRIPTIONS</text>
 
               <g class="nd" id="n-p-cat1">
                 <rect x="24" y="408" width="225" height="88" rx="9" fill="#0b101b" stroke="#1e293b"/>
@@ -719,7 +719,7 @@
               </g>
             </g>
           </svg>
-          <figcaption class="text-[11px] mono text-slate-500 mt-2">Decoupled Management Plane vs. Service Plane architecture. Onboarded tenants deploy only the Service Plane via ARM/Terraform while central admins retain full rollout, audit, and rollback control.</figcaption>
+          <figcaption class="text-[11px] mono text-slate-500 mt-2">Decoupled Management Plane vs. Service Plane architecture. Onboarded tenants deploy only the lightweight Service Plane via ARM/Terraform while central admins retain full rollout, audit, and rollback control.</figcaption>
         </figure>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
@@ -1228,31 +1228,31 @@
       if (!reduceMotion) new IntersectionObserver((en, o) => { if (en[0].isIntersecting) { o.disconnect(); start(); } }, { threshold: 0.4 }).observe(svg);
     })();
 
-    // Protect the Tenant (PTT) Governance flow player
+    // Multi-Tenant Cloud Governance & JIT flow player
     (function () {
       const svg = document.getElementById('pttSvg'); if (!svg) return;
       const cap = document.getElementById('pttCap'), stp = document.getElementById('pttStep');
       const play = document.getElementById('pttPlay');
       const FLOWS = {
         A: [
-          { n: ['p-devops','p-pillars','p-files'], e: ['pe5','pe9'], t: "Custom and built-in Azure Policy JSONs across 8 security pillars are published by Azure DevOps pipelines (authenticated via Service Principals) into the Management Plane's auto-rollout and manual-rollout Azure File Shares." },
-          { n: ['p-files','p-mjobs','p-kv'], e: ['pe6','pe8'], t: "ManagementPolicySynDailyJob retrieves SAS credentials (PolicyFileStorageAccessKey & PolicyJobStorageAccessKey) from Azure Key Vault via Managed Identity and reads queued policy definitions." },
-          { n: ['p-mjobs','p-sstore'], e: ['pe10'], t: "The Management Plane syncs policy definitions and rollout messages across tenant boundaries into each onboarded division's Service Plane Storage Account queues." },
-          { n: ['p-sstore','p-sweb','p-sumsi'], e: ['pe11','pe13'], t: "ServicePlanePolicyRollout (continuous WebJob) pulls the queued jobs and authenticates via the Service Plane User-Assigned Managed Identity holding the Resource Policy Contributor role." },
-          { n: ['p-sumsi','p-subs','p-cat1','p-cat2','p-cat3','p-cat4'], e: ['pe14'], t: "Policies are enforced across 70,000+ subscriptions covering AAD-only auth, PIM/least privilege, TLS 1.2+/TDE encryption, Defender for Cloud, DDoS/WAF, and Classic-to-ARM migration—cutting rollout time by 50%." }
+          { n: ['p-devops','p-pillars','p-files'], e: ['pe5','pe9'], t: "Custom and built-in Azure Policy JSON definitions across 8 security pillars are published by Azure DevOps pipelines (authenticated via Service Principals) into the Management Plane's auto-rollout and manual-rollout file shares." },
+          { n: ['p-files','p-mjobs','p-kv'], e: ['pe6','pe8'], t: "The Sync Engine retrieves storage credentials from Azure Key Vault using its Managed Identity and reads the queued policy definitions." },
+          { n: ['p-mjobs','p-sstore'], e: ['pe10'], t: "The Management Plane distributes policy definitions and rollout jobs across tenant boundaries into each onboarded division's local Service Plane queue." },
+          { n: ['p-sstore','p-sweb','p-sumsi'], e: ['pe11','pe13'], t: "The Service Plane Policy Worker pulls the queued jobs and authenticates via a least-privilege Managed Identity holding the Resource Policy Contributor role." },
+          { n: ['p-sumsi','p-subs','p-cat1','p-cat2','p-cat3','p-cat4'], e: ['pe14'], t: "Policies are enforced across 70,000+ subscriptions—covering Entra ID-only auth, PIM/least privilege, TLS 1.2+/TDE encryption, Defender for Cloud, DDoS/WAF, and Classic-to-ARM migration—cutting rollout time by 50%." }
         ],
         B: [
-          { n: ['p-stree','p-mjobs','p-cosmos'], e: ['pe4','pe3'], t: "Onboarded divisions register their Service Tree ID and certificate. MetaDataSyncDailyJob pulls division, service, and subscription hierarchies from Microsoft Service Tree into Azure Cosmos DB for NoSQL." },
-          { n: ['p-subs','p-sweb','p-sstore'], e: ['pe11','pe14'], t: "Inside each onboarded tenant, the ServicePlanePolicyResults WebJob continuously evaluates subscription and resource compliance against assigned policies." },
-          { n: ['p-sweb','p-mapi','p-cosmos'], e: ['pe15','pe3'], t: "Compliance telemetry reports back to the Management Plane API (ManagementEndpoint) and is stored in Cosmos DB, achieving 99% resource compliance and 50% fewer security incidents." },
-          { n: ['p-mapi','p-bot','p-teams'], e: ['pe2','pe1'], t: "The Management API sends real-time compliance and deployment notifications (/api/notify) to engineering owners and security admins in Microsoft Teams and Outlook." },
-          { n: ['p-teams','p-bot','p-mapi','p-sweb','p-subs'], e: ['pe1','pe2','pe15','pe14'], t: "Because the Management Plane is decoupled from the Service Plane, admins retain central control to trigger manual policy rollouts or instant rollbacks across any onboarded subscription via the Teams Bot." }
+          { n: ['p-stree','p-mjobs','p-cosmos'], e: ['pe4','pe3'], t: "Onboarded divisions register their organizational directory ID. The Sync Engine automatically pulls tenant, service, and subscription hierarchies into Azure Cosmos DB." },
+          { n: ['p-subs','p-sweb','p-sstore'], e: ['pe11','pe14'], t: "Inside each onboarded tenant, the Policy Worker continuously scans subscription and resource compliance against assigned security policies." },
+          { n: ['p-sweb','p-mapi','p-cosmos'], e: ['pe15','pe3'], t: "Compliance results report back to the central Orchestrator API and are stored in Cosmos DB, driving 99% resource compliance and a 50% reduction in security incidents." },
+          { n: ['p-mapi','p-bot','p-teams'], e: ['pe2','pe1'], t: "The Orchestrator API sends real-time compliance and deployment notifications to service owners and security admins in Microsoft Teams and Outlook." },
+          { n: ['p-teams','p-bot','p-mapi','p-sweb','p-subs'], e: ['pe1','pe2','pe15','pe14'], t: "Because the Management Plane is decoupled from the Service Plane, admins retain central control to trigger manual policy rollouts or instant rollbacks across any onboarded subscription via the Teams ChatOps Bot." }
         ],
         C: [
-          { n: ['p-teams','p-bot','p-stree'], e: ['pe1'], t: "Users request Just-In-Time (JIT) privilege elevation in Microsoft Teams (PTT-Bot). The Bot enforces OAuth 2.0 Conditional Access—requiring a Secure Admin Workstation (SAW / SAS-ALT) for privileged actions—and validates reporting hierarchy via Microsoft Graph." },
-          { n: ['p-bot','p-mapi','p-cosmos','p-kv'], e: ['pe2','pe3','pe8'], t: "The Bot forwards the request to ManagementApi, which verifies subscription ownership and JIT policy rules in Cosmos DB while persisting conversation state in botstatedata blob storage." },
-          { n: ['p-mapi','p-sfunc','p-sstore'], e: ['pe16','pe12'], t: "Upon approval, the Management Plane triggers ServicePlaneJitProvisioner (Azure Function App in the target Service Plane) via the JIT storage queue." },
-          { n: ['p-sfunc','p-sumsi','p-subs','p-cat1'], e: ['pe13','pe14'], t: "The Function App assumes the JIT User-Assigned Managed Identity (ServicePlaneJitClientId) with the User Access Administrator role to grant time-bound RBAC access, preventing permanent privileged access." },
+          { n: ['p-teams','p-bot','p-stree'], e: ['pe1'], t: "Engineers request Just-In-Time (JIT) privilege elevation in Microsoft Teams. The ChatOps Bot enforces OAuth 2.0 Conditional Access—requiring a Secure Admin Workstation (SAW / SAS-ALT) for privileged roles—and verifies reporting hierarchy via Microsoft Graph." },
+          { n: ['p-bot','p-mapi','p-cosmos','p-kv'], e: ['pe2','pe3','pe8'], t: "The Bot forwards the request to the Orchestrator API, which validates subscription ownership and JIT policy rules in Cosmos DB." },
+          { n: ['p-mapi','p-sfunc','p-sstore'], e: ['pe16','pe12'], t: "Upon approval, the Management Plane triggers the serverless JIT Access Function in the target Service Plane via the local JIT request queue." },
+          { n: ['p-sfunc','p-sumsi','p-subs','p-cat1'], e: ['pe13','pe14'], t: "The Function App assumes a dedicated JIT Managed Identity with the User Access Administrator role to grant time-bound RBAC access, eliminating permanent standing privileges." },
           { n: ['p-mapi','p-bot','p-teams'], e: ['pe2','pe1'], t: "Once time-bound JIT access is provisioned (or automatically revoked upon expiration), the requester and approvers receive an instant confirmation in Microsoft Teams." }
         ]
       };
